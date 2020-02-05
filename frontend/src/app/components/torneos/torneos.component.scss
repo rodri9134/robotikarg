@@ -1,0 +1,71 @@
+.contenedor_leerTorneos {
+    display: grid;
+    justify-items: center;
+
+  }
+  .contenedor_tabla{
+    width: 80%;
+    display: grid;
+    grid-template-columns: 12fr;
+    grid-template-areas: "titulo" " encabezados" "datosUsuario";
+  
+    //grid-auto-rows: auto;
+    // grid-gap: 10%;
+  
+    //margin: auto;
+  }
+  .titulo {
+    grid-area: titulo;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: grey;
+    color: darkred;
+  }
+  .encabezados {
+    grid-area: encabezados;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
+    grid-template-areas: "id nombre fecha ubicacion latitud longitud costeEquipo provincia rangoEdad";
+  }
+  .id {
+    //width: 100%;
+    grid-area: id;
+  }
+  .nombre {
+   // width: 100%;
+    grid-area: nombre;
+  }
+  .fecha {
+   // width: 100%;
+    grid-area: fecha;
+  }
+  .ubicacion{
+      grid-area:ubicacion;
+  }
+  .latitud{
+      grid-area:latitud;
+  }
+  .longitud{
+    grid-area:longitud;
+
+  }
+  .costeEquipo{
+      grid-area:costeEquipo;
+  }
+  .provincia{
+      grid-area:provincia;
+  }
+  .rangoEdad{
+      grid-area:rangoEdad;
+  }
+  .datosUsuario {
+    grid-area: datosUsuario;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
+    grid-template-areas: "id nombre fecha ubicacion latitud longitud costeEquipo provincia rangoEdad";
+    grid-auto-rows: auto;
+  }
+  
+  
+  

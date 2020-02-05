@@ -1,0 +1,54 @@
+<div id="espacio"></div>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+    <a class="navbar-brand" href="inicioa.html"><img  class="logo" src="../../assets/imagenes/logo3.png"></a>
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" href="#">Admin</a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                Instrucciones
+            </a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="admin/anadir_instrucciones.html">Añadir Instruccion</a>
+                <a class="dropdown-item" href="admin/ver_instrucciones.html">Instrucciones</a>
+                <a class="dropdown-item" href="admin/modificar_instrucciones.html">Modificar Instrucciones</a>
+             
+            </div>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                Artículos
+            </a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="admin/anadir_articulos.html">Añadir artículo</a>
+                <a class="dropdown-item" href="admin/ver_articulos.html">Artículos</a>
+                <a class="dropdown-item" href="admin/modificar_articulos.html">Modificar artículos</a>
+            </div>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                Torneos
+            </a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="admin/anadir_torneos.html">Añadir torneos</a>
+                <a class="dropdown-item" href="admin/ver_torneos.html">Torneos</a>
+                <a class="dropdown-item" href="admin/modificar_torneos.html">Modificar torneos</a>
+               
+            </div>
+        </li>
+
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle"  id="navbardrop" data-toggle="dropdown">
+                <img src="../../assets/imagenes/login.png" alt="Identidad">
+            </a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item"       [routerLink]="['/login']">Cerrar sesión</a>
+        
+      
+            </div>
+
+        </li>
+
+    </ul>
+</nav>

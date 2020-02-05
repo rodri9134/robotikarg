@@ -1,0 +1,35 @@
+<div class="login">
+    <form [formGroup]="loginForm" (Submit)="login()">
+        <div class="login-box">
+            <h1 class="titulo">Inicio de sesión</h1>
+            <div class="textbox">
+                <i class="fa fa-user" aria-hidden="true">Correo electrónico</i><br>
+                <input type="text" class="form-group" placeholder="Correo electrónico" formControlName="email">
+                <div *ngIf="email.invalid && (email.dirty || email.touched)">
+                    <div class="fallo" *ngIf="email.errors.required">
+                      El correo es obligatorio
+                    </div>
+                    <div class="fallo" *ngIf="email.errors.pattern">
+                        El correo tiene que cumplir unos requisitos
+                    </div>
+                </div>
+            </div>
+            <div class="textbox">
+                <i class="fa fa-lock" aria-hidden="true">Contraseña</i><br>
+                <input type="password" class="form-group"  placeholder="Contraseña" formControlName="password">
+                <div *ngIf="password.invalid && (password.dirty || password.touched)">
+                    <div class="fallo" *ngIf="password.errors.required">
+                       La contraseña es obligatoria
+                    </div>
+                    <div class="fallo" *ngIf="password.errors.minlength">
+                      La contraseña debe tener un mínimo de 6 caracteres
+                    </div>
+                    <div class="fallo" *ngIf="password.errors.maxlength">
+                     La contraseña debe tener un máximo de 15 caracteres
+                    </div>
+                </div>
+            </div>
+            <button [disabled]="!loginForm.valid" class="btn btn-primary" type="submit">Enviar</button>
+        </div>
+    </form>
+    </div>

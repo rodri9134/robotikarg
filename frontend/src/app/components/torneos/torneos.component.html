@@ -1,0 +1,33 @@
+<div class="contenedor_leerTorneos">
+    <div class="contenedor_tabla">
+      <div class="titulo">
+        <h2>Torneos</h2>
+      </div>
+      <div class="encabezados">
+        <div class="id"> Id</div>
+        <div class="nombre">Nombre</div>
+        <div class="fecha">Fecha</div>
+        <div class="ubicacion">Ubicación</div>
+        <div class="latitud">Latitud</div>
+        <div class="longitud">Longitud</div>
+        <div class="costeEquipo">Coste por equipo</div>
+        <div class="provincia">Provincia</div>
+        <div class="rangoEdad">RangoEdad</div>
+      </div>
+
+      <div>
+
+      <div class="datosUsuario" *ngFor='let torneo of torneos'>
+        <div>{{torneo.id}} </div>
+        <div>{{torneo.nombre}}</div>
+        <div>{{torneo.fecha}} </div>
+        <div> {{torneo.ubicacion}}</div>
+        <div> {{torneo.latitud}}</div>
+        <div> {{torneo.longitud}}</div>
+        <div> {{torneo.costeEquipo}}</div>
+        <div> </div>
+        <div> </div>
+      </div>
+    </div>
+    </div>
+  </div>
