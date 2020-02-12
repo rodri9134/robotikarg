@@ -13,6 +13,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const database_1 = __importDefault(require("../database"));
+const jwt = require('jsonwebtoken');
+const bcript = require('bcryptjs');
+const SECRET_KEY = 'miClaveSecreta';
 class UsuariosController {
     index(req, res) {
         res.json({ 'message': 'Estas en usuarios' });
@@ -43,6 +46,29 @@ class UsuariosController {
         return __awaiter(this, void 0, void 0, function* () {
             const usuarios = yield database_1.default.query('SELECT * FROM usuarios WHERE id=?', [req.params.id]);
             res.json(usuarios);
+        });
+    }
+    readLogin(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            // console.log(req.body);
+            const copiaUsuario = {
+                nombre: req.body.nombre,
+                imagen: req.body.imagen
+            };
+            const usuarios = yield database_1.default.query('SELECT * FROM usuarios WHERE nombre = ? AND imagen = ?', [req.body.nombre, req.body.imagen]);
+            console.log(usuarios.length);
+            if (usuarios.length == 0) {
+                res.json({ message: "Error al loguearse" });
+            }
+            else {
+                // res.json({ message: "Credenciales válidas" });
+                // res.json(usuarios);
+                const expiraen = 24 * 60 * 60;
+                const accessToken = jwt.sign({ id: copiaUsuario.nombre }, SECRET_KEY, { expiresIn: expiraen });
+                console.log(accessToken);
+                res.json(accessToken);
+            }
+            //   res.json(usuarios);
         });
     }
 }

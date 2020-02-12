@@ -24,4 +24,14 @@ export class UsuariosService {
   updateUsuario(id: string, usuario: Usuario): Observable<any> {
     return this.http.put('http://localhost:3000/usuarios/${id}', usuario);
   }
+  getLogin(usuario: Usuario): Observable<any> {
+    return this.http.post('http://localhost:3000/usuarios/login', usuario);
+  }
+  logIn() {
+    return !!localStorage.getItem('token');
+  }
+  logOut() {
+    // Al hacer logout quitamos el token
+    localStorage.removeItem('token');
+  }
 }

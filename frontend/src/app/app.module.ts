@@ -12,9 +12,6 @@ import { FooterComponent } from './components/footer/footer.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ClientesComponent } from './components/clientes/clientes.component';
 import { AdminComponent } from './components/admin/admin.component';
-import { PrincipalComponent } from './views/principal/principal.component';
-import { IniclientesComponent } from './views/iniclientes/iniclientes.component';
-import { IniadminComponent } from './views/iniadmin/iniadmin.component';
 import { NavinvComponent } from './components/navinv/navinv.component';
 import { NavcliComponent } from './components/navcli/navcli.component';
 import { AvisoLegalComponent } from './components/avisolegal/avisolegal.component';
@@ -23,22 +20,20 @@ import { RegistroComponent } from './components/registro/registro.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { TorneosComponent } from './components/torneos/torneos.component';
 import { InformacionComponent } from './components/informacion/informacion.component';
-
+import { PrincipalComponent } from './components/principal/principal.component';
+import {EncrDecrService} from './services/encr-decr-service.service';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    PrincipalComponent,
     ErrorComponentComponent,
     HeaderComponent,
     FooterComponent,
     NavbarComponent,
     ClientesComponent,
     AdminComponent,
-    IniclientesComponent,
-    IniadminComponent,
     NavinvComponent,
     NavcliComponent,
     AvisoLegalComponent,
@@ -47,6 +42,7 @@ import { InformacionComponent } from './components/informacion/informacion.compo
     ContactoComponent,
     TorneosComponent,
     InformacionComponent,
+    PrincipalComponent,
 
   ],
   imports: [
@@ -55,7 +51,7 @@ import { InformacionComponent } from './components/informacion/informacion.compo
     APP_ROUTING,
     HttpClientModule
   ],
-  providers: [],
+  providers: [EncrDecrService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,8 @@
 import { Request, Response } from 'express';
 import pool from '../database';
+const jwt = require('jsonwebtoken');
+const bcript = require('bcryptjs');
+const SECRET_KEY = 'miClaveSecreta';
 class UsuariosController {
     index(req: Request, res: Response) {
         res.json({ 'message': 'Estas en usuarios' });
@@ -9,6 +12,8 @@ class UsuariosController {
         res.json({ 'message': 'El usuario ha sido creado' });
 
     }
+
+
     public async read(req: Request, res: Response) {
         const usuarios = await pool.query('SELECT * FROM usuarios', [req.body]);
         res.json(usuarios);
@@ -26,6 +31,29 @@ class UsuariosController {
 
         const usuarios = await pool.query('SELECT * FROM usuarios WHERE id=?', [req.params.id]);
         res.json(usuarios);
+    }
+    public async readLogin(req: Request, res: Response) {
+        // console.log(req.body);
+        const copiaUsuario = {
+            nombre: req.body.nombre,
+            imagen: req.body.imagen
+        };
+        const usuarios = await pool.query('SELECT * FROM usuarios WHERE nombre = ? AND imagen = ?', [req.body.nombre, req.body.imagen]);
+        console.log(usuarios.length);
+        if (usuarios.length == 0) {
+
+            res.json({ message: "Error al loguearse" });
+        }
+        else {
+            // res.json({ message: "Credenciales válidas" });
+            // res.json(usuarios);
+            const expiraen = 24 * 60 * 60;
+            const accessToken = jwt.sign({ id: copiaUsuario.nombre }, SECRET_KEY, { expiresIn: expiraen });
+            console.log(accessToken);
+            res.json(accessToken);
+
+        }
+        //   res.json(usuarios);
     }
 }
 

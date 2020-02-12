@@ -13,7 +13,7 @@ export class TorneosService {
     return this.http.get('http://localhost:3000/torneos');
 
   }
-  
+
   getTorneo(id: string): Observable<any> {
     return this.http.get('http://localhost:3000/torneos/${id}');
   }

@@ -26,11 +26,8 @@ class server {
     routes() {
         this.app.use(indexRoutes_1.default);
         this.app.use('/usuarios', usuariosRoutes_1.default);
-        this.app.use(torneosRoutes_1.default);
         this.app.use('/torneos', torneosRoutes_1.default);
-        this.app.use(instruccionesRoutes_1.default);
         this.app.use('/instrucciones', instruccionesRoutes_1.default);
-        this.app.use(articulosRoutes_1.default);
         this.app.use('/articulos', articulosRoutes_1.default);
     }
     start() {

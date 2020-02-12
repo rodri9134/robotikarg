@@ -1,13 +1,14 @@
 /*import { NgModule } from '@angular/core';*/
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
-import { PrincipalComponent } from './views/principal/principal.component';
+
 import { AvisoLegalComponent } from './components/avisolegal/avisolegal.component';
 import { PrivacidadComponent } from './components/privacidad/privacidad.component';
 import { RegistroComponent } from './components/registro/registro.component';
 import { InformacionComponent } from './components/informacion/informacion.component';
 import { TorneosComponent } from './components/torneos/torneos.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
+import { PrincipalComponent} from './components/principal/principal.component';
 const routes: Routes = [
   {
     path: '', // alias o ruta

@@ -15,17 +15,22 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const database_1 = __importDefault(require("../database"));
 class TorneosController {
     index(req, res) {
-        res.json({ 'message': 'Estas en torneos' });
+        res.json({ message: 'Estas en torneos' });
     }
     create(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             yield database_1.default.query('INSERT INTO torneos SET ?', [req.body]);
-            res.json({ 'message': 'El torneo ha sido creado' });
+            res.json({ message: 'El torneo ha sido creado' });
         });
     }
+    // public async read(req: Request, res: Response) {
+    //     const torneos = await pool.query('SELECT * FROM torneos', [req.body]);
+    //     res.json(torneos);
+    // }
     read(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const torneos = yield database_1.default.query('SELECT * FROM torneos', [req.body]);
+            // tslint:disable-next-line: max-line-length
+            const torneos = yield database_1.default.query('SELECT torneos.*,provincias.nombre AS pNombre, rangoedad.tiporango AS rEdad FROM torneos INNER JOIN provincias ON torneos.idProvincia=provincias.id INNER JOIN rangoedad ON torneos.idRangoEdad=rangoedad.id', [req.body]);
             res.json(torneos);
         });
     }
@@ -46,4 +51,5 @@ class TorneosController {
         });
     }
 }
+// tslint:disable-next-line: new-parens
 exports.torneosController = new TorneosController;
