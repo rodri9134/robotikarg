@@ -32,24 +32,27 @@ class UsuariosController {
         const usuarios = await pool.query('SELECT * FROM usuarios WHERE id=?', [req.params.id]);
         res.json(usuarios);
     }
+
+
+
     public async readLogin(req: Request, res: Response) {
         // console.log(req.body);
         const copiaUsuario = {
-            nombre: req.body.nombre,
-            imagen: req.body.imagen
+            email: req.body.email,
+            password: req.body.password
         };
-        const usuarios = await pool.query('SELECT * FROM usuarios WHERE nombre = ? AND imagen = ?', [req.body.nombre, req.body.imagen]);
+        const usuarios = await pool.query('SELECT * FROM usuarios WHERE email = ? AND password = ?', [req.body.email, req.body.password]);
         console.log(usuarios.length);
         if (usuarios.length == 0) {
 
             res.json({ message: "Error al loguearse" });
         }
         else {
-            // res.json({ message: "Credenciales válidas" });
+             res.json({ message: "Credenciales válidas" });
             // res.json(usuarios);
             const expiraen = 24 * 60 * 60;
-            const accessToken = jwt.sign({ id: copiaUsuario.nombre }, SECRET_KEY, { expiresIn: expiraen });
-            console.log(accessToken);
+            const accessToken = jwt.sign({ id: copiaUsuario.email }, SECRET_KEY, { expiresIn: expiraen });
+            console.log("access token "+accessToken);
             res.json(accessToken);
 
         }

@@ -21,7 +21,11 @@ import { ContactoComponent } from './components/contacto/contacto.component';
 import { TorneosComponent } from './components/torneos/torneos.component';
 import { InformacionComponent } from './components/informacion/informacion.component';
 import { PrincipalComponent } from './components/principal/principal.component';
-import {EncrDecrService} from './services/encr-decr-service.service';
+import { EncrDecrService } from './services/encr-decr-service.service';
+import { MuestraInstruccionesComponent } from './components/cliente/muestra-instrucciones/muestra-instrucciones.component';
+import { MuestraArticulosComponent } from './components/cliente/muestra-articulos/muestra-articulos.component';
+import { EditarPerfilComponent } from './components/cliente/editar-perfil/editar-perfil.component';
+import { MisInstruccionesComponent } from './components/cliente/mis-instrucciones/mis-instrucciones.component';
 
 
 @NgModule({
@@ -43,6 +47,10 @@ import {EncrDecrService} from './services/encr-decr-service.service';
     TorneosComponent,
     InformacionComponent,
     PrincipalComponent,
+    MuestraInstruccionesComponent,
+    MuestraArticulosComponent,
+    EditarPerfilComponent,
+    MisInstruccionesComponent,
 
   ],
   imports: [

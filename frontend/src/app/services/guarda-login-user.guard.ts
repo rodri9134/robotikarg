@@ -8,20 +8,18 @@ import { UsuariosService } from './usuarios.service';
   providedIn: 'root'
 })
 export class GuardaLoginUserGuard implements CanActivate {
-  constructor(private router: Router, private Usuario: UsuariosService) {
+  constructor(private router: Router, private usuarios: UsuariosService) {
 
   }
   canActivate(): boolean {
-    if (this.Usuario.logIn()) {
+    if (this.usuarios.logIn()) {
       return true;
     }
-    this.router.navigate(['/login']);
+    this.router.navigate(['/navCli']);
     return false;
 
-    /*
-    next: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    return true;*/
+
   }
 
 }
+

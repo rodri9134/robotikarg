@@ -2,14 +2,14 @@
     display:grid;
     width: 100vw;
     height: 100vh;
-    grid-template-rows: 2fr 9fr 1fr;
+    grid-template-rows: 1fr 10fr 1fr;
     grid-template-columns: 12fr ;
     grid-template-areas: "cabecera" "cuerpo" "pie";
     }
     
     .cabecera {
         grid-area:cabecera;
-        background-color: darksalmon;
+        background-color: #18191f;
         
     
     }

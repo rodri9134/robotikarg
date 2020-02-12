@@ -4,7 +4,8 @@ export interface Usuario {
     email?: string;
     password?: string;
     telefono?: string;
+    foto?: string;
     idRol?: number;
-    user_session_token?: string;
+    
 }
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UsuariosService } from 'src/app/services/usuarios.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.component.html',
@@ -13,7 +14,7 @@ export class RegistroComponent implements OnInit {
 
   mensaje: string;
 
-  constructor(private formBuilder: FormBuilder, private usuariosService: UsuariosService) {
+  constructor(private router: Router, private formBuilder: FormBuilder, private usuariosService: UsuariosService) {
 
     this.registroForm = formBuilder.group({
 
@@ -33,6 +34,7 @@ export class RegistroComponent implements OnInit {
     console.log(this.usuariosService);
     this.usuariosService.saveUsuario(this.registroForm.value).subscribe(
       res => {
+        this.router.navigate(['/login']);
         console.log(res);
       },
       err => {

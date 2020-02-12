@@ -8,7 +8,37 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-            <li class="nav-item">
+      
+            <ng-container *ngIf="usuariosService.logIn(); else loggedOut">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle"  [routerLink]="['/mInstrucciones']" id="navbardrop" data-toggle="dropdown">
+                        Instrucciones
+                    </a>
+        
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle"  [routerLink]="['/mArticulos']" id="navbardrop" data-toggle="dropdown">
+                        Artículos
+                    </a>
+        
+                </li>
+        
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                        <img src="../../assets/imagenes/login.png" alt="Identidad">
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" [routerLink]="['/editar_perfil']">Editar perfil</a>
+                        <a class="dropdown-item" [routerLink]="['/mis_instrucciones']">Mis instrucciones guardadas</a>
+                        <a class="dropdown-item" [routerLink]="['/cerrar_sesion']" (click)="usuariosService.logOut()">Cerrar sesión</a>
+                
+                    </div>
+               
+                </li>
+            </ng-container>
+            <ng-container >
+                <ng-template #loggedOut>
+                          <li class="nav-item">
                 <a class="nav-link" [routerLink]="['/']">Inicio</a>
             </li>
             <li class="nav-item">
@@ -36,7 +66,9 @@
                     <img class="imagen" src="../../assets/imagenes/registro.png" alt="Registro">Registro
                 </a>
             </li>
-           
+        </ng-template>
+    </ng-container>
+    
         </ul>
     </div>
 </nav>

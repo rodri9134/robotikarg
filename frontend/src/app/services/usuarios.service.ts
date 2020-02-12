@@ -34,4 +34,7 @@ export class UsuariosService {
     // Al hacer logout quitamos el token
     localStorage.removeItem('token');
   }
+  getToken() {
+    return localStorage.getItem('token');
+  }
 }
