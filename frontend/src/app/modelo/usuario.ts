@@ -6,6 +6,5 @@ export interface Usuario {
     telefono?: string;
     foto?: string;
     idRol?: number;
-    
 }
 

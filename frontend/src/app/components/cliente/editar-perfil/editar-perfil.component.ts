@@ -15,13 +15,13 @@ export class EditarPerfilComponent implements OnInit {
     this.actualizarPerfilForm = formBuilder.group({
       email: [''],
       password: [''],
-      foto:['']
+      foto: ['']
     });
    }
 
   ngOnInit() {
   }
-actualizarUsuario(){
+actualizarUsuario() {
 
 
 
