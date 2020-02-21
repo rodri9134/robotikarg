@@ -15,17 +15,18 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const database_1 = __importDefault(require("../database"));
 class ArticulosController {
     index(req, res) {
-        res.json({ 'message': 'Estas en articulos' });
+        res.json({ message: 'Estas en articulos' });
     }
     create(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             yield database_1.default.query('INSERT INTO articulos SET ?', [req.body]);
-            res.json({ 'message': 'El articulos ha sido creado' });
+            res.json({ message: 'El articulos ha sido creado' });
         });
     }
     read(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const articulos = yield database_1.default.query('SELECT * FROM articulos', [req.body]);
+            // tslint:disable-next-line: max-line-length
+            const articulos = yield database_1.default.query('SELECT a.*,c.nombre AS categoria,t.nombre AS tienda FROM articulos a INNER JOIN categorias c ON a.idCategoria=c.id INNER JOIN tiendas t ON a.idTienda=t.id ', [req.body]);
             res.json(articulos);
         });
     }

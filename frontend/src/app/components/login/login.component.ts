@@ -3,7 +3,7 @@ import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms'
 import { UsuariosService } from 'src/app/services/usuarios.service';
 import { Router } from '@angular/router';
 import { EncrDecrService } from '../../services/encr-decr-service.service';
-
+import { Usuario } from '../../modelo/usuario';
 
 @Component({
   selector: 'app-login',
@@ -12,6 +12,7 @@ import { EncrDecrService } from '../../services/encr-decr-service.service';
 })
 export class LoginComponent implements OnInit {
   public loginForm: FormGroup;
+  public usuario: Usuario;
   public misusuarios: UsuariosService;
   title = 'EncryptionDecryptionSample';
 
@@ -36,23 +37,16 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
-/*
-    const encrypted = this.EncrDecr.set('123456$#@$^@1ERF', 'password@123456');
-    const decrypted = this.EncrDecr.get('123456$#@$^@1ERF', encrypted);
-    console.log('Encrypted :' + encrypted);
-    console.log('Encrypted :' + decrypted);
-*/
+
   }
   login() {
 
-    /*const encriptada = this.EncrDecr.set('123456$#@$^@1ERF', this.loginForm.get('imagen').value);
-    console.log('Contraseña encriptada: ' + encriptada);
-    const desencriptada = this.EncrDecr.get('123456$#@$^@1ERF', encriptada);
-    console.log('Contraseña desencriptada: ' + desencriptada);*/
     this.usuariosService.getLogin(this.loginForm.value).subscribe(
       res => {
         localStorage.setItem('token', res);
-        this.router.navigate(['/navcli']);
+        let u: Usuario = { email: this.loginForm.value.email, password:this.loginForm.value.password };
+        this.usuariosService.setUserLoggedIn(u);
+        this.router.navigate(['/navCli']);
         console.log(res);
       },
       err => {

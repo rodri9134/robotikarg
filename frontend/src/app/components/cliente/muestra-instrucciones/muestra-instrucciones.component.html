@@ -1,1 +1,27 @@
-<p>muestra-instrucciones works!</p>
+<div class="contenedor_instrucciones">
+    <div class="contenedor_tabla">
+      <div class="titulo">
+        <h2>LISTADO DE INSTRUCCIONES</h2>
+      </div>
+      <div class="encabezados">
+        <div class="id"> Id</div>
+        <div class="instruccion">Instrucción</div>
+        <div class="accion">Acción</div>
+        <div class="lenguaje">Lenguaje</div>
+        <div class="opciones">Opciones</div>
+     
+      </div>
+
+      <div>
+
+      <div class="instrucciones" *ngFor='let instruccione of instrucciones'>
+        <div>{{instruccione.id}} </div>
+        <div>{{instruccione.instruccion}}</div>
+        <div>{{instruccione.accion}} </div>
+        <div> {{instruccione.lenguaje}}</div>
+        <div>Me gusta | No me gusta</div>
+  
+      </div>
+    </div>
+    </div>
+  </div>

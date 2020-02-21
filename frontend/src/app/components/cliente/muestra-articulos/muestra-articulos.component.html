@@ -1,1 +1,34 @@
-<p>muestra-articulos works!</p>
+<div class="contenedor_articulos">
+    <div class="contenedor_tabla">
+      <div class="tituloA">
+        <h2>ARTÍCULOS</h2>
+   
+      </div>
+      <div class="encabezados">
+        <div class="id"> Id</div>
+        <div class="titulo">Titulo</div>
+        <div class="descripcion">Descripción</div>
+        <div class="referencia">Referencia</div>
+        <div class="precio">Precio</div>
+        <div class="imagen">Imagen</div>
+        <div class="categoria">Categoria</div>
+        <div class="tienda">Tienda</div>
+     
+      </div>
+
+      <div>
+
+      <div class="articulos" *ngFor='let articulo of articulos'>
+        <div>{{articulo.id}} </div>
+        <div>{{articulo.titulo}}</div>
+        <div>{{articulo.descripcion}} </div>
+        <div> <a href="{{articulo.referencia}}">{{articulo.referencia}}</a></div>
+        <div>{{articulo.precio}} € </div>
+        <div>{{articulo.imagen}}</div>
+        <div>{{articulo.categoria}} </div>
+        <div> {{articulo.tienda}}</div>
+  
+      </div>
+    </div>
+    </div>
+  </div>

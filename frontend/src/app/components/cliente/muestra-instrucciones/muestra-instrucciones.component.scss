@@ -1,0 +1,58 @@
+.contenedor_instrucciones {
+    display: grid;
+    justify-items: center;
+
+  }
+  .contenedor_tabla{
+    width: 80%;
+    display: grid;
+    grid-template-columns: 12fr;
+    grid-template-areas: "titulo" " encabezados" "instrucciones";
+
+  }
+  .titulo {
+    grid-area: titulo;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: grey;
+    color: darkred;
+  }
+  .encabezados {
+    grid-area: encabezados;
+    display: grid;
+    grid-template-columns: 1fr 6fr 3fr 1fr 1fr;
+    grid-template-areas: "id instruccion accion lenguaje opciones";
+    border:1px solid black;
+    color:white;
+    background-color: darkslategrey;
+    justify-content: center;
+    align-items: center;
+  }
+  .id {
+    //width: 100%;
+    grid-area: id;
+ 
+  }
+  .instruccion{
+      grid-area:instruccion;
+    }
+   .accion{
+       grid-area:accion;
+}
+   .lenguaje{
+       grid-area:lenguaje
+    }
+    .opciones{
+        grid-area:opciones;
+    }
+ .instrucciones {
+    grid-area:instrucciones;
+    display: grid;
+    grid-template-columns: 1fr 6fr 3fr 1fr 1fr;
+    grid-template-areas: "id instruccion accion lenguaje";
+    grid-auto-rows: auto;
+    border:1px solid black;
+    background-color: floralwhite;
+  }
+  

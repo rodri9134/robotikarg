@@ -30,7 +30,7 @@ export class RegistroComponent implements OnInit {
   }
   registro() {
 
-
+    // Encriptar con bcript
     console.log(this.usuariosService);
     this.usuariosService.saveUsuario(this.registroForm.value).subscribe(
       res => {

@@ -1,4 +1,4 @@
-//Se ponen llaves para coger un tipo específico
+// Se ponen llaves para coger un tipo específico
 import { Router } from 'express';
 import { indexController } from '../controladores/indexController';
 class indexRoutes {

@@ -67,7 +67,7 @@ const routes: Routes = [
     component: ContactoComponent,
   },
   {
-    path: 'navcli',
+    path: 'navCli',
     component: NavcliComponent,
     canActivate: [GuardaLoginUserGuard]
   },

@@ -18,12 +18,12 @@ const bcript = require('bcryptjs');
 const SECRET_KEY = 'miClaveSecreta';
 class UsuariosController {
     index(req, res) {
-        res.json({ 'message': 'Estas en usuarios' });
+        res.json({ message: 'Estas en usuarios' });
     }
     create(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             yield database_1.default.query('INSERT INTO usuarios SET ?', [req.body]);
-            res.json({ 'message': 'El usuario ha sido creado' });
+            res.json({ message: 'El usuario ha sido creado' });
         });
     }
     read(req, res) {
@@ -34,7 +34,11 @@ class UsuariosController {
     }
     update(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield database_1.default.query('UPDATE usuarios SET ? WHERE id=?', [req.params.id]);
+            console.log(req.body);
+            console.log(req.params);
+            console.log(req.params.id);
+            yield database_1.default.query('UPDATE usuarios SET ? WHERE id=?', [req.body, req.params.id]);
+            res.json({ message: 'El usuario ha sido actualizado' });
         });
     }
     delete(req, res) {
@@ -58,18 +62,20 @@ class UsuariosController {
             const usuarios = yield database_1.default.query('SELECT * FROM usuarios WHERE email = ? AND password = ?', [req.body.email, req.body.password]);
             console.log(usuarios.length);
             if (usuarios.length == 0) {
-                res.json({ message: "Error al loguearse" });
+                res.json({ message: 'Error al loguearse' });
             }
             else {
-                res.json({ message: "Credenciales válidas" });
+                //res.json({ message: "Credenciales válidas" });
                 // res.json(usuarios);
                 const expiraen = 24 * 60 * 60;
                 const accessToken = jwt.sign({ id: copiaUsuario.email }, SECRET_KEY, { expiresIn: expiraen });
-                console.log("access token " + accessToken);
+                console.log('Credenciales validas');
+                console.log(accessToken);
                 res.json(accessToken);
             }
             //   res.json(usuarios);
         });
     }
 }
+// tslint:disable-next-line: new-parens
 exports.usuariosController = new UsuariosController;

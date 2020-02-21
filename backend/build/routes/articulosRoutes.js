@@ -1,8 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-//Se ponen llaves para coger un tipo específico
+// Se ponen llaves para coger un tipo específico
 const express_1 = require("express");
 const articulosController_1 = require("../controladores/articulosController");
+// tslint:disable-next-line: class-name
 class articulosRoutes {
     constructor() {
         this.router = express_1.Router();

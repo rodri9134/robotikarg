@@ -1,6 +1,7 @@
-//Se ponen llaves para coger un tipo específico
+// Se ponen llaves para coger un tipo específico
 import { Router } from 'express';
 import { articulosController } from '../controladores/articulosController';
+// tslint:disable-next-line: class-name
 class articulosRoutes {
     public router: Router = Router();
     constructor() {

@@ -22,4 +22,3 @@ export class GuardaLoginUserGuard implements CanActivate {
   }
 
 }
-

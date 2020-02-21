@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-//Se ponen llaves para coger un tipo específico
+// Se ponen llaves para coger un tipo específico
 const express_1 = require("express");
 const instruccionesController_1 = require("../controladores/instruccionesController");
 class instruccionesRoutes {
@@ -13,7 +13,9 @@ class instruccionesRoutes {
         this.router.get('/', instruccionesController_1.instruccionesController.read);
         this.router.put('/:id', instruccionesController_1.instruccionesController.update);
         this.router.delete('/:id', instruccionesController_1.instruccionesController.delete);
+        this.router.get('/:id', instruccionesController_1.instruccionesController.instruccionesUsuario);
         this.router.get('/:id', instruccionesController_1.instruccionesController.readone);
+        this.router.get('/:id', instruccionesController_1.instruccionesController.guardarInstrucciones);
     }
 }
 const instruccionesRoute = new instruccionesRoutes();

@@ -1,5 +1,5 @@
 import express, { Application } from 'express';
-
+// import App from './controladores/app';
 import indexRoutes from './routes/indexRoutes';
 import usuariosRoutes from './routes/usuariosRoutes';
 import torneosRoutes from './routes/torneosRoutes';
@@ -23,6 +23,7 @@ class server {
     routes(): void {
 
         this.app.use(indexRoutes);
+      //  this.app.use('/formulario',App);
         this.app.use('/usuarios', usuariosRoutes);
         this.app.use('/torneos', torneosRoutes);
         this.app.use('/instrucciones', instruccionesRoutes);

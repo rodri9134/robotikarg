@@ -26,7 +26,7 @@
     grid-area: encabezados;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr  ;
-    grid-template-areas: "id nombre fecha ubicacion latitud longitud costeEquipo provincia rangoEdad";
+    grid-template-areas: "id nombre fecha hora ubicacion latitud longitud costeEquipo provincia rangoEdad";
     border:1px solid black;
     color:white;
     background-color: darkslategrey;
@@ -45,6 +45,9 @@
   .fecha {
    // width: 100%;
     grid-area: fecha;
+  }
+  .hora {
+    grid-area: hora;
   }
   .ubicacion{
       grid-area:ubicacion;
@@ -69,7 +72,7 @@
     grid-area: datosUsuario;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-areas: "id nombre fecha ubicacion latitud longitud costeEquipo provincia rangoEdad";
+    grid-template-areas: "id nombre fecha hora ubicacion latitud longitud costeEquipo provincia rangoEdad";
     grid-auto-rows: auto;
     border:1px solid black;
     background-color: floralwhite;

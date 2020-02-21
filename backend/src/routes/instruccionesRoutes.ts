@@ -1,4 +1,4 @@
-//Se ponen llaves para coger un tipo específico
+// Se ponen llaves para coger un tipo específico
 import { Router } from 'express';
 import { instruccionesController } from '../controladores/instruccionesController';
 class instruccionesRoutes {
@@ -11,7 +11,11 @@ class instruccionesRoutes {
         this.router.get('/', instruccionesController.read);
         this.router.put('/:id', instruccionesController.update);
         this.router.delete('/:id', instruccionesController.delete);
+        
+        this.router.get('/:id', instruccionesController.instruccionesUsuario);
         this.router.get('/:id', instruccionesController.readone);
+        this.router.get('/:id', instruccionesController.guardarInstrucciones);
+   
 
     }
 

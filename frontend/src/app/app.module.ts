@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 
 import { APP_ROUTING } from './app-routing.module';
@@ -26,7 +26,7 @@ import { MuestraInstruccionesComponent } from './components/cliente/muestra-inst
 import { MuestraArticulosComponent } from './components/cliente/muestra-articulos/muestra-articulos.component';
 import { EditarPerfilComponent } from './components/cliente/editar-perfil/editar-perfil.component';
 import { MisInstruccionesComponent } from './components/cliente/mis-instrucciones/mis-instrucciones.component';
-
+import { MessageService } from './services/message.service';
 
 @NgModule({
   declarations: [
@@ -59,7 +59,7 @@ import { MisInstruccionesComponent } from './components/cliente/mis-instruccione
     APP_ROUTING,
     HttpClientModule
   ],
-  providers: [EncrDecrService],
+  providers: [MessageService, EncrDecrService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

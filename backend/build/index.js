@@ -4,6 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
+// import App from './controladores/app';
 const indexRoutes_1 = __importDefault(require("./routes/indexRoutes"));
 const usuariosRoutes_1 = __importDefault(require("./routes/usuariosRoutes"));
 const torneosRoutes_1 = __importDefault(require("./routes/torneosRoutes"));
@@ -25,6 +26,7 @@ class server {
     }
     routes() {
         this.app.use(indexRoutes_1.default);
+        //  this.app.use('/formulario',App);
         this.app.use('/usuarios', usuariosRoutes_1.default);
         this.app.use('/torneos', torneosRoutes_1.default);
         this.app.use('/instrucciones', instruccionesRoutes_1.default);

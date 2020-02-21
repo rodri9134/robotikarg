@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-//Se ponen llaves para coger un tipo específico
+// Se ponen llaves para coger un tipo específico
 const express_1 = require("express");
 const usuariosController_1 = require("../controladores/usuariosController");
 class usuariosRoutes {

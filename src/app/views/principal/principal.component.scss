@@ -1,0 +1,21 @@
+.main-container {
+    min-width: 100%;
+    min-height: 100%;
+    display: grid;
+    grid-template-columns: 2fr 6fr;
+    grid-template-rows: 1fr 1fr 6fr 1fr;
+    grid-template-areas: "alias-header alias-header" "alias-navinv alias-navinv" "alias-changes alias-changes" "alias-footer alias-footer";
+    app-header{
+      grid-area:alias-header;
+    }
+    app-changes{
+      grid-area:alias-changes;
+    }
+    app-footer{
+      grid-area: alias-footer;
+    }
+    app-navinv{
+      grid-area:alias-navinv;
+    }
+    }
+    

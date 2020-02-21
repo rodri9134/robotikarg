@@ -1,1 +1,25 @@
-<p>mis-instrucciones works!</p>
+<div class="contenedor_misInstrucciones">
+    <div class="contenedor_tabla">
+      <div class="titulo">
+        <h2>Mis instrucciones</h2>
+      </div>
+      <div class="encabezados">
+        <div class="id"> Id</div>
+        <div class="instruccon">Instrucción</div>
+        <div class="accion">Acción</div>
+        <div class="lenguaje">Lenguaje</div>
+     
+      </div>
+
+      <div>
+
+      <div class="datosUsuario" *ngFor='let miInstruccion of misInstrucciones'>
+        <div>{{miInstruccion.id}} </div>
+        <div>{{miInstruccion.instruccion}}</div>
+        <div>{{miInstruccion.accion}} </div>
+        <div> {{miInstruccion.lenguaje}}</div>
+  
+      </div>
+    </div>
+    </div>
+  </div>

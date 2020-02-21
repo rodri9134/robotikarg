@@ -1,4 +1,4 @@
-//Se ponen llaves para coger un tipo específico
+// Se ponen llaves para coger un tipo específico
 import { Router } from 'express';
 import { usuariosController } from '../controladores/usuariosController';
 class usuariosRoutes {

@@ -1,0 +1,50 @@
+.contenedor_editarPerfil {
+    display: grid;
+    justify-items: center;
+    
+    //grid-template-columns: 12fr;
+  }
+  .contenedor{
+    width: 60%;
+    display: grid;
+    grid-template-columns: 12fr;
+    grid-template-areas: "titulo" " datosFormulario";
+  
+    //grid-auto-rows: auto;
+    // grid-gap: 10%;
+  
+    //margin: auto;
+  }
+  .titulo {
+    grid-area: titulo;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: grey;
+    color: darkred;
+  }
+  .datosFormulario {
+    grid-area: datosFormulario;
+    display: grid;
+    grid-template-columns: 2fr 5fr 5fr;
+    grid-template-areas: "email password foto";
+  }
+  .email {
+
+    grid-area: email;
+  }
+  .password {
+
+    grid-area: password;
+  }
+  .foto {
+    grid-area: foto;
+
+  }
+.aviso{
+
+    color:darkred;
+}
+.fallo{
+  color:red;
+}

@@ -5,11 +5,11 @@ const bcript = require('bcryptjs');
 const SECRET_KEY = 'miClaveSecreta';
 class UsuariosController {
     index(req: Request, res: Response) {
-        res.json({ 'message': 'Estas en usuarios' });
+        res.json({ message: 'Estas en usuarios' });
     }
     public async create(req: Request, res: Response) {
         await pool.query('INSERT INTO usuarios SET ?', [req.body]);
-        res.json({ 'message': 'El usuario ha sido creado' });
+        res.json({ message: 'El usuario ha sido creado' });
 
     }
 
@@ -19,8 +19,11 @@ class UsuariosController {
         res.json(usuarios);
     }
     public async update(req: Request, res: Response) {
-
-        await pool.query('UPDATE usuarios SET ? WHERE id=?', [req.params.id]);
+        console.log(req.body);
+        console.log(req.params);
+        console.log(req.params.id);
+        await pool.query('UPDATE usuarios SET ? WHERE id=?', [req.body, req.params.id]);
+        res.json({ message: 'El usuario ha sido actualizado' });
 
     }
     public async delete(req: Request, res: Response) {
@@ -34,7 +37,6 @@ class UsuariosController {
     }
 
 
-
     public async readLogin(req: Request, res: Response) {
         // console.log(req.body);
         const copiaUsuario = {
@@ -45,14 +47,15 @@ class UsuariosController {
         console.log(usuarios.length);
         if (usuarios.length == 0) {
 
-            res.json({ message: "Error al loguearse" });
+            res.json({ message: 'Error al loguearse' });
         }
         else {
-             res.json({ message: "Credenciales válidas" });
+            //res.json({ message: "Credenciales válidas" });
             // res.json(usuarios);
             const expiraen = 24 * 60 * 60;
             const accessToken = jwt.sign({ id: copiaUsuario.email }, SECRET_KEY, { expiresIn: expiraen });
-            console.log("access token "+accessToken);
+            console.log('Credenciales validas');
+            console.log(accessToken);
             res.json(accessToken);
 
         }
@@ -60,4 +63,5 @@ class UsuariosController {
     }
 }
 
+// tslint:disable-next-line: new-parens
 export const usuariosController = new UsuariosController;
