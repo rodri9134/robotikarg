@@ -11,7 +11,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ClientesComponent } from './components/clientes/clientes.component';
-import { AdminComponent } from './components/admin/admin.component';
+
 import { NavinvComponent } from './components/navinv/navinv.component';
 import { NavcliComponent } from './components/navcli/navcli.component';
 import { AvisoLegalComponent } from './components/avisolegal/avisolegal.component';
@@ -27,6 +27,13 @@ import { MuestraArticulosComponent } from './components/cliente/muestra-articulo
 import { EditarPerfilComponent } from './components/cliente/editar-perfil/editar-perfil.component';
 import { MisInstruccionesComponent } from './components/cliente/mis-instrucciones/mis-instrucciones.component';
 import { MessageService } from './services/message.service';
+import { AdminInstruccionesComponent } from './components/admin/admin-instrucciones/admin-instrucciones.component';
+import { AdminArticulosComponent } from './components/admin/admin-articulos/admin-articulos.component';
+import { AdminTorneosComponent } from './components/admin/admin-torneos/admin-torneos.component';
+import { AdminEditarInstruccionesComponent } from './components/admin/admin-editar-instrucciones/admin-editar-instrucciones.component';
+import { AdminEditarArticulosComponent } from './components/admin/admin-editar-articulos/admin-editar-articulos.component';
+import { AdminEditarTorneosComponent } from './components/admin/admin-editar-torneos/admin-editar-torneos.component';
+import { InicioAdminComponent } from './components/admin/inicio-admin/inicio-admin.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +44,6 @@ import { MessageService } from './services/message.service';
     FooterComponent,
     NavbarComponent,
     ClientesComponent,
-    AdminComponent,
     NavinvComponent,
     NavcliComponent,
     AvisoLegalComponent,
@@ -51,6 +57,13 @@ import { MessageService } from './services/message.service';
     MuestraArticulosComponent,
     EditarPerfilComponent,
     MisInstruccionesComponent,
+    AdminInstruccionesComponent,
+    AdminArticulosComponent,
+    AdminTorneosComponent,
+    AdminEditarInstruccionesComponent,
+    AdminEditarArticulosComponent,
+    AdminEditarTorneosComponent,
+    InicioAdminComponent,
 
   ],
   imports: [

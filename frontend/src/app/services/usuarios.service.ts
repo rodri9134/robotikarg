@@ -28,13 +28,17 @@ export class UsuariosService {
   getLogin(usuario: Usuario): Observable<any> {
     return this.http.post('http://localhost:3000/usuarios/login', usuario);
   }
-
+  idUsuario(usuario: Usuario): Observable<any> {
+    return this.http.post('http://localhost:3000/usuarios/idUsuario', usuario);
+  }
   logIn() {
     return !!localStorage.getItem('token');
   }
   logOut() {
     // Al hacer logout quitamos el token
     localStorage.removeItem('token');
+    localStorage.removeItem('currentUser');
+    localStorage.removeItem('idUsuario');
   }
   getToken() {
     return localStorage.getItem('token');

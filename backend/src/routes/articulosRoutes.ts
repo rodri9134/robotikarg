@@ -12,6 +12,7 @@ class articulosRoutes {
         this.router.get('/', articulosController.read);
         this.router.put('/:id', articulosController.update);
         this.router.delete('/:id', articulosController.delete);
+        this.router.get('/:id', articulosController.readone);
 
     }
 

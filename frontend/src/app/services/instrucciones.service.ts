@@ -24,7 +24,7 @@ export class InstruccionesService {
     return this.http.put('http://localhost:3000/instrucciones/${id}', instruccion);
   }
   getInstruccionesUsuario(id: string): Observable<any> {
-    return this.http.get('http://localhost:3000/instruccionesUsuario/${id}');
+    return this.http.get('http://localhost:3000/instrucciones/instruccionesUsuario/'+id);
   }
   
   getInstruccion(id: string): Observable<any> {

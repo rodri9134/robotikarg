@@ -15,6 +15,13 @@ import { MuestraInstruccionesComponent } from './components/cliente/muestra-inst
 import { MuestraArticulosComponent } from './components/cliente/muestra-articulos/muestra-articulos.component';
 import { EditarPerfilComponent } from './components/cliente/editar-perfil/editar-perfil.component';
 import { MisInstruccionesComponent } from './components/cliente/mis-instrucciones/mis-instrucciones.component';
+import { InicioAdminComponent } from './components/admin/inicio-admin/inicio-admin.component';
+import { AdminArticulosComponent } from './components/admin/admin-articulos/admin-articulos.component';
+import { AdminInstruccionesComponent } from './components/admin/admin-instrucciones/admin-instrucciones.component';
+import { AdminTorneosComponent } from './components/admin/admin-torneos/admin-torneos.component';
+import { AdminEditarArticulosComponent } from './components/admin/admin-editar-articulos/admin-editar-articulos.component';
+import { AdminEditarInstruccionesComponent } from './components/admin/admin-editar-instrucciones/admin-editar-instrucciones.component';
+import { AdminEditarTorneosComponent } from './components/admin/admin-editar-torneos/admin-editar-torneos.component';
 const routes: Routes = [
   {
     path: '', // alias o ruta
@@ -93,6 +100,28 @@ const routes: Routes = [
     component: MisInstruccionesComponent,
     canActivate: [GuardaLoginUserGuard]
 
+  }, {
+    path: 'inicio_admin',
+    component: InicioAdminComponent,
+
+  }, {
+    path: 'admin_articulos',
+    component: AdminArticulosComponent,
+  }, {
+    path: 'admin_instrucciones',
+    component: AdminInstruccionesComponent,
+  }, {
+    path: 'admin_torneos',
+    component: AdminTorneosComponent,
+  }, {
+    path: 'admin_editar_articulos',
+    component: AdminEditarArticulosComponent,
+  }, {
+    path: 'admin_editar_instrucciones',
+    component: AdminEditarInstruccionesComponent,
+  }, {
+    path: 'admin_editar_torneos',
+    component: AdminEditarTorneosComponent,
   }
 ];
 

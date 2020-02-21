@@ -11,7 +11,8 @@ export class MisInstruccionesComponent implements OnInit {
   constructor(private instruccionesService: InstruccionesService) { }
 
   ngOnInit() {
-    this.instruccionesService.getInstruccionesUsuario('12').subscribe(
+    const idUsuario = localStorage.getItem('idUsuario');
+    this.instruccionesService.getInstruccionesUsuario(idUsuario).subscribe(
       res => {
         console.log(res);
         this.instrucciones = res;

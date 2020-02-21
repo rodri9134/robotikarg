@@ -7,7 +7,7 @@
     width: 80%;
     display: grid;
     grid-template-columns: 12fr;
-    grid-template-areas: "titulo" " encabezados" "datosUsuario";
+    grid-template-areas: "titulo" " encabezados" "instrucciones";
   
     //grid-auto-rows: auto;
     // grid-gap: 10%;
@@ -25,7 +25,7 @@
   .encabezados {
     grid-area: encabezados;
     display: grid;
-    grid-template-columns: 1fr 5fr 3fr 3fr;
+    grid-template-columns: 1fr 5fr 2fr 1fr;
     grid-template-areas: "id instruccion accion lenguaje";
     border:1px solid black;
     color:white;
@@ -50,10 +50,10 @@
       grid-area:lenguaje;
   }
   
-  .datosUsuario {
-    grid-area: datosUsuario;
+  .instrucciones {
+    grid-area: instrucciones;
     display: grid;
-    grid-template-columns: 1fr 5fr 2fr 2fr;
+    grid-template-columns: 1fr 5fr 2fr 1fr;
     grid-template-areas: "id instruccion accion lenguaje";
     grid-auto-rows: auto;
     border:1px solid black;

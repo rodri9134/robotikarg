@@ -39,18 +39,35 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
 
   }
+  guardarIdUsuario() {
+    this.usuariosService.idUsuario(this.loginForm.value).subscribe(es => {
+      console.log(es[0].id);
+      localStorage.setItem('idUsuario', es[0].id);
+
+    }
+      ,
+      err => {
+        console.log(err);
+      }
+    );
+
+  }
   login() {
 
     this.usuariosService.getLogin(this.loginForm.value).subscribe(
       res => {
-        localStorage.setItem('token', res);
-        let u: Usuario = { email: this.loginForm.value.email, password:this.loginForm.value.password };
+
+        this.guardarIdUsuario();
+        const tok = 'Robocliente' + res;
+        localStorage.setItem('token', tok);
+        let u: Usuario = { email: this.loginForm.value.email, password: this.loginForm.value.password };
         this.usuariosService.setUserLoggedIn(u);
         this.router.navigate(['/navCli']);
         console.log(res);
       },
       err => {
         console.log(err);
+        this.router.navigate(['/login']);
       }
     );
 

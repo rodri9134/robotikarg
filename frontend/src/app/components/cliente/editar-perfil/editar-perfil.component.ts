@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UsuariosService } from 'src/app/services/usuarios.service';
-import {first} from "rxjs/operators";
+import { first } from "rxjs/operators";
 @Component({
   selector: 'app-editar-perfil',
   templateUrl: './editar-perfil.component.html',
@@ -27,7 +27,8 @@ export class EditarPerfilComponent implements OnInit {
   }
   actualizarUsuario() {
     // console.log(this.actualizarPerfilForm.value);
-    this.usuariosService.updateUsuario(this.id, this.actualizarPerfilForm.value).pipe(first()).subscribe(
+    const idUsuario = localStorage.getItem('idUsuario');
+    this.usuariosService.updateUsuario(idUsuario, this.actualizarPerfilForm.value).pipe(first()).subscribe(
       data => {
         if (data.status === 200) {
           console.log('Perfil actualizado correctamente.');
