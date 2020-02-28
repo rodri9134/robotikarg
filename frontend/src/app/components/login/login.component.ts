@@ -58,9 +58,10 @@ export class LoginComponent implements OnInit {
       res => {
 
         this.guardarIdUsuario();
+
         const tok = 'Robocliente' + res;
         localStorage.setItem('token', tok);
-        let u: Usuario = { email: this.loginForm.value.email, password: this.loginForm.value.password };
+        const u: Usuario = { email: this.loginForm.value.email, password: this.loginForm.value.password };
         this.usuariosService.setUserLoggedIn(u);
         this.router.navigate(['/navCli']);
         console.log(res);

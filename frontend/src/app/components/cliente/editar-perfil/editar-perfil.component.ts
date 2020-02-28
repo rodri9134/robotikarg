@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UsuariosService } from 'src/app/services/usuarios.service';
-import { first } from "rxjs/operators";
+import { first } from 'rxjs/operators';
 @Component({
   selector: 'app-editar-perfil',
   templateUrl: './editar-perfil.component.html',

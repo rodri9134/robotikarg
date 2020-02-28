@@ -28,7 +28,7 @@
         <div><img class="formateaImagen" alt="{{articulo.imagen}}" src="assets/imagenes/{{articulo.imagen}}"></div>
         <div>{{articulo.categoria}} </div>
         <div> {{articulo.tienda}}</div>
-        <div>Editar || Eliminar</div>
+        <div><a  ng-click="editar(articulo.id)">Editar </a>|| <a  (click)="eliminar(articulo.id)">Eliminar</a></div>
   
       </div>
     </div>

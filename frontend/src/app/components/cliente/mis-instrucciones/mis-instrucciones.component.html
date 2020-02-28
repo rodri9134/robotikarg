@@ -8,6 +8,7 @@
         <div class="instruccon">Instrucción</div>
         <div class="accion">Acción</div>
         <div class="lenguaje">Lenguaje</div>
+        <div class="opciones">Opciones</div>
      
       </div>
 
@@ -18,7 +19,7 @@
         <div>{{miInstruccion.instruccion}}</div>
         <div>{{miInstruccion.accion}} </div>
         <div> {{miInstruccion.nombreLenguaje}}</div>
-  
+        <button (click)="nomegusta(miInstruccion.id)">Ya no me gusta</button>
       </div>
     </div>
     </div>

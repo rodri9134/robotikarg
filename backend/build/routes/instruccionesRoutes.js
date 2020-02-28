@@ -15,7 +15,7 @@ class instruccionesRoutes {
         this.router.delete('/:id', instruccionesController_1.instruccionesController.delete);
         this.router.get('/:id', instruccionesController_1.instruccionesController.readone);
         this.router.get('/instruccionesUsuario/:id', instruccionesController_1.instruccionesController.instruccionesUsuario);
-        this.router.post('/:id', instruccionesController_1.instruccionesController.guardarInstrucciones);
+        this.router.post('/guardarInstrucciones/:id', instruccionesController_1.instruccionesController.guardarInstrucciones);
     }
 }
 const instruccionesRoute = new instruccionesRoutes();

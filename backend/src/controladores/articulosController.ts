@@ -25,7 +25,7 @@ class ArticulosController {
     }
     public async readone(req: Request, res: Response) {
 
-        const articulos = await pool.query('SELECT * FROM articulos WHERE id=?', [req.params.id]);
+        const articulos = await pool.query('SELECT a.*,c.nombre AS categoria,t.nombre AS tienda FROM articulos a INNER JOIN categorias c ON a.idCategoria=c.id INNER JOIN tiendas t ON a.idTienda=t.id  WHERE id=?', [req.params.id]);
         res.json(articulos);
     }
 }

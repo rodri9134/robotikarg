@@ -55,7 +55,9 @@ class InstruccionesController {
     }
     guardarInstrucciones(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield database_1.default.query('INSERT INTO instrucciones_usuarios SET ?', [req.body]);
+            console.log('Id instruccion: ' + req.params.idInstruccion + ' id usuario' + req.params.idUsuario);
+            console.log('Id instruccion1: ' + req.body.idInstruccion + ' id usuario2' + req.body);
+            yield database_1.default.query('INSERT INTO instrucciones_usuarios SET idInstruccion=?, idUsuario=?', [req.body]);
             res.json({ message: 'Tu instrucción ha sido añadida' });
         });
     }

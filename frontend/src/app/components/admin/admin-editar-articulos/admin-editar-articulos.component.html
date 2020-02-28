@@ -1,1 +1,12 @@
-<p>admin-editar-articulos works!</p>
+<h1>Editar artículo</h1>
+<form [formGroup]="editarArticuloForm" (submit)="editarArticulo()">
+    <input formControlName="id" value="" hidden><br>
+<label>Titulo</label><input formControlName="titulo" value=""><br>
+<label>Descripción</label><input formControlName="descripcion" value=""><br>
+<label>Referencia</label><input formControlName="referencia" value=""><br>
+<label>Precio</label><input formControlName="precio" value=""><br>
+<label>Imagen</label><input formControlName="imagen" value=""><br>
+<!--<label>Categoria</label><input  name="idCategoria" value="" readonly><br>
+<label>Tienda</label><input  name="idTienda" value=""  readonly><br>-->
+<input type="submit" value="Editar articulo">
+</form>

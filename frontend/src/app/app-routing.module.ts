@@ -1,7 +1,7 @@
 /*import { NgModule } from '@angular/core';*/
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
-
+import { InstruccionesUsuarioService} from './services/instrucciones-usuario.service';
 import { AvisoLegalComponent } from './components/avisolegal/avisolegal.component';
 import { PrivacidadComponent } from './components/privacidad/privacidad.component';
 import { RegistroComponent } from './components/registro/registro.component';

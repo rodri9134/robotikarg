@@ -13,7 +13,7 @@ class instruccionesRoutes {
         this.router.delete('/:id', instruccionesController.delete);
         this.router.get('/:id', instruccionesController.readone);
         this.router.get('/instruccionesUsuario/:id', instruccionesController.instruccionesUsuario);
-        this.router.post('/:id', instruccionesController.guardarInstrucciones);
+        this.router.post('/guardarInstrucciones/:id', instruccionesController.guardarInstrucciones);
    
 
     }

@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
-
 import { APP_ROUTING } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
@@ -37,6 +36,7 @@ import { InicioAdminComponent } from './components/admin/inicio-admin/inicio-adm
 
 @NgModule({
   declarations: [
+
     AppComponent,
     LoginComponent,
     ErrorComponentComponent,

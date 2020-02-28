@@ -15,19 +15,21 @@ export class InstruccionesService {
 
   saveInstruccion(instruccion: Instruccion): Observable<any> {
     console.log(instruccion);
-    return this.http.post('http://localhost:3000/instrucciones', instruccion);
+    return this.http.post('http://localhost:3000/instrucciones/', instruccion);
   }
   deleteInstruccion(id: string): Observable<any> {
     return this.http.delete('http://localhost:3000/instruccion/${id}');
   }
   updateInstruccion(id: string, instruccion: Instruccion): Observable<any> {
     return this.http.put('http://localhost:3000/instrucciones/${id}', instruccion);
-  }
+  }/*
   getInstruccionesUsuario(id: string): Observable<any> {
     return this.http.get('http://localhost:3000/instrucciones/instruccionesUsuario/'+id);
   }
-  
   getInstruccion(id: string): Observable<any> {
     return this.http.get('http://localhost:3000/instrucciones/${id}');
+  }*/
+  guardarInstruccionUsuario(idInstruccion: string, idUsuario: string): Observable<any> {
+    return this.http.post('http://localhost:3000/instrucciones/guardarInstrucciones/' + idInstruccion, idUsuario);
   }
 }

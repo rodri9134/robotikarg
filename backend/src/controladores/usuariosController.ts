@@ -64,7 +64,9 @@ class UsuariosController {
     }
 
     public async idUsuario(req: Request, res: Response) {
-        const idUsuario = await pool.query('SELECT id FROM usuarios WHERE email = ? AND password = ?', [req.body.email, req.body.password]);
+        console.log(req.body.email)
+        const idUsuario = await pool.query('SELECT id FROM usuarios WHERE email = ?', [req.body.email]);
+       console.log('Id usuario: ',idUsuario);
         res.json(idUsuario);
 
     }
