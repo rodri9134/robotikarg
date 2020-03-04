@@ -26,7 +26,7 @@ class InstruccionesController {
     read(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             // tslint:disable-next-line: max-line-length
-            const instrucciones = yield database_1.default.query('SELECT i.*,l.nombre AS lenguaje FROM instrucciones i INNER JOIN lenguajes l ON i.idLenguaje=l.id', [req.body]);
+            const instrucciones = yield database_1.default.query('SELECT i.*,l.nombre AS lenguaje FROM instrucciones i INNER JOIN lenguajes l ON i.idLenguaje=l.id ORDER BY l.nombre', [req.body]);
             res.json(instrucciones);
         });
     }
@@ -55,9 +55,8 @@ class InstruccionesController {
     }
     guardarInstrucciones(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            console.log('Id instruccion: ' + req.params.idInstruccion + ' id usuario' + req.params.idUsuario);
-            console.log('Id instruccion1: ' + req.body.idInstruccion + ' id usuario2' + req.body);
-            yield database_1.default.query('INSERT INTO instrucciones_usuarios SET idInstruccion=?, idUsuario=?', [req.body]);
+            console.log('Req body ' + req.params.idUsuario);
+            yield database_1.default.query('INSERT INTO instrucciones_usuarios SET ?', [req.body]);
             res.json({ message: 'Tu instrucción ha sido añadida' });
         });
     }

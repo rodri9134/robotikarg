@@ -8,30 +8,27 @@
     display: grid;
     grid-template-columns: 12fr;
     grid-template-areas: "titulo" " encabezados" "instrucciones";
-  
-    //grid-auto-rows: auto;
-    // grid-gap: 10%;
-  
-    //margin: auto;
+
   }
   .titulo {
     grid-area: titulo;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: grey;
-    color: darkred;
+
+    color:#0569EC;
   }
   .encabezados {
     grid-area: encabezados;
     display: grid;
     grid-template-columns: 1fr 5fr 1fr 1fr 1fr;
     grid-template-areas: "id instruccion accion lenguaje opciones";
-    border:1px solid black;
+    border:1px solid #00376F;
     color:white;
-    background-color: darkslategrey;
+    background-color: #0a2843;
     justify-content: center;
     align-items: center;
+    padding:auto;
   }
   .id {
  
@@ -59,7 +56,19 @@
     grid-template-columns: 1fr 5fr 1fr 1fr 1fr;
     grid-template-areas: "id instruccion accion lenguaje opciones";
     grid-auto-rows: auto;
-    border:1px solid black;
+    border:1px solid #00376F;
     background-color: floralwhite;
   }
+  .nomegusta:hover {
+    background-color: white;
+    transition-duration: 0.4s;
+    border-radius:5px;
+    border:1px solid white;
+  }
   
+  .nomegusta {
+    background-color: #4e94d2;
+    border-radius:5px;
+    border:1px solid #00376F;
+    width: 100%;
+  }

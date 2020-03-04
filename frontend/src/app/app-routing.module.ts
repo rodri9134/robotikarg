@@ -1,7 +1,7 @@
 /*import { NgModule } from '@angular/core';*/
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
-import { InstruccionesUsuarioService} from './services/instrucciones-usuario.service';
+import { InstruccionesUsuarioService } from './services/instrucciones-usuario.service';
 import { AvisoLegalComponent } from './components/avisolegal/avisolegal.component';
 import { PrivacidadComponent } from './components/privacidad/privacidad.component';
 import { RegistroComponent } from './components/registro/registro.component';
@@ -22,6 +22,8 @@ import { AdminTorneosComponent } from './components/admin/admin-torneos/admin-to
 import { AdminEditarArticulosComponent } from './components/admin/admin-editar-articulos/admin-editar-articulos.component';
 import { AdminEditarInstruccionesComponent } from './components/admin/admin-editar-instrucciones/admin-editar-instrucciones.component';
 import { AdminEditarTorneosComponent } from './components/admin/admin-editar-torneos/admin-editar-torneos.component';
+import { LoginAdminComponent } from './components/login-admin/login-admin.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 const routes: Routes = [
   {
     path: '', // alias o ruta
@@ -79,6 +81,10 @@ const routes: Routes = [
     canActivate: [GuardaLoginUserGuard]
   },
   {
+    path: 'navAdmin',
+    component: NavbarComponent,
+  },
+  {
     path: 'mInstrucciones',
     component: MuestraInstruccionesComponent,
     canActivate: [GuardaLoginUserGuard]
@@ -100,7 +106,13 @@ const routes: Routes = [
     component: MisInstruccionesComponent,
     canActivate: [GuardaLoginUserGuard]
 
-  }, {
+  },
+  {
+    path: 'loginAdmin',
+    component: LoginAdminComponent,
+  }
+  ,
+  {
     path: 'inicio_admin',
     component: InicioAdminComponent,
 

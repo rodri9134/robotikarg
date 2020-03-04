@@ -70,6 +70,14 @@ class UsuariosController {
         res.json(idUsuario);
 
     }
+    public async readAdminLogin(req: Request, res: Response) {
+
+        const copiaUsuario = {
+            email: req.body.email,
+            password: req.body.password
+        };
+        const usuario = await pool.query('SELECT * FROM usuarios WHERE idRol=2 AND email = ?', [req.body.email]);
+    }
     public async readLogin(req: Request, res: Response) {
 
         const copiaUsuario = {

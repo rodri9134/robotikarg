@@ -16,7 +16,7 @@ class TorneosController {
     // }
      public async read(req: Request, res: Response) {
         // tslint:disable-next-line: max-line-length
-        const torneos = await pool.query('SELECT torneos.*,provincias.nombre AS pNombre, rangoedad.tiporango AS rEdad FROM torneos INNER JOIN provincias ON torneos.idProvincia=provincias.id INNER JOIN rangoedad ON torneos.idRangoEdad=rangoedad.id', [req.body]);
+        const torneos = await pool.query('SELECT torneos.*,provincias.nombre AS pNombre, rangoedad.tiporango AS rEdad FROM torneos INNER JOIN provincias ON torneos.idProvincia=provincias.id INNER JOIN rangoedad ON torneos.idRangoEdad=rangoedad.id ORDER BY torneos.fecha', [req.body]);
         res.json(torneos);
     }
     public async update(req: Request, res: Response) {

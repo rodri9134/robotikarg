@@ -26,7 +26,7 @@ class ArticulosController {
     read(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             // tslint:disable-next-line: max-line-length
-            const articulos = yield database_1.default.query('SELECT a.*,c.nombre AS categoria,t.nombre AS tienda FROM articulos a INNER JOIN categorias c ON a.idCategoria=c.id INNER JOIN tiendas t ON a.idTienda=t.id ', [req.body]);
+            const articulos = yield database_1.default.query('SELECT a.*,c.nombre AS categoria,t.nombre AS tienda FROM articulos a INNER JOIN categorias c ON a.idCategoria=c.id INNER JOIN tiendas t ON a.idTienda=t.id ORDER BY t.nombre,c.nombre', [req.body]);
             res.json(articulos);
         });
     }

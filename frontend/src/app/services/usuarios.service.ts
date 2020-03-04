@@ -28,6 +28,9 @@ export class UsuariosService {
   getLogin(usuario: Usuario): Observable<any> {
     return this.http.post('http://localhost:3000/usuarios/login', usuario);
   }
+  getLoginAdmin(usuario: Usuario): Observable<any> {
+    return this.http.post('http://localhost:3000/admin/login', usuario);
+  }
   idUsuario(usuario: Usuario): Observable<any> {
     return this.http.post('http://localhost:3000/usuarios/idUsuario', usuario);
   }

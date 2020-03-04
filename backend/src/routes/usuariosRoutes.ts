@@ -12,7 +12,9 @@ class usuariosRoutes {
         this.router.put('/:id', usuariosController.update);
         this.router.delete('/:id', usuariosController.delete);
         this.router.get('/:id', usuariosController.readone);
+        this.router.post('/admin/login', usuariosController.readAdminLogin);
         this.router.post('/login', usuariosController.readLogin);
+
         this.router.post('/idUsuario', usuariosController.idUsuario);
     }
 }

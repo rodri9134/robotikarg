@@ -13,43 +13,37 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const database_1 = __importDefault(require("../database"));
-class TorneosController {
+class LenguajesController {
     index(req, res) {
-        res.json({ message: 'Estas en torneos' });
+        res.json({ message: 'Estas en lenguajes' });
     }
     create(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield database_1.default.query('INSERT INTO torneos SET ?', [req.body]);
-            res.json({ message: 'El torneo ha sido creado' });
+            yield database_1.default.query('INSERT INTO lenguajes SET ?', [req.body]);
+            res.json({ message: 'El lenguaje ha sido creado' });
         });
     }
-    // public async read(req: Request, res: Response) {
-    //     const torneos = await pool.query('SELECT * FROM torneos', [req.body]);
-    //     res.json(torneos);
-    // }
     read(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            // tslint:disable-next-line: max-line-length
-            const torneos = yield database_1.default.query('SELECT torneos.*,provincias.nombre AS pNombre, rangoedad.tiporango AS rEdad FROM torneos INNER JOIN provincias ON torneos.idProvincia=provincias.id INNER JOIN rangoedad ON torneos.idRangoEdad=rangoedad.id ORDER BY torneos.fecha', [req.body]);
-            res.json(torneos);
+            const articulos = yield database_1.default.query('SELECT l.* FROM lenguajes l', [req.body]);
+            res.json(articulos);
         });
     }
     update(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield database_1.default.query('UPDATE torneos SET ? WHERE id=?', [req.params.id]);
+            yield database_1.default.query('UPDATE lenguajes SET ? WHERE id=?', [req.params.id]);
         });
     }
     delete(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield database_1.default.query('DELETE FROM torneos WHERE id=?', [req.params.id]);
+            yield database_1.default.query('DELETE FROM lenguajes WHERE id=?', [req.params.id]);
         });
     }
     readone(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const torneos = yield database_1.default.query('SELECT * FROM torneos WHERE id=?', [req.params.id]);
-            res.json(torneos);
+            const lenguajes = yield database_1.default.query('SELECT l.* FROM lenguajes WHERE id=?', [req.params.id]);
+            res.json(lenguajes);
         });
     }
 }
-// tslint:disable-next-line: new-parens
-exports.torneosController = new TorneosController;
+exports.lenguajesController = new LenguajesController;

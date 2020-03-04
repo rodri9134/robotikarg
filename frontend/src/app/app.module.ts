@@ -33,6 +33,7 @@ import { AdminEditarInstruccionesComponent } from './components/admin/admin-edit
 import { AdminEditarArticulosComponent } from './components/admin/admin-editar-articulos/admin-editar-articulos.component';
 import { AdminEditarTorneosComponent } from './components/admin/admin-editar-torneos/admin-editar-torneos.component';
 import { InicioAdminComponent } from './components/admin/inicio-admin/inicio-admin.component';
+import { LoginAdminComponent } from './components/login-admin/login-admin.component';
 
 @NgModule({
   declarations: [
@@ -64,6 +65,7 @@ import { InicioAdminComponent } from './components/admin/inicio-admin/inicio-adm
     AdminEditarArticulosComponent,
     AdminEditarTorneosComponent,
     InicioAdminComponent,
+    LoginAdminComponent,
 
   ],
   imports: [

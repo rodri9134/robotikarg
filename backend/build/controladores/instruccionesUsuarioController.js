@@ -36,6 +36,7 @@ class InstruccionesUsuarioController {
     //Eliminar instrucciones usuario
     eliminarInstruccionUsuario(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
+            console.log("Eliminar usuario.id " + req.body.idUsuario);
             yield database_1.default.query('DELETE FROM instrucciones_usuarios WHERE idUsuario= ?', [req.params.id]);
             res.json({ message: 'Instruccion eliminada' });
         });

@@ -1,0 +1,34 @@
+@import "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+
+.login {
+
+   display:grid;
+   justify-content: center;
+}
+.fallo{
+  color:red;
+}
+.titulo{
+  color:#1479F9;
+}
+i{
+
+display: block;
+width: 180px;
+height: 25px;
+background: white;
+text-align: center;
+border-radius: 15px;
+box-shadow: -2px -2px 3px rgba(255,255,255,0.05),
+3px 3px 3px rgba(0,0,0,0.2);
+}
+
+i:hover{
+color:#1479F9;
+text-shadow: 0 0 15px #1479F9;
+
+}
+.fa{
+  font-size:18px;
+  color:#555;
+}

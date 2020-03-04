@@ -10,14 +10,14 @@
         <ul class="navbar-nav">
       
             <ng-container *ngIf="usuariosService.logIn(); else loggedOut">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle"  [routerLink]="['/mInstrucciones']" id="navbardrop" data-toggle="dropdown">
+                <li class="nav-item">
+                    <a class="nav-link"  [routerLink]="['/mInstrucciones']" id="navbardrop">
                         Instrucciones
                     </a>
         
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle"  [routerLink]="['/mArticulos']" id="navbardrop" data-toggle="dropdown">
+                <li class="nav-item">
+                    <a class="nav-link"  [routerLink]="['/mArticulos']" id="navbardrop">
                         Artículos
                     </a>
         

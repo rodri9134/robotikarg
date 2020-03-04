@@ -19,6 +19,7 @@ class InstruccionesUsuarioController {
     }
     //Eliminar instrucciones usuario
     public async eliminarInstruccionUsuario(req:Request, res:Response){
+        console.log("Eliminar usuario.id "+req.body.idUsuario);
         await pool.query('DELETE FROM instrucciones_usuarios WHERE idUsuario= ?',[req.params.id]);
         res.json({message: 'Instruccion eliminada'});
     }

@@ -3,8 +3,16 @@
       <div class="titulo">
         <h2>LISTADO DE INSTRUCCIONES</h2>
       </div>
+      <div class="lenguajes">
+        <label for="lenguajes">Lenguajes</label>
+        <select name="lenguajes" (change)="muestraInsturcciones($event.target.value)">
+          <option value="-1">-------------</option>
+          <option  *ngFor='let lenguaje of lenguajes' value="{{lenguaje.id}}">{{lenguaje.nombre}}</option>
+        </select>
+        
+      </div>
       <div class="encabezados">
-        <div class="id"> Id</div>
+   
         <div class="instruccion">Instrucción</div>
         <div class="accion">Acción</div>
         <div class="lenguaje">Lenguaje</div>
@@ -15,11 +23,11 @@
       <div>
 
       <div class="instrucciones" *ngFor='let instruccione of instrucciones'>
-        <div>{{instruccione.id}} </div>
+
         <div>{{instruccione.instruccion}}</div>
         <div>{{instruccione.accion}} </div>
         <div> {{instruccione.lenguaje}}</div>
-        <div><button (click)="megusta(instruccione.id)">Me gusta </button></div>
+        <div><button class="megusta" (click)="megusta(instruccione.id)">Me gusta </button></div>
   
       </div>
     </div>

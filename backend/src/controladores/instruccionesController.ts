@@ -12,7 +12,7 @@ class InstruccionesController {
 
     public async read(req: Request, res: Response) {
         // tslint:disable-next-line: max-line-length
-        const instrucciones = await pool.query('SELECT i.*,l.nombre AS lenguaje FROM instrucciones i INNER JOIN lenguajes l ON i.idLenguaje=l.id', [req.body]);
+        const instrucciones = await pool.query('SELECT i.*,l.nombre AS lenguaje FROM instrucciones i INNER JOIN lenguajes l ON i.idLenguaje=l.id ORDER BY l.nombre', [req.body]);
         res.json(instrucciones);
     }
     public async update(req: Request, res: Response) {
@@ -32,14 +32,12 @@ class InstruccionesController {
     public async instruccionesUsuario(req: Request, res: Response) {
 
         // tslint:disable-next-line: max-line-length
-        const misInstrucciones = await pool.query('SELECT i.id,i.instruccion,i.accion,l.nombre as nombreLenguaje FROM instrucciones i INNER JOIN instrucciones_usuarios iu ON iu.idInstruccion=i.id INNER JOIN usuarios u ON iu.idUsuario=u.id INNER JOIN lenguajes l ON l.id=i.idLenguaje WHERE u.id=?' , [req.params.id]);
+        const misInstrucciones = await pool.query('SELECT i.id,i.instruccion,i.accion,l.nombre as nombreLenguaje FROM instrucciones i INNER JOIN instrucciones_usuarios iu ON iu.idInstruccion=i.id INNER JOIN usuarios u ON iu.idUsuario=u.id INNER JOIN lenguajes l ON l.id=i.idLenguaje WHERE u.id=?', [req.params.id]);
         res.json(misInstrucciones);
     }
     public async guardarInstrucciones(req: Request, res: Response) {
-        console.log('Id instruccion: '+req.params.idInstruccion+' id usuario'+req.params.idUsuario);
-        console.log('Id instruccion1: '+req.body.idInstruccion+' id usuario2'+req.body);
-        
-        await pool.query('INSERT INTO instrucciones_usuarios SET idInstruccion=?, idUsuario=?', [req.body]);
+        console.log('Req body ' + req.params.idUsuario);
+        await pool.query('INSERT INTO instrucciones_usuarios SET ?', [req.body]);
         res.json({ message: 'Tu instrucción ha sido añadida' });
     }
 }
