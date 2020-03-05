@@ -1,31 +1,5 @@
--- --------------------------------------------------------
--- Host:                         127.0.0.1
--- Versión del servidor:         10.4.8-MariaDB - mariadb.org binary distribution
--- SO del servidor:              Win64
--- HeidiSQL Versión:             9.3.0.4984
--- --------------------------------------------------------
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET NAMES utf8mb4 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
--- Volcando datos para la tabla segundamano_rol.anuncio: ~0 rows (aproximadamente)
-/*!40000 ALTER TABLE `anuncio` DISABLE KEYS */;
-/*!40000 ALTER TABLE `anuncio` ENABLE KEYS */;
-
--- Volcando datos para la tabla segundamano_rol.foto: ~0 rows (aproximadamente)
-/*!40000 ALTER TABLE `foto` DISABLE KEYS */;
-/*!40000 ALTER TABLE `foto` ENABLE KEYS */;
-
--- Volcando datos para la tabla segundamano_rol.migration_versions: ~1 rows (aproximadamente)
-/*!40000 ALTER TABLE `migration_versions` DISABLE KEYS */;
-INSERT INTO `migration_versions` (`version`, `executed_at`) VALUES
-	('20200127210754', '2020-01-27 21:08:14');
-/*!40000 ALTER TABLE `migration_versions` ENABLE KEYS */;
-
--- Volcando datos para la tabla segundamano_rol.provincia: ~52 rows (aproximadamente)
-/*!40000 ALTER TABLE `provincia` DISABLE KEYS */;
-INSERT INTO `provincia` (`id`, `nombre`) VALUES
+INSERT INTO `provincias` (`id`, `nombre`) VALUES
 	(1, 'Álava'),
 	(2, 'Albacete'),
 	(3, 'Alicante'),
@@ -78,11 +52,3 @@ INSERT INTO `provincia` (`id`, `nombre`) VALUES
 	(50, 'Zaragoza'),
 	(51, 'Ceuta'),
 	(52, 'Melilla');
-/*!40000 ALTER TABLE `provincia` ENABLE KEYS */;
-
--- Volcando datos para la tabla segundamano_rol.usuario: ~0 rows (aproximadamente)
-/*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-/*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
-/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
-/*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
