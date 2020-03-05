@@ -25,8 +25,14 @@ class LenguajesController {
     }
     read(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const articulos = yield database_1.default.query('SELECT l.* FROM lenguajes l', [req.body]);
-            res.json(articulos);
+            const lenguajes = yield database_1.default.query('SELECT lenguajes.id,lenguajes.nombre FROM lenguajes', [req.body]);
+            res.json(lenguajes);
+        });
+    }
+    read2(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const lenguajes = yield database_1.default.query('SELECT lenguajes.id, lenguajes.nombre FROM lenguajes', [req.body]);
+            res.json(lenguajes);
         });
     }
     update(req, res) {

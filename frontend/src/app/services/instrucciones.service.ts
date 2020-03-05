@@ -12,7 +12,10 @@ export class InstruccionesService {
   getInstrucciones(): Observable<any> {
     return this.http.get('http://localhost:3000/instrucciones');
   }
-
+  getInstruccionesLenguaje(id: string): Observable<any> {
+    console.log('id ' + id);
+    return this.http.get('http://localhost:3000/instrucciones/' + id);
+  }
   saveInstruccion(instruccion: Instruccion): Observable<any> {
     console.log(instruccion);
     return this.http.post('http://localhost:3000/instrucciones/', instruccion);

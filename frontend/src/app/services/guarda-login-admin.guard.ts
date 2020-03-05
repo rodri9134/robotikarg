@@ -7,15 +7,15 @@ import { UsuariosService } from './usuarios.service';
 @Injectable({
   providedIn: 'root'
 })
-export class GuardaLoginUserGuard implements CanActivate {
+export class GuardaLoginAdminGuard implements CanActivate {
   constructor(private router: Router, private usuarios: UsuariosService) {
 
   }
   canActivate(): boolean {
-    if (this.usuarios.logIn()) {
+    if (this.usuarios.logAdminIn()) {
       return true;
     }
-    this.router.navigate(['/navAdmin']);
+    this.router.navigate(['/navCli']);
     return false;
 
 

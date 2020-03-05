@@ -10,8 +10,13 @@ class LenguajesController {
 
     }
     public async read(req: Request, res: Response) {
-        const articulos = await pool.query('SELECT l.* FROM lenguajes l', [req.body]);
-        res.json(articulos);
+        const lenguajes = await pool.query('SELECT lenguajes.id,lenguajes.nombre FROM lenguajes', [req.body]);
+        res.json(lenguajes);
+    }
+    public async read2(req: Request, res: Response) {
+
+        const lenguajes = await pool.query('SELECT lenguajes.id, lenguajes.nombre FROM lenguajes',[req.body]);
+        res.json(lenguajes);
     }
     public async update(req: Request, res: Response) {
 

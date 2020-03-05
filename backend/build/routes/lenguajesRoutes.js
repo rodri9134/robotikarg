@@ -4,18 +4,18 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
 const lenguajesController_1 = require("../controladores/lenguajesController");
 // tslint:disable-next-line: class-name
-class articulosRoutes {
+class lenguajesRoutes {
     constructor() {
         this.router = express_1.Router();
         this.config();
     }
     config() {
         this.router.post('/', lenguajesController_1.lenguajesController.create);
-        this.router.get('/', lenguajesController_1.lenguajesController.read);
+        this.router.get('/', lenguajesController_1.lenguajesController.read2);
         this.router.put('/:id', lenguajesController_1.lenguajesController.update);
         this.router.delete('/:id', lenguajesController_1.lenguajesController.delete);
         this.router.get('/:id', lenguajesController_1.lenguajesController.readone);
     }
 }
-const articulosRoute = new articulosRoutes();
-exports.default = articulosRoute.router;
+const lenguajesRoute = new lenguajesRoutes();
+exports.default = lenguajesRoute.router;

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { InstruccionesUsuarioService } from 'src/app/services/instrucciones-usuario.service';
 import { Instruccion } from 'src/app/modelo/instrucciones';
+import { Router } from '@angular/router';
 import { first } from 'rxjs/operators';
 @Component({
   selector: 'app-mis-instrucciones',
@@ -9,7 +10,7 @@ import { first } from 'rxjs/operators';
 })
 export class MisInstruccionesComponent implements OnInit {
   private instrucciones: Instruccion;
-  constructor(private instruccionesUsuarioService: InstruccionesUsuarioService) { }
+  constructor(private router: Router, private instruccionesUsuarioService: InstruccionesUsuarioService) { }
 
   ngOnInit() {
     const idUsuario = localStorage.getItem('idUsuario');
@@ -23,12 +24,14 @@ export class MisInstruccionesComponent implements OnInit {
       }
     );
   }
-  nomegusta(idInstruccion) {
-    console.log('Id Instruccion: ', idInstruccion);
-    this.instruccionesUsuarioService.eliminarInstruccionUsuario(idInstruccion).subscribe(
+  nomegusta(idInstruccionUsuario) {
+    console.log('Id Instruccion: ', idInstruccionUsuario);
+    this.instruccionesUsuarioService.eliminarInstruccionUsuario(idInstruccionUsuario).subscribe(
       res => {
         console.log(res);
+
         this.instrucciones = res;
+        this.router.navigate(['/mInstrucciones']);
       },
       err => {
         console.log(err);

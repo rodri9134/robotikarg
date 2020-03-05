@@ -15,6 +15,11 @@ class InstruccionesController {
         const instrucciones = await pool.query('SELECT i.*,l.nombre AS lenguaje FROM instrucciones i INNER JOIN lenguajes l ON i.idLenguaje=l.id ORDER BY l.nombre', [req.body]);
         res.json(instrucciones);
     }
+    public async readLenguaje(req: Request, res: Response) {
+        // tslint:disable-next-line: max-line-length
+        const instrucciones = await pool.query('SELECT i.*,l.nombre AS lenguaje FROM instrucciones i INNER JOIN lenguajes l ON i.idLenguaje=l.id WHERE i.idLenguaje=? ORDER BY l.nombre', [req.params.id]);
+        res.json(instrucciones);
+    }
     public async update(req: Request, res: Response) {
 
         await pool.query('UPDATE instrucciones SET ? WHERE id=?', [req.params.id]);
@@ -32,7 +37,7 @@ class InstruccionesController {
     public async instruccionesUsuario(req: Request, res: Response) {
 
         // tslint:disable-next-line: max-line-length
-        const misInstrucciones = await pool.query('SELECT i.id,i.instruccion,i.accion,l.nombre as nombreLenguaje FROM instrucciones i INNER JOIN instrucciones_usuarios iu ON iu.idInstruccion=i.id INNER JOIN usuarios u ON iu.idUsuario=u.id INNER JOIN lenguajes l ON l.id=i.idLenguaje WHERE u.id=?', [req.params.id]);
+        const misInstrucciones = await pool.query('SELECT iu.id AS idInstruccionUsuario,i.id,i.instruccion,i.accion,l.nombre as nombreLenguaje FROM instrucciones i INNER JOIN instrucciones_usuarios iu ON iu.idInstruccion=i.id INNER JOIN usuarios u ON iu.idUsuario=u.id INNER JOIN lenguajes l ON l.id=i.idLenguaje WHERE u.id=?', [req.params.id]);
         res.json(misInstrucciones);
     }
     public async guardarInstrucciones(req: Request, res: Response) {

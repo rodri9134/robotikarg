@@ -37,6 +37,17 @@ export class UsuariosService {
   logIn() {
     return !!localStorage.getItem('token');
   }
+  logAdminIn() {
+    return !!localStorage.getItem('tokenAdmin');
+
+  }
+  logAdminOut() {
+    localStorage.removeItem('tokenAdmin');
+  }
+  getAdminToken() {
+
+    return localStorage.getItem('tokenAdmin');
+  }
   logOut() {
     // Al hacer logout quitamos el token
     localStorage.removeItem('token');

@@ -12,18 +12,17 @@ export class InstruccionesUsuarioService {
   constructor(private http: HttpClient) { }
 
   getInstruccionesUsuario(id: string): Observable<any> {
-    return this.http.get('http://localhost:3000/instrucciones/instruccionesUsuario/' + id);
+    return this.http.get('http://localhost:3000/instruccionesUsuario/' + id);
   }
   /*
     getInstruccion(id: string): Observable<any> {
       return this.http.get('http://localhost:3000/instrucciones/${id}');
     }*/
-  saveInstruccionUsuario(idInstruccion: string, idUsuario: string): Observable<any> {
-    console.log('Id instruccion ' + idInstruccion);
-    console.log('idusuario ' + idUsuario);
-    return this.http.post('http://localhost:3000/instrucciones/instruccionUsuario/' + idInstruccion, idUsuario);
+  saveInstruccionUsuario(instruccionUsuario: InstruccionUsuario): Observable<any> {
+
+    return this.http.post('http://localhost:3000/instruccionesUsuario', instruccionUsuario);
   }
   eliminarInstruccionUsuario(id: string): Observable<any> {
-    return this.http.get('http://localhost:3000/instrucciones/instruccionesUsuario/' + id);
+    return this.http.get('http://localhost:3000/instruccionesUsuario/eliminarInstruccionUsuario/' + id);
   }
 }

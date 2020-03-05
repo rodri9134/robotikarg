@@ -1,3 +1,4 @@
+
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
@@ -69,10 +70,11 @@ import { LoginAdminComponent } from './components/login-admin/login-admin.compon
 
   ],
   imports: [
+    HttpClientModule,
     ReactiveFormsModule,
     BrowserModule,
     APP_ROUTING,
-    HttpClientModule
+
   ],
   providers: [MessageService, EncrDecrService],
   bootstrap: [AppComponent]

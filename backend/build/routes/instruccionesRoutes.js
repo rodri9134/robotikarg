@@ -13,7 +13,7 @@ class instruccionesRoutes {
         this.router.get('/', instruccionesController_1.instruccionesController.read);
         this.router.put('/:id', instruccionesController_1.instruccionesController.update);
         this.router.delete('/:id', instruccionesController_1.instruccionesController.delete);
-        this.router.get('/:id', instruccionesController_1.instruccionesController.readone);
+        this.router.get('/:id', instruccionesController_1.instruccionesController.readLenguaje);
         this.router.get('/instruccionesUsuario/:id', instruccionesController_1.instruccionesController.instruccionesUsuario);
         this.router.post('/guardarInstrucciones/:id', instruccionesController_1.instruccionesController.guardarInstrucciones);
     }

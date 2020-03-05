@@ -11,6 +11,7 @@ import { ContactoComponent } from './components/contacto/contacto.component';
 import { PrincipalComponent } from './components/principal/principal.component';
 import { NavcliComponent } from './components/navcli/navcli.component';
 import { GuardaLoginUserGuard } from './services/guarda-login-user.guard';
+import {GuardaLoginAdminGuard} from './services/guarda-login-admin.guard';
 import { MuestraInstruccionesComponent } from './components/cliente/muestra-instrucciones/muestra-instrucciones.component';
 import { MuestraArticulosComponent } from './components/cliente/muestra-articulos/muestra-articulos.component';
 import { EditarPerfilComponent } from './components/cliente/editar-perfil/editar-perfil.component';
@@ -36,6 +37,11 @@ const routes: Routes = [
   {
 
     path: '', // alias o ruta
+    component: PrincipalComponent // Importación del componente
+  },
+  {
+
+    path: 'cerrar_sesion', // alias o ruta
     component: PrincipalComponent // Importación del componente
   }
   ,
@@ -102,7 +108,7 @@ const routes: Routes = [
     canActivate: [GuardaLoginUserGuard]
   },
   {
-    path: 'mis_instrucciones',
+    path: 'misInstrucciones',
     component: MisInstruccionesComponent,
     canActivate: [GuardaLoginUserGuard]
 
@@ -119,21 +125,27 @@ const routes: Routes = [
   }, {
     path: 'admin_articulos',
     component: AdminArticulosComponent,
+    canActivate: [GuardaLoginAdminGuard]
   }, {
     path: 'admin_instrucciones',
     component: AdminInstruccionesComponent,
+    canActivate: [GuardaLoginAdminGuard]
   }, {
     path: 'admin_torneos',
     component: AdminTorneosComponent,
+    canActivate: [GuardaLoginAdminGuard]
   }, {
     path: 'admin_editar_articulos',
     component: AdminEditarArticulosComponent,
+    canActivate: [GuardaLoginAdminGuard]
   }, {
     path: 'admin_editar_instrucciones',
     component: AdminEditarInstruccionesComponent,
+    canActivate: [GuardaLoginAdminGuard]
   }, {
     path: 'admin_editar_torneos',
     component: AdminEditarTorneosComponent,
+    canActivate: [GuardaLoginAdminGuard]
   }
 ];
 

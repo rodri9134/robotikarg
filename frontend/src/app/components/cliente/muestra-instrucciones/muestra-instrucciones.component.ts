@@ -7,6 +7,7 @@ import { Usuario } from 'src/app/modelo/usuario';
 import { Router } from '@angular/router';
 import { InstruccionUsuario } from 'src/app/modelo/instruccionesUsuario';
 import { Lenguaje } from 'src/app/modelo/lenguajes';
+import { first } from 'rxjs/operators';
 @Component({
   selector: 'app-muestra-instrucciones',
   templateUrl: './muestra-instrucciones.component.html',
@@ -24,11 +25,13 @@ export class MuestraInstruccionesComponent implements OnInit {
       res => {
         console.log(res);
         this.lenguajes = res;
-      },
+      }
+      ,
       err => {
         console.log(err);
       }
     );
+
     this.instruccionesService.getInstrucciones().subscribe(
       res => {
         console.log(res);
@@ -38,10 +41,11 @@ export class MuestraInstruccionesComponent implements OnInit {
         console.log(err);
       }
     );
-  }
-  muestraInstrucciones() {
 
-    this.instruccionesService.getInstrucciones().subscribe(
+  }
+  muestraInstrucciones(id) {
+
+    this.instruccionesService.getInstruccionesLenguaje(id).subscribe(
       res => {
         console.log(res);
         this.instrucciones = res;
@@ -53,15 +57,18 @@ export class MuestraInstruccionesComponent implements OnInit {
   }
   megusta(idInstruccion) {
     console.log('Id Instruccion: ', idInstruccion);
-    const idUsuario = localStorage.getItem('idUsuario');
-    this.instruccionesService.guardarInstruccionUsuario(idInstruccion, idUsuario).subscribe(
+    const idUsuario: number = parseInt(localStorage.getItem('idUsuario'));
+
+    const instruccionesUsuario: InstruccionUsuario = { idInstruccion: idInstruccion, idUsuario: idUsuario };
+    this.instruccionesUsuarioService.saveInstruccionUsuario(instruccionesUsuario).pipe(first()).subscribe(
       data => {
         if (data.status === 200) {
-          console.log('Perfil actualizado correctamente.');
-          this.router.navigate(['/navCli']);
+
+         alert("La instrucción que quieres guardar ya la tienes");
 
         } else {
           alert(data.message);
+          this.router.navigate(['/misInstrucciones']);
         }
       },
       error => {

@@ -5,7 +5,7 @@
       </div>
       <div class="lenguajes">
         <label for="lenguajes">Lenguajes</label>
-        <select name="lenguajes" (change)="muestraInsturcciones($event.target.value)">
+        <select name="lenguajes" (change)="muestraInstrucciones($event.target.value)">
           <option value="-1">-------------</option>
           <option  *ngFor='let lenguaje of lenguajes' value="{{lenguaje.id}}">{{lenguaje.nombre}}</option>
         </select>
