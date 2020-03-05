@@ -91,6 +91,26 @@ class UsuariosController {
                 password: req.body.password
             };
             const usuario = yield database_1.default.query('SELECT * FROM usuarios WHERE idRol=2 AND email = ?', [req.body.email]);
+            if (usuario.length == 0) {
+                res.json({ message: 'Correo incorrecto' });
+            }
+            else {
+                console.log('Texto plano: ' + req.body.password);
+                console.log('Contraseña usuario: ' + usuario[0].password);
+                const comparar = bcrypt.compareSync(req.body.password, usuario[0].password);
+                console.log('Comparar ' + comparar);
+                if (!comparar) {
+                    const expiraen = 24 * 60 * 60;
+                    const accessToken = jwt.sign({ id: copiaUsuario.email }, SECRET_KEY, { expiresIn: expiraen });
+                    console.log('Credenciales validas');
+                    console.log(accessToken);
+                    res.json(accessToken);
+                }
+                else {
+                    console.log('Contraseña incorrecta');
+                    res.json({ message: 'Contraseña incorrecta' });
+                }
+            }
         });
     }
     readLogin(req, res) {

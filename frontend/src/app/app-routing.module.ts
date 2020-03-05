@@ -89,6 +89,7 @@ const routes: Routes = [
   {
     path: 'navAdmin',
     component: NavbarComponent,
+    canActivate: [GuardaLoginAdminGuard]
   },
   {
     path: 'mInstrucciones',

@@ -15,7 +15,7 @@ export class GuardaLoginAdminGuard implements CanActivate {
     if (this.usuarios.logAdminIn()) {
       return true;
     }
-    this.router.navigate(['/navCli']);
+    this.router.navigate(['/navAdmin']);
     return false;
 
 
