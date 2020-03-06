@@ -4,27 +4,27 @@
             <h1 class="titulo">INICIO DE SESIÓN ADMIN</h1>
             <div class="textbox">
                 <i class="fa fa-user" aria-hidden="true">Correo electrónico</i><br>
-                <input type="text" class="form-group" placeholder="Correo electrónico" formControlName="email">
-                <div *ngIf="email.invalid && (email.dirty || email.touched)">
-                    <div class="fallo" *ngIf="email.errors.required">
+                <input type="text" class="form-group" placeholder="Correo electrónico" formControlName="emailAdmin">
+                <div *ngIf="emailAdmin.invalid && (emailAdmin.dirty || emailAdmin.touched)">
+                    <div class="fallo" *ngIf="emailAdmin.errors.required">
                       El correo es obligatorio
                     </div>
-                    <div class="fallo" *ngIf="email.errors.pattern">
+                    <div class="fallo" *ngIf="emailAdmin.errors.pattern">
                         El correo tiene que cumplir unos requisitos
                     </div>
                 </div>
             </div>
             <div class="textbox">
                 <i class="fa fa-lock" aria-hidden="true">Contraseña</i><br>
-                <input type="password" class="form-group"  placeholder="Contraseña" formControlName="password">
-                <div *ngIf="password.invalid && (password.dirty || password.touched)">
-                    <div class="fallo" *ngIf="password.errors.required">
+                <input type="password" class="form-group"  placeholder="Contraseña" formControlName="passwordAdmin">
+                <div *ngIf="passwordAdmin.invalid && (passwordAdmin.dirty || passwordAdmin.touched)">
+                    <div class="fallo" *ngIf="passwordAdmin.errors.required">
                        La contraseña es obligatoria
                     </div>
-                    <div class="fallo" *ngIf="password.errors.minlength">
+                    <div class="fallo" *ngIf="passwordAdmin.errors.minlength">
                       La contraseña debe tener un mínimo de 6 caracteres
                     </div>
-                    <div class="fallo" *ngIf="password.errors.maxlength">
+                    <div class="fallo" *ngIf="passwordAdmin.errors.maxlength">
                      La contraseña debe tener un máximo de 15 caracteres
                     </div>
                 </div>

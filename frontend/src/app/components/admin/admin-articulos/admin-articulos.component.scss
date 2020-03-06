@@ -25,7 +25,7 @@
     grid-template-areas: "id titulo descripcion referencia precio imagen categoria tienda opciones";
     border:1px solid black;
     color:white;
-    background-color: darkslategrey;
+    background-color: #0a2843;
     justify-content: center;
     align-items: center;
   }
@@ -74,4 +74,40 @@ grid-area:tienda;
   a{
       text-decoration: none;
   }
+  .editar {
+    transition-duration: 0.4s;
+    border-radius:5px;
+    border:1px solid white;
+  }
   
+  .editar:hover {
+    background-color: #4e94d2;
+    border-radius:5px;
+    border:1px solid #00376F;
+    width: 100%;
+  }
+  .eliminar {
+    transition-duration: 0.4s;
+    border-radius:5px;
+    border:1px solid white;
+  }
+  
+  .eliminar:hover {
+    background-color: #4e94d2;
+    border-radius:5px;
+    border:1px solid #5684ac;
+    width: 100%;
+  }
+  .añadir_articulo{
+    transition-duration: 0.4s;
+    border-radius:5px;
+    background-color: rgb(167, 179, 190);
+    border:1px solid #5684ac;
+  }
+  
+  .añadir_articulo:hover {
+    background-color: #4e94d2;
+    border-radius:5px;
+    border:1px solid #5684ac;
+    width: 100%;
+  }

@@ -8,7 +8,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-            <ng-container *ngIf="usuariosService.logAdminIn(); else loggedAdminOut">
+            <ng-container *ngIf="usuariosService.logAdminIn(); else logIn">
                 <li class="nav-item">
                     <a class="nav-link"  [routerLink]="['/admin_instrucciones']" id="navbardrop">
                         Instrucciones admin
@@ -32,13 +32,13 @@
                         <img src="../../assets/imagenes/login.png" alt="Identidad">
                     </a>
                     <div class="dropdown-menu">
-                       <a class="dropdown-item" [routerLink]="['/cerrar_sesion']" (click)="usuariosService.logAdminOut()">Cerrar sesión</a>
+                       <a class="dropdown-item" [routerLink]="['/navInv']" (click)="usuariosService.logAdminOut()">Cerrar sesión</a>
                 
                     </div>
                
                 </li>
             </ng-container>
-            <ng-container *ngIf="usuariosService.logIn(); else loggedOut">
+            <ng-container  #logIn *ngIf="usuariosService.logIn(); else loggedOut">
                 <li class="nav-item">
                     <a class="nav-link"  [routerLink]="['/mInstrucciones']" id="navbardrop">
                         Instrucciones

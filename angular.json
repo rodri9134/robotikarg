@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "formulariosreactivos": {
+    "robotikarg": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -24,7 +24,7 @@
             "tsConfig": "tsconfig.app.json",
             "aot": false,
             "assets": [
-              "src/favicon.ico",
+              "src/favicon.png",
               "src/assets"
             ],
             "styles": [
@@ -72,18 +72,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "formulariosreactivos:build"
+            "browserTarget": "robotikarg:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "formulariosreactivos:build:production"
+              "browserTarget": "robotikarg:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "formulariosreactivos:build"
+            "browserTarget": "robotikarg:build"
           }
         },
         "test": {
@@ -125,16 +125,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "formulariosreactivos:serve"
+            "devServerTarget": "robotikarg:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "formulariosreactivos:serve:production"
+              "devServerTarget": "robotikarg:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "formulariosreactivos"
+  "defaultProject": "robotikarg"
 }

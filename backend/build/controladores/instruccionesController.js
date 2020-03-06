@@ -37,9 +37,20 @@ class InstruccionesController {
             res.json(instrucciones);
         });
     }
+    leerInstruccion(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            // tslint:disable-next-line: max-line-length
+            const instrucciones = yield database_1.default.query('SELECT i.* FROM instrucciones i WHERE i.id=?', [req.params.id]);
+            res.json(instrucciones);
+        });
+    }
     update(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield database_1.default.query('UPDATE instrucciones SET ? WHERE id=?', [req.params.id]);
+            console.log('Instruccion' + req.body);
+            console.log('Id ' + req.params.id);
+            const id = req.params.id;
+            req.body.id = id;
+            yield database_1.default.query('UPDATE instrucciones SET ? WHERE id=?', [req.body, req.params.id]);
         });
     }
     delete(req, res) {

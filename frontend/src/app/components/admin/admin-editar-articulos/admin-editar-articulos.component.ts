@@ -12,10 +12,31 @@ export class AdminEditarArticulosComponent implements OnInit {
   public editarArticuloForm: FormGroup;
   public articulos: Articulo;
   constructor(private router: Router, private formBuilder: FormBuilder, private articulosService: ArticulosService) {
+    this.editarArticuloForm = formBuilder.group({
+      id: [''],
+      titulo: ['', [Validators.required]],
+      descripcion: ['', [Validators.required]],
+      referencia: ['', [Validators.required]],
+      imagen: ['', [Validators.required]],
+      idCategoria: ['', [Validators.required]],
+      idTienda: ['', [Validators.required]],
+    });
   }
   ngOnInit() {
   }
   editarArticulo() {
+    const idInstruccion = localStorage.getItem('idArticulo');
+    this.articulosService.updateArticulo(idInstruccion, this.editarArticuloForm.value).subscribe(
+      res => {
+        console.log('Articulo actualizado correctamente');
+        this.articulos = res;
+        this.router.navigate(['/admin_articulos']);
+      }
+      ,
+      err => {
+        console.log(err);
+      }
+    );
 
   }
   // titulo,descripcion,referencia,precio,imagen
@@ -37,5 +58,11 @@ export class AdminEditarArticulosComponent implements OnInit {
   }
   get imagen() {
     return this.editarArticuloForm.get('imagen');
+  }
+  get idCategoria() {
+    return this.editarArticuloForm.get('idCategoria');
+  }
+  get idTienda(){
+    return this.editarArticuloForm.get('idTienda');
   }
 }

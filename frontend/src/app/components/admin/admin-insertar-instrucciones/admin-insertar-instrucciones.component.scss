@@ -1,19 +1,13 @@
-.contenedor_editarArticulos {
+.contenedor_insertarInstrucciones {
     display: grid;
     justify-items: center;
-    
-    //grid-template-columns: 12fr;
   }
   .contenedor{
     width: 60%;
     display: grid;
     grid-template-columns: 12fr;
     grid-template-areas: "titulo" " datosFormulario";
-  
-    //grid-auto-rows: auto;
-    // grid-gap: 10%;
-  
-    //margin: auto;
+
   }
   .titulo {
     grid-area: titulo;
@@ -25,8 +19,8 @@
   .datosFormulario {
     grid-area: datosFormulario;
     display: grid;
-    grid-template-columns: 1fr 1fr 3fr 2fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-areas: "id titulo descripcion referencia precio imagen categoria tienda opciones";
+    grid-template-columns: 1fr 5fr 5fr 1fr;
+    grid-template-areas: "id instruccion accion idLenguaje";
   }
   .id{
       grid-area:id;

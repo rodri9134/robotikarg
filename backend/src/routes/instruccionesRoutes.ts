@@ -12,8 +12,9 @@ class instruccionesRoutes {
         this.router.put('/:id', instruccionesController.update);
         this.router.delete('/:id', instruccionesController.delete);
        this.router.get('/:id', instruccionesController.readLenguaje);
-        this.router.get('/instruccionesUsuario/:id', instruccionesController.instruccionesUsuario);
-        this.router.post('/guardarInstrucciones/:id', instruccionesController.guardarInstrucciones);
+       this.router.get('/leerInstrucion/:id', instruccionesController.leerInstruccion);
+    //    this.router.get('/instruccionesUsuario/:id', instruccionesController.instruccionesUsuario);
+    //    this.router.post('/guardarInstrucciones/:id', instruccionesController.guardarInstrucciones);
    
 
     }

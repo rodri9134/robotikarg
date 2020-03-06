@@ -7,6 +7,8 @@ import instruccionesRoutes from './routes/instruccionesRoutes';
 import articulosRoutes from './routes/articulosRoutes';
 import instruccionesUsuariosRoutes from './routes/instruccionesUsuarioRoutes';
 import lenguajesRoutes from './routes/lenguajesRoutes';
+import tiendasRoutes from './routes/tiendasRoutes';
+import categoriasRoutes from './routes/categoriasRoutes';
 import morgan from 'morgan';
 import cors from 'cors';
 class server {
@@ -32,6 +34,8 @@ class server {
         this.app.use('/articulos', articulosRoutes);
         this.app.use('/lenguajes',lenguajesRoutes);
         this.app.use('/instruccionesUsuario',instruccionesUsuariosRoutes);
+        this.app.use('/tiendas',tiendasRoutes);
+        this.app.use('/categorias',categoriasRoutes);
     }
     start(): void {
         this.app.listen(this.app.get('port'), () => console.log('El servidor está escuchando en el puerto ', this.app.get('port')));

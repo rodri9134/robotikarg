@@ -20,9 +20,17 @@ class InstruccionesController {
         const instrucciones = await pool.query('SELECT i.*,l.nombre AS lenguaje FROM instrucciones i INNER JOIN lenguajes l ON i.idLenguaje=l.id WHERE i.idLenguaje=? ORDER BY l.nombre', [req.params.id]);
         res.json(instrucciones);
     }
+    public async leerInstruccion(req: Request, res: Response) {
+        // tslint:disable-next-line: max-line-length
+        const instrucciones = await pool.query('SELECT i.* FROM instrucciones i WHERE i.id=?', [req.params.id]);
+        res.json(instrucciones);
+    }
     public async update(req: Request, res: Response) {
-
-        await pool.query('UPDATE instrucciones SET ? WHERE id=?', [req.params.id]);
+console.log('Instruccion' +req.body);
+console.log('Id '+req.params.id);
+const id=req.params.id;
+req.body.id=id;
+        await pool.query('UPDATE instrucciones SET ? WHERE id=?', [req.body,req.params.id]);
 
     }
     public async delete(req: Request, res: Response) {

@@ -11,7 +11,7 @@ import { ContactoComponent } from './components/contacto/contacto.component';
 import { PrincipalComponent } from './components/principal/principal.component';
 import { NavcliComponent } from './components/navcli/navcli.component';
 import { GuardaLoginUserGuard } from './services/guarda-login-user.guard';
-import {GuardaLoginAdminGuard} from './services/guarda-login-admin.guard';
+import { GuardaLoginAdminGuard } from './services/guarda-login-admin.guard';
 import { MuestraInstruccionesComponent } from './components/cliente/muestra-instrucciones/muestra-instrucciones.component';
 import { MuestraArticulosComponent } from './components/cliente/muestra-articulos/muestra-articulos.component';
 import { EditarPerfilComponent } from './components/cliente/editar-perfil/editar-perfil.component';
@@ -25,6 +25,10 @@ import { AdminEditarInstruccionesComponent } from './components/admin/admin-edit
 import { AdminEditarTorneosComponent } from './components/admin/admin-editar-torneos/admin-editar-torneos.component';
 import { LoginAdminComponent } from './components/login-admin/login-admin.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { AdminInsertarArticulosComponent } from './components/admin/admin-insertar-articulos/admin-insertar-articulos.component';
+// tslint:disable-next-line: max-line-length
+import { AdminInsertarInstruccionesComponent } from './components/admin/admin-insertar-instrucciones/admin-insertar-instrucciones.component';
+import { AdminInsertarTorneosComponent } from './components/admin/admin-insertar-torneos/admin-insertar-torneos.component';
 const routes: Routes = [
   {
     path: '', // alias o ruta
@@ -146,6 +150,21 @@ const routes: Routes = [
   }, {
     path: 'admin_editar_torneos',
     component: AdminEditarTorneosComponent,
+    canActivate: [GuardaLoginAdminGuard]
+  }
+  , {
+    path: 'admin_insertar_articulos',
+    component: AdminInsertarArticulosComponent,
+    canActivate: [GuardaLoginAdminGuard]
+  }
+  , {
+    path: 'admin_insertar_instrucciones',
+    component: AdminInsertarInstruccionesComponent,
+    canActivate: [GuardaLoginAdminGuard]
+  }
+  , {
+    path: 'admin_insertar_torneos',
+    component: AdminInsertarTorneosComponent,
     canActivate: [GuardaLoginAdminGuard]
   }
 ];

@@ -31,7 +31,9 @@
         <div> {{torneo.costeEquipo}} €</div>
         <div>{{torneo.pNombre}} </div>
         <div> {{torneo.rEdad}}</div>
-        <div>Editar | Eliminar</div>
+        <div><button class="editar" (click)="editar(torneo.id)">Editar torneo</button>
+          <button class="eliminar" (click)="eliminar(torneo.id)">Eliminar torneo</button>
+      </div>
       </div>
     </div>
     </div>

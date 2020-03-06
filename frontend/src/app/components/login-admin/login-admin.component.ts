@@ -12,15 +12,13 @@ import { Usuario } from '../../modelo/usuario';
 export class LoginAdminComponent implements OnInit {
   public loginAdminForm: FormGroup;
   public usuario: Usuario;
-  public misusuarios: UsuariosService;
-  title = 'EncryptionDecryptionSample';
 
   mensaje: string;
   private patronemail = '^[a-z0-9.%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$';
   constructor(private EncrDecr: EncrDecrService, private router: Router, private formBuilder: FormBuilder, private usuariosService: UsuariosService) {
     this.loginAdminForm = formBuilder.group({
-      email: ['', [Validators.required, Validators.pattern(this.patronemail)]],
-      password: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(15)]]
+      emailAdmin: ['', [Validators.required, Validators.pattern(this.patronemail)]],
+      passwordAdmin: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(15)]]
 
     });
   }
