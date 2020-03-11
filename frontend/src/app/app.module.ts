@@ -35,10 +35,12 @@ import { AdminEditarArticulosComponent } from './components/admin/admin-editar-a
 import { AdminEditarTorneosComponent } from './components/admin/admin-editar-torneos/admin-editar-torneos.component';
 import { InicioAdminComponent } from './components/admin/inicio-admin/inicio-admin.component';
 import { LoginAdminComponent } from './components/login-admin/login-admin.component';
+// tslint:disable-next-line: max-line-length
 import { AdminInsertarInstruccionesComponent } from './components/admin/admin-insertar-instrucciones/admin-insertar-instrucciones.component';
 import { AdminInsertarTorneosComponent } from './components/admin/admin-insertar-torneos/admin-insertar-torneos.component';
 import { AdminInsertarArticulosComponent } from './components/admin/admin-insertar-articulos/admin-insertar-articulos.component';
-
+// import { SocialLoginModule, AuthServiceConfig } from "angularx-social-login";
+// import { GoogleLoginProvider, FacebookLoginProvider } from "angularx-social-login";
 @NgModule({
   declarations: [
 
@@ -80,6 +82,7 @@ import { AdminInsertarArticulosComponent } from './components/admin/admin-insert
     ReactiveFormsModule,
     BrowserModule,
     APP_ROUTING,
+
 
   ],
   providers: [MessageService, EncrDecrService],

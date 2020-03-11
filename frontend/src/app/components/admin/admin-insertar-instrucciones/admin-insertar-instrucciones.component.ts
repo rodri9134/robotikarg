@@ -13,6 +13,7 @@ export class AdminInsertarInstruccionesComponent implements OnInit {
   public lenguajes: LenguajesService;
   public instrucciones: InstruccionesService;
 
+  // tslint:disable-next-line: max-line-length
   constructor(private router: Router, private formBuilder: FormBuilder, private instruccionesService: InstruccionesService, private lenguajesService: LenguajesService) {
     this.insertarInstruccionForm = formBuilder.group({
       id: [''],
@@ -37,7 +38,7 @@ export class AdminInsertarInstruccionesComponent implements OnInit {
     );
   }
 
-insertarInstruccion(){
+insertarInstruccion() {
   this.instruccionesService.saveInstruccion(this.insertarInstruccionForm.value).subscribe(
     res => {
       console.log(res);
