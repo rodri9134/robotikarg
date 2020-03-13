@@ -7,9 +7,9 @@ class instruccionesUsuarioRoutes {
         this.config();
     }
     config() {
-        this.router.get('/instruccionesUsuario/:id', instruccionesUsuarioController.instruccionesUsuario);
+        this.router.get('/:id', instruccionesUsuarioController.instruccionesUsuario);
         this.router.post('/', instruccionesUsuarioController.guardarInstruccionUsuario);
-        this.router.get('/instruccionesUsuario/quitarInstruccionesUsuario/:id', instruccionesUsuarioController.eliminarInstruccionUsuario);
+        this.router.get('/eliminarInstruccionUsuario/:id', instruccionesUsuarioController.eliminarInstruccionUsuario);
     }
 }
 const instruccionesUsuarioRoute = new instruccionesUsuarioRoutes();

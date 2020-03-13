@@ -5,7 +5,7 @@ let InstruccionesService = class InstruccionesService {
         this.http = http;
     }
     getInstrucciones() {
-        return this.http.get('http://localhost:3000/instrucciones/');
+        return this.http.get('http://localhost:3000/instrucciones');
     }
     getInstruccionesLenguaje(id) {
         console.log('id ' + id);
@@ -16,17 +16,19 @@ let InstruccionesService = class InstruccionesService {
         return this.http.post('http://localhost:3000/instrucciones/', instruccion);
     }
     deleteInstruccion(id) {
-        return this.http.delete('http://localhost:3000/instruccion/${id}');
+        console.log('Id a eliminar: ' + id);
+        return this.http.delete('http://localhost:3000/instrucciones/' + id);
     }
     updateInstruccion(id, instruccion) {
-        return this.http.put('http://localhost:3000/instrucciones/${id}', instruccion);
-    } /*
+        return this.http.put('http://localhost:3000/instrucciones/' + id, instruccion);
+    }
+    /*
     getInstruccionesUsuario(id: string): Observable<any> {
       return this.http.get('http://localhost:3000/instrucciones/instruccionesUsuario/'+id);
-    }
-    getInstruccion(id: string): Observable<any> {
-      return this.http.get('http://localhost:3000/instrucciones/${id}');
     }*/
+    getInstruccion(id) {
+        return this.http.get('http://localhost:3000/instrucciones/leerInstrucion/' + id);
+    }
     guardarInstruccionUsuario(idInstruccion, idUsuario) {
         return this.http.post('http://localhost:3000/instrucciones/guardarInstrucciones/' + idInstruccion, idUsuario);
     }

@@ -1,7 +1,8 @@
 import { __decorate } from "tslib";
 import { Component } from '@angular/core';
 let MisInstruccionesComponent = class MisInstruccionesComponent {
-    constructor(instruccionesUsuarioService) {
+    constructor(router, instruccionesUsuarioService) {
+        this.router = router;
         this.instruccionesUsuarioService = instruccionesUsuarioService;
     }
     ngOnInit() {
@@ -13,11 +14,12 @@ let MisInstruccionesComponent = class MisInstruccionesComponent {
             console.log(err);
         });
     }
-    nomegusta(idInstruccion) {
-        console.log('Id Instruccion: ', idInstruccion);
-        this.instruccionesUsuarioService.eliminarInstruccionUsuario(idInstruccion).subscribe(res => {
+    nomegusta(idInstruccionUsuario) {
+        console.log('Id Instruccion: ', idInstruccionUsuario);
+        this.instruccionesUsuarioService.eliminarInstruccionUsuario(idInstruccionUsuario).subscribe(res => {
             console.log(res);
             this.instrucciones = res;
+            this.router.navigate(['/mInstrucciones']);
         }, err => {
             console.log(err);
         });

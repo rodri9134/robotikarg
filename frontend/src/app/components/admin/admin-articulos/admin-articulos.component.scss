@@ -7,7 +7,7 @@
     width: 80%;
     display: grid;
     grid-template-columns: 12fr;
-    grid-template-areas: "titulo" " encabezados" "articulos";
+    grid-template-areas: "titulo" "filtros" " encabezados" "articulos";
 
   }
   .tituloA {
@@ -17,6 +17,9 @@
     justify-content: center;
 
     color:#00376F;
+  }
+  .filtros{
+    grid-area:filtros;
   }
   .encabezados {
     grid-area: encabezados;

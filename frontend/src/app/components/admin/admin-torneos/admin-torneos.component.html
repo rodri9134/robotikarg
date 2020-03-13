@@ -2,35 +2,43 @@
     <div class="contenedor_tabla">
       <div class="titulo">
         <h2>LISTADO DE TORNEOS</h2>
+        
       </div>
+<div class="filtros">
+  <button class="añadir_torneos" [routerLink]="['/admin_insertar_torneos']">Añadir torneo</button><br>
+  Filtros. Provincias: <select name="idProvincia" (change)="muestraTorneosProvincias($event.target.value)">
+<option value="-1">-----------</option>
+<option  *ngFor='let provincia of provincias' value="{{provincia.id}}">{{provincia.nombre}}</option>
+  </select>Edades: 
+<select name="idRangoEdad" (change)="muestraTorneosEdades($event.target.value)">
+  <option value="-1">-----------</option>
+  <option  *ngFor='let rangoEdad of rangoEdades' value="{{rangoEdad.id}}">{{rangoEdad.tipoRango}}</option>
+</select>
+
+</div>
       <div class="encabezados">
-        <div class="id"> Id</div>
-        <div class="nombre">Nombre</div>
+        <div class="imagen">Imagen</div>
         <div class="fecha">Fecha</div>
         <div class="hora">Hora</div>
-        <div class="ubicacion">Ubicación</div>
-        <div class="latitud">Latitud</div>
-        <div class="longitud">Longitud</div>
         <div class="costeEquipo">Coste por equipo</div>
-        <div class="provincia">Provincia</div>
         <div class="rangoEdad">RangoEdad</div>
+        <div class="ubicacion">Ubicacion</div>
         <div class="opciones">Opciones</div>
       </div>
 
       <div>
 
       <div class="datosUsuario" *ngFor='let torneo of torneos'>
-        <div>{{torneo.id}} </div>
-        <div>{{torneo.nombre}}</div>
-        <div>{{torneo.fecha| date:'dd-MM-yyyy'}}</div>
+   
+        <div><a href="{{torneo.pagina}}"><img class="formateaImagen" src="assets/imagenes/{{torneo.imagen}}" alt="{{torneo.imagen}}"></a></div>
        
-        <div>{{torneo.fecha| date:'HH:mm:ss'}} </div>
-        <div> {{torneo.ubicacion}}</div>
-        <div> {{torneo.latitud}}</div>
-        <div> {{torneo.longitud}}</div>
-        <div> {{torneo.costeEquipo}} €</div>
-        <div>{{torneo.pNombre}} </div>
+        <div>{{torneo.fecha| date:'dd-MM-yyyy'}}</div>
+        <div>{{torneo.fecha| date:'HH:mm:ss'}} </div>  
+        <div> {{torneo.costeEquipo}}</div>
+     
         <div> {{torneo.rEdad}}</div>
+      
+        <div> <a href="{{torneo.enlace}}">{{torneo.ubicacion}}</a></div>
         <div><button class="editar" (click)="editar(torneo.id)">Editar torneo</button>
           <button class="eliminar" (click)="eliminar(torneo.id)">Eliminar torneo</button>
       </div>

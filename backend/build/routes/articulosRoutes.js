@@ -15,6 +15,8 @@ class articulosRoutes {
         this.router.put('/:id', articulosController_1.articulosController.update);
         this.router.delete('/:id', articulosController_1.articulosController.delete);
         this.router.get('/:id', articulosController_1.articulosController.readone);
+        this.router.get('/articulosTienda/:id', articulosController_1.articulosController.articulosTienda);
+        this.router.get('/articulosCategoria/:id', articulosController_1.articulosController.articulosCategoria);
     }
 }
 const articulosRoute = new articulosRoutes();

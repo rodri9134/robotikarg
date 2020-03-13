@@ -46,5 +46,17 @@ class ArticulosController {
             res.json(articulos);
         });
     }
+    articulosCategoria(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const articulos = yield database_1.default.query('SELECT * FROM articulos WHERE idCategoria=?', [req.params.id]);
+            res.json(articulos);
+        });
+    }
+    articulosTienda(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const articulos = yield database_1.default.query('SELECT * FROM articulos WHERE idTienda=?', [req.params.id]);
+            res.json(articulos);
+        });
+    }
 }
 exports.articulosController = new ArticulosController;

@@ -62,7 +62,7 @@ export class AdminEditarArticulosComponent implements OnInit {
   get idCategoria() {
     return this.editarArticuloForm.get('idCategoria');
   }
-  get idTienda(){
+  get idTienda() {
     return this.editarArticuloForm.get('idTienda');
   }
 }

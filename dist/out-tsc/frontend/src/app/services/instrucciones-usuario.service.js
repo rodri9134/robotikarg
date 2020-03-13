@@ -5,19 +5,17 @@ let InstruccionesUsuarioService = class InstruccionesUsuarioService {
         this.http = http;
     }
     getInstruccionesUsuario(id) {
-        return this.http.get('http://localhost:3000/instrucciones/instruccionesUsuario/' + id);
+        return this.http.get('http://localhost:3000/instruccionesUsuario/' + id);
     }
     /*
       getInstruccion(id: string): Observable<any> {
         return this.http.get('http://localhost:3000/instrucciones/${id}');
       }*/
-    saveInstruccionUsuario(idInstruccion, idUsuario) {
-        console.log('Id instruccion ' + idInstruccion);
-        console.log('idusuario ' + idUsuario);
-        return this.http.post('http://localhost:3000/instrucciones/instruccionUsuario/' + idInstruccion, idUsuario);
+    saveInstruccionUsuario(instruccionUsuario) {
+        return this.http.post('http://localhost:3000/instruccionesUsuario', instruccionUsuario);
     }
     eliminarInstruccionUsuario(id) {
-        return this.http.get('http://localhost:3000/instrucciones/instruccionesUsuario/' + id);
+        return this.http.get('http://localhost:3000/instruccionesUsuario/eliminarInstruccionUsuario/' + id);
     }
 };
 InstruccionesUsuarioService = __decorate([

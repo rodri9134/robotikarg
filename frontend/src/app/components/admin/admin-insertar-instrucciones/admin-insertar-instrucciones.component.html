@@ -7,8 +7,7 @@
 
   <form [formGroup]="insertarInstruccionForm" (submit)="insertarInstruccion()">
     <div class="instrucciones">
-    <div class="form-group">
-    <input type="text"  class="id" id="id" formControlName="id" value="{{miInstruccion.id}}" hidden> </div>
+
       <div class="form-group">
         <label for="instruccion">Instrucción: </label><br>
         <textarea formControlName="instruccion" class="instruccion" id="instruccion" ></textarea>

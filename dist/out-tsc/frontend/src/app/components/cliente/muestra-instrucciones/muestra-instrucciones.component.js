@@ -1,5 +1,6 @@
 import { __decorate } from "tslib";
 import { Component } from '@angular/core';
+import { first } from 'rxjs/operators';
 let MuestraInstruccionesComponent = class MuestraInstruccionesComponent {
     // tslint:disable-next-line: max-line-length
     constructor(lenguajesService, router, instruccionesService, instruccionesUsuarioService) {
@@ -32,14 +33,15 @@ let MuestraInstruccionesComponent = class MuestraInstruccionesComponent {
     }
     megusta(idInstruccion) {
         console.log('Id Instruccion: ', idInstruccion);
-        const idUsuario = localStorage.getItem('idUsuario');
-        this.instruccionesService.guardarInstruccionUsuario(idInstruccion, idUsuario).subscribe(data => {
+        const idUsuario = parseInt(localStorage.getItem('idUsuario'));
+        const instruccionesUsuario = { idInstruccion: idInstruccion, idUsuario: idUsuario };
+        this.instruccionesUsuarioService.saveInstruccionUsuario(instruccionesUsuario).pipe(first()).subscribe(data => {
             if (data.status === 200) {
-                console.log('Perfil actualizado correctamente.');
-                this.router.navigate(['/navCli']);
+                alert("La instrucción que quieres guardar ya la tienes");
             }
             else {
                 alert(data.message);
+                this.router.navigate(['/misInstrucciones']);
             }
         }, error => {
             alert(error);

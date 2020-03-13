@@ -24,7 +24,7 @@ let UsuariosService = class UsuariosService {
         return this.http.post('http://localhost:3000/usuarios/login', usuario);
     }
     getLoginAdmin(usuario) {
-        return this.http.post('http://localhost:3000/admin/login', usuario);
+        return this.http.post('http://localhost:3000/usuarios/admin/login', usuario);
     }
     idUsuario(usuario) {
         return this.http.post('http://localhost:3000/usuarios/idUsuario', usuario);

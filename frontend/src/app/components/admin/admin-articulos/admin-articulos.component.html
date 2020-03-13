@@ -4,6 +4,16 @@
         <h2>LISTADO DE ARTÍCULOS</h2>
    
       </div>
+      <div class="filtros">
+        <button class="añadir_articulos" [routerLink]="['/admin_insertar_articulos']">Añadir articulo</button><br>
+        Filtros. Categoria:<select name="idCategoria" (change)="muestraArticulosCategoria($event.target.value)">
+      <option value="-1">-----------</option>
+      <option  *ngFor='let categoria of categorias' value="{{categoria.id}}">{{categoria.nombre}}</option>
+      </select>  Tienda: 
+      <select name="idTienda" (change)="muestraArticulosTienda($event.target.value)">
+        <option value="-1">-----------</option>
+        <option  *ngFor='let tienda of tiendas' value="{{tienda.id}}">{{tienda.nombre}}</option>
+      </select>
       <div class="encabezados">
         <div class="id"> Id</div>
         <div class="titulo">Titulo</div>

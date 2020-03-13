@@ -12,6 +12,10 @@ let AdminTorneosComponent = class AdminTorneosComponent {
             console.log(err);
         });
     }
+    muestraTorneosProvincia() {
+    }
+    muestraTorneosEdad() {
+    }
 };
 AdminTorneosComponent = __decorate([
     Component({

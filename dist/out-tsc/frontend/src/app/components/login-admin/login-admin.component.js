@@ -7,21 +7,18 @@ let LoginAdminComponent = class LoginAdminComponent {
         this.router = router;
         this.formBuilder = formBuilder;
         this.usuariosService = usuariosService;
-        this.title = 'EncryptionDecryptionSample';
         this.patronemail = '^[a-z0-9.%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$';
         this.loginAdminForm = formBuilder.group({
-            email: ['', [Validators.required, Validators.pattern(this.patronemail)]],
-            password: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(15)]]
+            emailAdmin: ['', [Validators.required, Validators.pattern(this.patronemail)]],
+            passwordAdmin: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(15)]]
         });
     }
     ngOnInit() {
     }
-    login() {
+    loginAdmin() {
         this.usuariosService.getLoginAdmin(this.loginAdminForm.value).subscribe(res => {
             const tok = 'Roboadmin' + res;
-            localStorage.setItem('token', tok);
-            const u = { email: this.loginAdminForm.value.email, password: this.loginAdminForm.value.password };
-            this.usuariosService.setUserLoggedIn(u);
+            localStorage.setItem('tokenAdmin', tok);
             this.router.navigate(['/navAdmin']);
             console.log(res);
         }, err => {

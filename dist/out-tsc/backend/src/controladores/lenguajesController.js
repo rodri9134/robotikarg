@@ -16,6 +16,12 @@ class LenguajesController {
             res.json(lenguajes);
         });
     }
+    read2(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const lenguajes = yield pool.query('SELECT lenguajes.id, lenguajes.nombre FROM lenguajes', [req.body]);
+            res.json(lenguajes);
+        });
+    }
     update(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             yield pool.query('UPDATE lenguajes SET ? WHERE id=?', [req.params.id]);

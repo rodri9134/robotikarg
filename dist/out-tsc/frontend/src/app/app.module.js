@@ -34,6 +34,11 @@ import { AdminEditarArticulosComponent } from './components/admin/admin-editar-a
 import { AdminEditarTorneosComponent } from './components/admin/admin-editar-torneos/admin-editar-torneos.component';
 import { InicioAdminComponent } from './components/admin/inicio-admin/inicio-admin.component';
 import { LoginAdminComponent } from './components/login-admin/login-admin.component';
+import { AdminInsertarInstruccionesComponent } from './components/admin/admin-insertar-instrucciones/admin-insertar-instrucciones.component';
+import { AdminInsertarTorneosComponent } from './components/admin/admin-insertar-torneos/admin-insertar-torneos.component';
+import { AdminInsertarArticulosComponent } from './components/admin/admin-insertar-articulos/admin-insertar-articulos.component';
+// import { SocialLoginModule, AuthServiceConfig } from "angularx-social-login";
+// import { GoogleLoginProvider, FacebookLoginProvider } from "angularx-social-login";
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -67,12 +72,15 @@ AppModule = __decorate([
             AdminEditarTorneosComponent,
             InicioAdminComponent,
             LoginAdminComponent,
+            AdminInsertarInstruccionesComponent,
+            AdminInsertarTorneosComponent,
+            AdminInsertarArticulosComponent,
         ],
         imports: [
+            HttpClientModule,
             ReactiveFormsModule,
             BrowserModule,
             APP_ROUTING,
-            HttpClientModule
         ],
         providers: [MessageService, EncrDecrService],
         bootstrap: [AppComponent]

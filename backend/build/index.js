@@ -14,6 +14,8 @@ const instruccionesUsuarioRoutes_1 = __importDefault(require("./routes/instrucci
 const lenguajesRoutes_1 = __importDefault(require("./routes/lenguajesRoutes"));
 const tiendasRoutes_1 = __importDefault(require("./routes/tiendasRoutes"));
 const categoriasRoutes_1 = __importDefault(require("./routes/categoriasRoutes"));
+const provinciasRoutes_1 = __importDefault(require("./routes/provinciasRoutes"));
+const rangoEdadRoutes_1 = __importDefault(require("./routes/rangoEdadRoutes"));
 const morgan_1 = __importDefault(require("morgan"));
 const cors_1 = __importDefault(require("cors"));
 class server {
@@ -39,6 +41,8 @@ class server {
         this.app.use('/instruccionesUsuario', instruccionesUsuarioRoutes_1.default);
         this.app.use('/tiendas', tiendasRoutes_1.default);
         this.app.use('/categorias', categoriasRoutes_1.default);
+        this.app.use('/provincias', provinciasRoutes_1.default);
+        this.app.use('/rangoEdad', rangoEdadRoutes_1.default);
     }
     start() {
         this.app.listen(this.app.get('port'), () => console.log('El servidor está escuchando en el puerto ', this.app.get('port')));

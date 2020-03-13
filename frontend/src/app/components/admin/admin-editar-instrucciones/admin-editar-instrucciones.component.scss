@@ -9,11 +9,7 @@
     display: grid;
     grid-template-columns: 12fr;
     grid-template-areas: "titulo" " datosFormulario";
-  
-    //grid-auto-rows: auto;
-    // grid-gap: 10%;
-  
-    //margin: auto;
+
   }
   .titulo {
     grid-area: titulo;

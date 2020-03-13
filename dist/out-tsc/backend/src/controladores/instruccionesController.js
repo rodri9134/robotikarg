@@ -24,9 +24,20 @@ class InstruccionesController {
             res.json(instrucciones);
         });
     }
+    leerInstruccion(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            // tslint:disable-next-line: max-line-length
+            const instrucciones = yield pool.query('SELECT i.* FROM instrucciones i WHERE i.id=?', [req.params.id]);
+            res.json(instrucciones);
+        });
+    }
     update(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield pool.query('UPDATE instrucciones SET ? WHERE id=?', [req.params.id]);
+            console.log('Instruccion' + req.body);
+            console.log('Id ' + req.params.id);
+            const id = req.params.id;
+            req.body.id = id;
+            yield pool.query('UPDATE instrucciones SET ? WHERE id=?', [req.body, req.params.id]);
         });
     }
     delete(req, res) {
@@ -43,7 +54,7 @@ class InstruccionesController {
     instruccionesUsuario(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             // tslint:disable-next-line: max-line-length
-            const misInstrucciones = yield pool.query('SELECT i.id,i.instruccion,i.accion,l.nombre as nombreLenguaje FROM instrucciones i INNER JOIN instrucciones_usuarios iu ON iu.idInstruccion=i.id INNER JOIN usuarios u ON iu.idUsuario=u.id INNER JOIN lenguajes l ON l.id=i.idLenguaje WHERE u.id=?', [req.params.id]);
+            const misInstrucciones = yield pool.query('SELECT iu.id AS idInstruccionUsuario,i.id,i.instruccion,i.accion,l.nombre as nombreLenguaje FROM instrucciones i INNER JOIN instrucciones_usuarios iu ON iu.idInstruccion=i.id INNER JOIN usuarios u ON iu.idUsuario=u.id INNER JOIN lenguajes l ON l.id=i.idLenguaje WHERE u.id=?', [req.params.id]);
             res.json(misInstrucciones);
         });
     }

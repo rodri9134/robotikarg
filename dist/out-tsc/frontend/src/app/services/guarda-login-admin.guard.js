@@ -9,7 +9,7 @@ let GuardaLoginAdminGuard = class GuardaLoginAdminGuard {
         if (this.usuarios.logAdminIn()) {
             return true;
         }
-        this.router.navigate(['/navCli']);
+        this.router.navigate(['/navAdmin']);
         return false;
     }
 };

@@ -64,7 +64,8 @@ export class MuestraInstruccionesComponent implements OnInit {
       data => {
         if (data.status === 200) {
 
-          alert("La instrucción que quieres guardar ya la tienes");
+          alert('La instrucción que quieres guardar ya la tienes');
+          this.router.navigate(['/misInstrucciones']);
 
         } else {
           alert(data.message);

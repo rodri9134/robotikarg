@@ -13,6 +13,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const database_1 = __importDefault(require("../database"));
+const fs = require('fs');
 class TorneosController {
     index(req, res) {
         res.json({ message: 'Estas en torneos' });
@@ -48,6 +49,18 @@ class TorneosController {
         return __awaiter(this, void 0, void 0, function* () {
             const torneos = yield database_1.default.query('SELECT * FROM torneos WHERE id=?', [req.params.id]);
             res.json(torneos);
+        });
+    }
+    rangoEdad(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const rangoEdad = yield database_1.default.query('SELECT * FROM rangoedad', [req.body]);
+            res.json(rangoEdad);
+        });
+    }
+    provincias(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const provincias = yield database_1.default.query('SELECT * FROM provincias WHERE id=?', [req.body]);
+            res.json(provincias);
         });
     }
 }

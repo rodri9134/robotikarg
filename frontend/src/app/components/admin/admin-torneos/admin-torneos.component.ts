@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Torneo } from 'src/app/modelo/torneos';
+import { Provincia } from 'src/app/modelo/provincias';
+import { RangoEdad } from 'src/app/modelo/rangoEdad';
 import { TorneosService } from 'src/app/services/torneos.service';
+import { ProvinciasService } from 'src/app/services/provincias.service';
+import { RangoEdadService } from 'src/app/services/rango-edad.service';
+
 
 @Component({
   selector: 'app-admin-torneos',
@@ -10,7 +15,10 @@ import { TorneosService } from 'src/app/services/torneos.service';
 export class AdminTorneosComponent implements OnInit {
 
   private torneos: Torneo;
-  constructor(private torneosService: TorneosService) { }
+  private provincias: Provincia;
+  private rangoEdades: RangoEdad;
+  // tslint:disable-next-line: max-line-length
+  constructor(private torneosService: TorneosService, private provinciasService: ProvinciasService, private rangoEdadService: RangoEdadService) { }
 
   ngOnInit() {
     this.torneosService.getTorneos().subscribe(
@@ -23,6 +31,28 @@ export class AdminTorneosComponent implements OnInit {
         console.log(err);
       }
     );
+    this.rangoEdadService.getRangoEdades().subscribe(
+      res => {
+
+        console.log(res);
+        this.rangoEdades = res;
+      },
+      err => {
+        console.log(err);
+      }
+    );
+
+    this.provinciasService.getProvincias().subscribe(
+      res => {
+
+        console.log(res);
+        this.provincias = res;
+      },
+      err => {
+        console.log(err);
+      }
+    );
+
   }
 
 }

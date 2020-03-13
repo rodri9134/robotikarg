@@ -7,12 +7,7 @@
     width: 80%;
     display: grid;
     grid-template-columns: 12fr;
-    grid-template-areas: "titulo" " encabezados" "datosUsuario";
-  
-    //grid-auto-rows: auto;
-    // grid-gap: 10%;
-  
-    //margin: auto;
+    grid-template-areas: "titulo" "filtros" " encabezados" "datosUsuario";
   }
   .titulo {
     grid-area: titulo;
@@ -21,11 +16,14 @@
     justify-content: center;
     color:#00376F;
   }
+  .filtros{
+    grid-area:filtros;
+  }
   .encabezados {
     grid-area: encabezados;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr  1fr;
-    grid-template-areas: "id nombre fecha hora ubicacion latitud longitud costeEquipo provincia rangoEdad opciones";
+    grid-template-columns: 3fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: "imagen fecha hora costeEquipo rangoEdad ubicacion opciones";
     border:1px solid black;
     color:white;
     background-color: #0a2843;
@@ -73,12 +71,53 @@
   .datosUsuario {
     grid-area: datosUsuario;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-areas: "id nombre fecha hora ubicacion latitud longitud costeEquipo provincia rangoEdad opciones";
+    grid-template-columns: 3fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: "imagen fecha hora costeEquipo rangoEdad ubicacion opciones";
     grid-auto-rows: auto;
     border:1px solid black;
     background-color: floralwhite;
   }
   
+  .editar {
+    transition-duration: 0.4s;
+    border-radius:5px;
+    border:1px solid white;
+  }
   
+  .editar:hover {
+    background-color: #4e94d2;
+    border-radius:5px;
+    border:1px solid #00376F;
+    width: 100%;
+  }
+  .eliminar {
+    transition-duration: 0.4s;
+    border-radius:5px;
+    border:1px solid white;
+  }
   
+  .eliminar:hover {
+    background-color: #4e94d2;
+    border-radius:5px;
+    border:1px solid #5684ac;
+    width: 100%;
+  }
+  .añadir_torneo{
+    transition-duration: 0.4s;
+    border-radius:5px;
+    background-color: rgb(167, 179, 190);
+    border:1px solid #5684ac;
+  }
+  
+  .añadir_torneo:hover {
+    background-color: #4e94d2;
+    border-radius:5px;
+    border:1px solid #5684ac;
+    width: 100%;
+  }
+  .formateaImagen{
+    width: 60%;
+    height:60%;
+    justify-content: center;
+    align-items: center;
+  }

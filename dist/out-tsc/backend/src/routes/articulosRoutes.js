@@ -13,6 +13,8 @@ class articulosRoutes {
         this.router.put('/:id', articulosController.update);
         this.router.delete('/:id', articulosController.delete);
         this.router.get('/:id', articulosController.readone);
+        this.router.get('/articulosTienda/:id', articulosController.articulosTienda);
+        this.router.get('/articulosCategoria/:id', articulosController.articulosCategoria);
     }
 }
 const articulosRoute = new articulosRoutes();

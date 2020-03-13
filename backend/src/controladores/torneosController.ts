@@ -1,10 +1,26 @@
 import { Request, Response } from 'express';
 import pool from '../database';
+const fs = require('fs');
 class TorneosController {
+
+
     index(req: Request, res: Response) {
         res.json({ message: 'Estas en torneos' });
     }
-    public async create(req: Request, res: Response) {
+    public async create(req: Request, res: Response) {/*
+        fs.writeFile('/tmp/hello.txt', 'Hello world!', function(err: any) {
+ 
+            if(err) return console.error(err);
+          
+          });
+          
+          
+          const buffer = new Buffer([ 0x48, 0x65, 0x6c, 0x6c, 0x6f ]);
+          fs.writeFile(req.body.imagen, buffer, function(err: any) {
+            // If an error occurred, show it and return
+            if(err) return console.error(err);
+            // Successfully wrote binary contents to the file!
+          });*/
         await pool.query('INSERT INTO torneos SET ?', [req.body]);
         res.json({ message: 'El torneo ha sido creado' });
 
@@ -33,6 +49,17 @@ class TorneosController {
         const torneos = await pool.query('SELECT * FROM torneos WHERE id=?', [req.params.id]);
         res.json(torneos);
     }
+    public async rangoEdad(req: Request, res: Response) {
+
+        const rangoEdad = await pool.query('SELECT * FROM rangoedad', [req.body]);
+        res.json(rangoEdad);
+    }
+    public async provincias(req: Request, res: Response) {
+
+        const provincias = await pool.query('SELECT * FROM provincias WHERE id=?', [req.body]);
+        res.json(provincias);
+    }
+  
 }
 
 // tslint:disable-next-line: new-parens

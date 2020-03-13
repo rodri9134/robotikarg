@@ -20,6 +20,12 @@ let ArticulosService = class ArticulosService {
     updateArticulo(id, articulo) {
         return this.http.put('http://localhost:3000/articulos/${id}', articulo);
     }
+    getArticulosTienda(id) {
+        return this.http.get('http://localhost:3000/articulos/articulosTienda' + id);
+    }
+    getArticulosCategoria(id) {
+        return this.http.get('http://localhost:3000/articulos/articulosCategoria' + id);
+    }
 };
 ArticulosService = __decorate([
     Injectable({
