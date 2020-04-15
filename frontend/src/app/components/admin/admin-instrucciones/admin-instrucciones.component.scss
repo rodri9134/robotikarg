@@ -15,7 +15,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color:#00376F;
+  color:#0A2843;
 }
 .lenguajes{
   grid-area:lenguajes;
@@ -31,7 +31,7 @@
   grid-template-areas: "id instruccion accion lenguaje opciones";
   border:1px solid black;
   color:white;
-  background-color: #0a2843;
+  background-color: #0A2843;
   justify-content: center;
   align-items: center;
 }
@@ -70,7 +70,7 @@
 .editar:hover {
   background-color: #4e94d2;
   border-radius:5px;
-  border:1px solid #00376F;
+  border:1px solid #0A2843;
   width: 100%;
 }
 .eliminar {

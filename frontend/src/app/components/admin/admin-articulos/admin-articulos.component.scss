@@ -16,7 +16,7 @@
     align-items: center;
     justify-content: center;
 
-    color:#00376F;
+    color:#0A2843;
   }
   .filtros{
     grid-area:filtros;
@@ -28,7 +28,7 @@
     grid-template-areas: "id titulo descripcion referencia precio imagen categoria tienda opciones";
     border:1px solid black;
     color:white;
-    background-color: #0a2843;
+    background-color:#0A2843;
     justify-content: center;
     align-items: center;
   }
@@ -86,7 +86,7 @@ grid-area:tienda;
   .editar:hover {
     background-color: #4e94d2;
     border-radius:5px;
-    border:1px solid #00376F;
+    border:1px solid #0A2843;
     width: 100%;
   }
   .eliminar {

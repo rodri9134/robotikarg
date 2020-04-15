@@ -42,22 +42,22 @@ export class LoginComponent implements OnInit {
   signInWithGoogle(): void {
     this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
   }
-  
+
   signInWithFB(): void {
     this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
-  } 
+  }
   signOut(): void {
     this.authService.signOut();
   }
   guardarIdUsuario() {
     this.usuariosService.idUsuario(this.loginForm.value).subscribe(es => {
-      console.log(es[0].id);
+      console.log('idusuario ' + es[0].id);
       localStorage.setItem('idUsuario', es[0].id);
 
     }
       ,
       err => {
-        console.log(err);
+        console.log('Error al guardar idUsuario ' + err);
       }
     );
 
