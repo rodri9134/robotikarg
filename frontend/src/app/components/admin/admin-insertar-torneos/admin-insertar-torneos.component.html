@@ -1,4 +1,4 @@
-<div class="contenedor_insertarInstrucciones">
+<div class="contenedor_insertarTorneos">
     <div class="contenedor">
   <div class="titulo">
   <h3>Insertar torneo</h3>
@@ -67,9 +67,10 @@
          <div class="form-group">
           
             <label for="idRangoEdad">Rango Edad</label>
+    
             <select formControlName="idRangoEdad">
               <option value="-1">-------------</option>
-              <option  *ngFor='let rangoEdadd of idRangoEdad' value="{{rangoEdadd.id}}">{{rangoEdadd.nombre}}</option>
+              <option  *ngFor='let rangoEdad of rangoEdades' value="{{rangoEdad.id}}">{{rangoEdad.tiporango}}</option>
             </select>
             
           </div>

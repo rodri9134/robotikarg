@@ -15,6 +15,7 @@ export class AdminArticulosComponent implements OnInit {
   private articulos: Articulo;
   private tiendas: Tienda;
   private categorias: Categoria;
+  // tslint:disable-next-line: max-line-length
   constructor(private router: Router, private articulosService: ArticulosService, private categoriasService: CategoriasService, private tiendasService: TiendasService) { }
 
   ngOnInit() {
@@ -50,9 +51,13 @@ export class AdminArticulosComponent implements OnInit {
       }
     );
   }
-  editar(id) {
-    const articulo = this.articulosService.getArticulo(id);
+
+  editar(idArticulo) {
+    localStorage.setItem('idArticulo', idArticulo);
+    console.log('Id articulo ' + idArticulo);
     this.router.navigate(['/admin_editar_articulos']);
+
+
   }
   eliminar(id) {
     this.articulosService.deleteArticulo(id).subscribe(res => {
@@ -74,6 +79,7 @@ export class AdminArticulosComponent implements OnInit {
     );
   }
   muestraArticulosCategoria(id) {
+
 
     this.articulosService.getArticulosCategoria(id).subscribe(
       res => {

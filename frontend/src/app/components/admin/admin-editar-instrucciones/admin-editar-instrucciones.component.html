@@ -34,7 +34,7 @@
               <div class="lenguajes">
             <label for="idLenguaje">Lenguajes</label>
             <select formControlName="idLenguaje">
-              <option value="-1">-------------</option>
+              <option selected="true" disabled value="{{miInstruccion.idlenguaje}}">{{miInstruccion.nombrelenguaje}}</option>
               <option  *ngFor='let lenguaje of lenguajes' value="{{lenguaje.id}}">{{lenguaje.nombre}}</option>
             </select>
             

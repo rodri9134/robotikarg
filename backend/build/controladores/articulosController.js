@@ -42,19 +42,19 @@ class ArticulosController {
     }
     readone(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const articulos = yield database_1.default.query('SELECT a.*,c.nombre AS categoria,t.nombre AS tienda FROM articulos a INNER JOIN categorias c ON a.idCategoria=c.id INNER JOIN tiendas t ON a.idTienda=t.id  WHERE id=?', [req.params.id]);
+            const articulos = yield database_1.default.query('SELECT a.*,c.nombre AS categoria,t.nombre AS tienda FROM articulos a INNER JOIN categorias c ON a.idCategoria=c.id INNER JOIN tiendas t ON a.idTienda=t.id  WHERE a.id=?', [req.params.id]);
             res.json(articulos);
         });
     }
     articulosCategoria(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const articulos = yield database_1.default.query('SELECT * FROM articulos WHERE idCategoria=?', [req.params.id]);
+            const articulos = yield database_1.default.query('SELECT a.*,c.nombre AS categoria,t.nombre AS tienda FROM articulos a INNER JOIN categorias c ON a.idCategoria=c.id INNER JOIN tiendas t ON a.idTienda=t.id WHERE idCategoria=? ORDER BY t.nombre,c.nombre', [req.params.id]);
             res.json(articulos);
         });
     }
     articulosTienda(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const articulos = yield database_1.default.query('SELECT * FROM articulos WHERE idTienda=?', [req.params.id]);
+            const articulos = yield database_1.default.query('SELECT a.*,c.nombre AS categoria,t.nombre AS tienda FROM articulos a INNER JOIN categorias c ON a.idCategoria=c.id INNER JOIN tiendas t ON a.idTienda=t.id  WHERE idTienda=? ORDER BY t.nombre,c.nombre', [req.params.id]);
             res.json(articulos);
         });
     }

@@ -11,6 +11,7 @@ import tiendasRoutes from './routes/tiendasRoutes';
 import categoriasRoutes from './routes/categoriasRoutes';
 import provinciasRoutes from './routes/provinciasRoutes';
 import rangoEdadRoutes from './routes/rangoEdadRoutes';
+import contactoRoutes from './routes/contactoRoutes';
 import morgan from 'morgan';
 import cors from 'cors';
 class server {
@@ -40,6 +41,7 @@ class server {
         this.app.use('/categorias',categoriasRoutes);
         this.app.use('/provincias',provinciasRoutes);
         this.app.use('/rangoEdad',rangoEdadRoutes);
+        this.app.use('/contacto',contactoRoutes);
     }
     start(): void {
         this.app.listen(this.app.get('port'), () => console.log('El servidor está escuchando en el puerto ', this.app.get('port')));

@@ -48,6 +48,15 @@ export class UsuariosService {
 
     return localStorage.getItem('tokenAdmin');
   }
+  setAdminLoggedIn(user: Usuario) {
+    this.isUserLoggedIn = true;
+    this.usserLogged = user;
+    localStorage.setItem('currentAdmin', JSON.stringify(user));
+
+  }
+  getAdminLoggedIn() {
+    return JSON.parse(localStorage.getItem('currentAdmin'));
+  }
   logOut() {
     // Al hacer logout quitamos el token
     localStorage.removeItem('token');

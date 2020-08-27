@@ -14,7 +14,7 @@ export class ArticulosService {
   }
 
   getArticulo(id: string): Observable<any> {
-    return this.http.get('http://localhost:3000/articulos/${id}');
+    return this.http.get('http://localhost:3000/articulos/' + id);
   }
   saveArticulo(articulo: Articulo): Observable<any> {
     console.log(articulo);
@@ -26,10 +26,15 @@ export class ArticulosService {
   updateArticulo(id: string, articulo: Articulo): Observable<any> {
     return this.http.put('http://localhost:3000/articulos/${id}', articulo);
   }
-  getArticulosTienda(id: string){
-    return this.http.get('http://localhost:3000/articulos/articulosTienda' + id);
+  getArticulosTienda(id: string) {
+    return this.http.get('http://localhost:3000/articulos/articulosTienda/' + id);
   }
-  getArticulosCategoria(id: string){
-    return this.http.get('http://localhost:3000/articulos/articulosCategoria' + id);
+  getArticulosCategoria(id: string) {
+    return this.http.get('http://localhost:3000/articulos/articulosCategoria/' + id);
   }
 }
+/*
+getInstruccionesLenguaje(id: string): Observable<any> {
+  console.log('id ' + id);
+  return this.http.get('http://localhost:3000/instrucciones/' + id);
+}*/

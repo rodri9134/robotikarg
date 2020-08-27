@@ -25,6 +25,7 @@ export class InstruccionesService {
     return this.http.delete('http://localhost:3000/instrucciones/' + id);
   }
   updateInstruccion(id: string, instruccion: Instruccion): Observable<any> {
+    console.log('Instruccion: '+id+' '+instruccion.accion+' '+instruccion.instruccion);
     return this.http.put('http://localhost:3000/instrucciones/' + id, instruccion);
   }
 

@@ -11,6 +11,8 @@ class torneosRoutes {
         this.router.put('/:id', torneosController.update);
         this.router.delete('/:id', torneosController.delete);
         this.router.get('/:id', torneosController.readone);
+        this.router.get('/torneosProvincia/:id', torneosController.torneosProvincia);
+        this.router.get('/torneosEdad/:id', torneosController.torneosEdad);
 
     }
 }

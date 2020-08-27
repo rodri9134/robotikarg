@@ -46,7 +46,7 @@ class TorneosController {
     }
     public async readone(req: Request, res: Response) {
 
-        const torneos = await pool.query('SELECT * FROM torneos WHERE id=?', [req.params.id]);
+        const torneos = await pool.query('SELECT torneos.*,provincias.nombre AS pNombre, rangoedad.tiporango AS rEdad FROM torneos INNER JOIN provincias ON torneos.idProvincia=provincias.id INNER JOIN rangoedad ON torneos.idRangoEdad=rangoedad.id WHERE torneos.id=? ORDER BY torneos.fecha ', [req.params.id]);
         res.json(torneos);
     }
     public async rangoEdad(req: Request, res: Response) {
@@ -59,7 +59,16 @@ class TorneosController {
         const provincias = await pool.query('SELECT * FROM provincias WHERE id=?', [req.body]);
         res.json(provincias);
     }
-  
+    public async torneosProvincia(req: Request, res: Response) {
+
+        const torneos = await pool.query('SELECT torneos.*,provincias.nombre AS pNombre, rangoedad.tiporango AS rEdad FROM torneos INNER JOIN provincias ON torneos.idProvincia=provincias.id INNER JOIN rangoedad ON torneos.idRangoEdad=rangoedad.id WHERE torneos.idprovincia=? ORDER BY torneos.fecha', [req.params.id]);
+        res.json(torneos);
+    }
+    public async torneosEdad(req: Request, res: Response) {
+    console.log('Id Edad '+req.params.id);
+        const torneos = await pool.query('SELECT torneos.*,provincias.nombre AS pNombre, rangoedad.tiporango AS rEdad FROM torneos INNER JOIN provincias ON torneos.idProvincia=provincias.id INNER JOIN rangoedad ON torneos.idRangoEdad=rangoedad.id WHERE torneos.idrangoedad=? ORDER BY torneos.fecha', [req.params.id]);
+        res.json(torneos);
+    }
 }
 
 // tslint:disable-next-line: new-parens

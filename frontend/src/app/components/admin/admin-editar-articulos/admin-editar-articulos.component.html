@@ -1,7 +1,7 @@
-<div class="contenedor_editarArticulo">
+<div class="contenedor_editarArticulos">
     <div class="contenedor">
   <div class="titulo">
-  <h3>Editar articulo</h3>
+  <h3>Editar articulos</h3>
   </div>
   <div class="datosFormulario">
   <form [formGroup]="editarArticuloForm" (submit)="editarArticulo()">
@@ -19,7 +19,7 @@
     </div>
     <div class="form-group">
         <label for="descripcion">Descripcion: </label>
-        <input type="text" formControlName="descripcion" class="descripcion" id="descripcion" value="{{miArticulo.descripcion}}">
+        <textarea formControlName="descripcion" class="descripcion" id="descripcion" value="{{miArticulo.descripcion}}" size="500"></textarea>
         <div *ngIf="descripcion.invalid && (descripcion.dirty || descripcion.touched)">
             <div class="fallo" *ngIf="descripcion.errors.required">
              La descripción es obligatoria
@@ -58,7 +58,7 @@
               <div class="categoria">
             <label for="idCategoria">Categoria</label>
             <select formControlName="idCategoria">
-              <option value="-1">-------------</option>
+              <option selected="true" disabled value="{{miArticulo.idCategoria}}">{{miArticulo.categoria}}</option>
               <option  *ngFor='let categoria of categorias' value="{{categoria.id}}">{{categoria.nombre}}</option>
             </select>
             
@@ -68,7 +68,7 @@
             <div class="tienda">
           <label for="idTienda">Tienda</label>
           <select formControlName="idTienda">
-            <option value="-1">-------------</option>
+            <option selected="true"disabled value="{{miArticulo.idTienda}}">{{miArticulo.tienda}}</option>
             <option  *ngFor='let tienda of tiendas' value="{{tienda.id}}">{{tienda.nombre}}</option>
           </select>
           

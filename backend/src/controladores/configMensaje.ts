@@ -10,10 +10,12 @@ module.exports = (contactoForm: any) => {
             pass: '25Ar49Ro(!' // Cambialo por tu password
         }
     });
+    console.log(contactoForm.titulo);
     const mailOptions = {
-        from: '<${formulario.email}>',
+        from: '<${contactoForm.email}>',
         to: 'rodri9134@gmail.com', // Cambia esta parte por el destinatario
-        subject: contactoForm.asunto,
+        subject: contactoForm.titulo,
+        
         html: `
  <strong>Email:</strong> ${contactoForm.email} <br/>
  <strong>Titulo:</strong> ${contactoForm.titulo} <br/>

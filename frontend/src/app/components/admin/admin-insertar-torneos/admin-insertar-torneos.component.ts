@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { TorneosService } from 'src/app/services/torneos.service';
 
 import { Torneo } from '../../../modelo/torneos';
+import { ProvinciasService } from 'src/app/services/provincias.service';
+import { RangoEdadService } from 'src/app/services/rango-edad.service';
 @Component({
   selector: 'app-admin-insertar-torneos',
   templateUrl: './admin-insertar-torneos.component.html',
@@ -13,8 +15,11 @@ export class AdminInsertarTorneosComponent implements OnInit {
   public insertarTorneoForm: FormGroup;
   private imagen2: any;
   public torneos: TorneosService;
+  public provincias: ProvinciasService;
+  public rangoEdades: RangoEdadService;
   http: any;
-  constructor(private router: Router, private formBuilder: FormBuilder, private torneosService: TorneosService) {
+  // tslint:disable-next-line: max-line-length
+  constructor(private router: Router, private formBuilder: FormBuilder, private provinciasService: ProvinciasService, private rangoEdadService: RangoEdadService, private torneosService: TorneosService) {
 
     this.insertarTorneoForm = formBuilder.group({
       imagen: [''],
@@ -42,6 +47,27 @@ export class AdminInsertarTorneosComponent implements OnInit {
         console.log(err);
       }
     );
+    this.rangoEdadService.getRangoEdades().subscribe(
+      res => {
+        console.log(res);
+        this.rangoEdades = res;
+      }
+      ,
+      err => {
+        console.log(err);
+      }
+    );
+    this.provinciasService.getProvincias().subscribe(
+      res => {
+        console.log(res);
+        this.provincias = res;
+      }
+      ,
+      err => {
+        console.log(err);
+      }
+    );
+
   }
 
   insertarTorneo() {

@@ -25,6 +25,7 @@ import { AdminEditarInstruccionesComponent } from './components/admin/admin-edit
 import { AdminEditarTorneosComponent } from './components/admin/admin-editar-torneos/admin-editar-torneos.component';
 import { LoginAdminComponent } from './components/login-admin/login-admin.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import {NavAdministradorComponent} from './components/nav-administrador/nav-administrador.component';
 import { AdminInsertarArticulosComponent } from './components/admin/admin-insertar-articulos/admin-insertar-articulos.component';
 // tslint:disable-next-line: max-line-length
 import { AdminInsertarInstruccionesComponent } from './components/admin/admin-insertar-instrucciones/admin-insertar-instrucciones.component';
@@ -93,6 +94,11 @@ const routes: Routes = [
   {
     path: 'navAdmin',
     component: NavbarComponent,
+    canActivate: [GuardaLoginAdminGuard]
+  },
+  {
+    path: 'navAdministrador',
+    component: NavAdministradorComponent,
     canActivate: [GuardaLoginAdminGuard]
   },
   {

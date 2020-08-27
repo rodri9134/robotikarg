@@ -42,6 +42,7 @@ import { AdminInsertarTorneosComponent } from './components/admin/admin-insertar
 import { AdminInsertarArticulosComponent } from './components/admin/admin-insertar-articulos/admin-insertar-articulos.component';
 import { SocialLoginModule, AuthServiceConfig } from 'angularx-social-login';
 import { GoogleLoginProvider, FacebookLoginProvider } from 'angularx-social-login';
+import { NavAdministradorComponent } from './components/nav-administrador/nav-administrador.component';
 const config = new AuthServiceConfig([
   {
     id: GoogleLoginProvider.PROVIDER_ID,
@@ -73,6 +74,7 @@ export function provideConfig() {
     RegistroComponent,
     ContactoComponent,
     TorneosComponent,
+    AdminEditarTorneosComponent,
     InformacionComponent,
     PrincipalComponent,
     MuestraInstruccionesComponent,
@@ -84,12 +86,12 @@ export function provideConfig() {
     AdminTorneosComponent,
     AdminEditarInstruccionesComponent,
     AdminEditarArticulosComponent,
-    AdminEditarTorneosComponent,
     InicioAdminComponent,
     LoginAdminComponent,
     AdminInsertarInstruccionesComponent,
     AdminInsertarTorneosComponent,
     AdminInsertarArticulosComponent,
+    NavAdministradorComponent,
 
   ],
   imports: [
@@ -98,6 +100,7 @@ export function provideConfig() {
     BrowserModule,
     APP_ROUTING,
     SocialLoginModule,
+    FormsModule,
 
 
   ],

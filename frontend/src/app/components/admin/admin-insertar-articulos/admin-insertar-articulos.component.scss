@@ -1,0 +1,55 @@
+.contenedor_insertarArticulos {
+    display: grid;
+    justify-items: center;
+  }
+  .contenedor{
+    width: 60%;
+    display: grid;
+    grid-template-columns: 12fr;
+    grid-template-areas: "titulo" " datosFormulario";
+
+  }
+  .titulo {
+    grid-area: titulo;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0A2843;
+  }
+  .datosFormulario {
+    grid-area: datosFormulario;
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr 2fr 1fr 2fr 1fr 1fr;
+    grid-template-areas: "id titulo descripcion referencia precio imagen categoria tienda";
+}
+  .id{
+      grid-area:id;
+  }
+.titulo{
+    grid-area: titulo;
+}
+.descripcion{
+    grid-area: descripcion;
+}
+.referencia{
+    grid-area: referencia;
+}
+.precio{
+    grid-area: precio;
+}
+.imagen{
+    grid-area: imagen;
+}
+.categoria{
+    grid-area: categoria;
+}
+.tienda{
+    grid-area: tienda;
+}
+.aviso{
+
+    color:darkred;
+}
+.fallo{
+  color:red;
+}

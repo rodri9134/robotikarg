@@ -34,6 +34,12 @@ export class TorneosService {
   updateTorneo(id: string, torneo: Torneo): Observable<any> {
     return this.http.put('http://localhost:3000/torneos/', torneo);
   }
+  getTorneosProvincia(id: string){
+    return this.http.get('http://localhost:3000/torneos/torneosProvincia/' + id);
+  }
+  getTorneosEdad(id: string){
+    return this.http.get('http://localhost:3000/torneos/torneosEdad/' + id);
+  }
 
   /*
   public preaddImage(post: Torneo, image: FileI): void {

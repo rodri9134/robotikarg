@@ -1,0 +1,68 @@
+.contenedor_editarTorneo {
+    display: grid;
+    justify-items: center;
+    
+    //grid-template-columns: 12fr;
+  }
+  .contenedor{
+    width: 60%;
+    display: grid;
+    grid-template-columns: 12fr;
+    grid-template-areas: "titulo" "datosFormulario";
+  
+    //grid-auto-rows: auto;
+    // grid-gap: 10%;
+  
+    //margin: auto;
+  }
+  .titulo {
+    grid-area: titulo;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: darkred;
+  }
+  .datosFormulario {
+    grid-area: datosFormulario;
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr 2fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: "id imagen nombre fecha ubicacion enlace pagina costeEquipo provincias rangoEdades";
+  }
+  .id{
+      grid-area:id;
+  }
+.imagen{
+    grid-area: imagen;
+}
+.nombre{
+    grid-area: nombre;
+}
+.fecha{
+    grid-area:fecha;
+}
+.ubicacion{
+
+    grid-area: ubicacion;
+}
+.enlace{
+    grid-area: enlace;
+}
+.pagina{
+    grid-area: pagina;
+}
+.costeEquipo{
+    grid-area: costeEquipo;
+}
+.provincias{
+    grid-area: provincias;
+}
+.rangoEdades{
+    grid-area: rangoEdades;
+}
+.aviso{
+
+    color:darkred;
+}
+.fallo{
+  color:red;
+}

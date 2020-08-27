@@ -40,7 +40,7 @@ class InstruccionesController {
     leerInstruccion(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             // tslint:disable-next-line: max-line-length
-            const instrucciones = yield database_1.default.query('SELECT i.* FROM instrucciones i WHERE i.id=?', [req.params.id]);
+            const instrucciones = yield database_1.default.query('SELECT i.*,l.nombre AS nombrelenguaje FROM instrucciones i INNER JOIN lenguajes l ON i.idLenguaje=l.id  WHERE i.id=?', [req.params.id]);
             res.json(instrucciones);
         });
     }
