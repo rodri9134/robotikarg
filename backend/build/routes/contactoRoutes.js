@@ -14,14 +14,14 @@ class contactoRoutes {
     config() {
         correo.use(bodyParser.json());
         correo.use(cors());
-        correo.get('/formulario', (req, res) => {
+        correo.post('/formulario', (req, res) => {
             console.log('------ ' + req.body);
             configMensaje(req.body);
             res.status(200).send();
         });
-        correo.listen(3002, () => {
+        correo.listen(3000, () => {
             //3002
-            console.log('Servidor corriendo');
+            console.log('Servidor de correo corriendo');
         });
     }
 }

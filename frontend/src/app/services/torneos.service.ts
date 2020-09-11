@@ -32,8 +32,9 @@ export class TorneosService {
     return this.http.delete('http://localhost:3000/torneos/' + id);
   }
   updateTorneo(id: string, torneo: Torneo): Observable<any> {
-    return this.http.put('http://localhost:3000/torneos/', torneo);
+    return this.http.put('http://localhost:3000/torneos/'+ id, torneo);
   }
+
   getTorneosProvincia(id: string){
     return this.http.get('http://localhost:3000/torneos/torneosProvincia/' + id);
   }

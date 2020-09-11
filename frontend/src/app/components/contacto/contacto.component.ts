@@ -24,23 +24,9 @@ export class ContactoComponent implements OnInit {
   }
 
   ngOnInit() {
-   /* this.contactoForm = this.builder.group ({
-      Fullname: new FormControl ('', [Validators.required]),
-      Email: new FormControl ('', [Validators.compose ([Validators.required, Validators. email])]),
-      Comment: new FormControl ('', [Validators.required])
-      });*/
+
   }
-/*  onSubmit(FormData) {
-    console.log(FormData);
-    this.messageService.sendMessage(FormData)
-    .subscribe(response => {
-      console.log(response);
-      this.router.navigate(['/']);
- 
-    }, error => {
-    console.warn(error.responseText);
-    console.log({ error });
-    });*/
+
   enviarContacto(form) {
     this.messageService.sendMessage(form.value).subscribe(() => {
       // alert('Mensaje enviado correctamente');
@@ -48,17 +34,7 @@ export class ContactoComponent implements OnInit {
        this.router.navigate(['/']);
     });
   }
-  /*
-  contacto(contacto) {
-    this.messageService.sendMessage(this.contactoForm.value).subscribe(() => {
-      // alert('Mensaje enviado correctamente');
-      this.contactoForm.reset();
 
-      console.log('Mensaje enviado correctamente');
-      this.router.navigate(['/']);
-    });
-  }
-*/
 
 }
 

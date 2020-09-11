@@ -1,23 +1,26 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const nodemailer = require('nodemailer');
-module.exports = (contactoForm) => {
+module.exports = (formulario) => {
     const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
             user: 'rodri9134@gmail.com',
             pass: '25Ar49Ro(!' // Cambialo por tu password
+        },
+        tls: {
+            rejectUnauthorized: false,
         }
     });
-    console.log(contactoForm.titulo);
+    console.log(formulario.titulo);
     const mailOptions = {
         from: '<${contactoForm.email}>',
         to: 'rodri9134@gmail.com',
-        subject: contactoForm.titulo,
+        subject: formulario.titulo,
         html: `
- <strong>Email:</strong> ${contactoForm.email} <br/>
- <strong>Titulo:</strong> ${contactoForm.titulo} <br/>
- <strong>Motivo de la consulta:</strong> ${contactoForm.motivo}
+ <strong>Email:</strong> ${formulario.email} <br/>
+ <strong>Titulo:</strong> ${formulario.titulo} <br/>
+ <strong>Motivo de la consulta:</strong> ${formulario.motivo}
  `
     };
     transporter.sendMail(mailOptions, function (err, info) {

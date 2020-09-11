@@ -32,7 +32,7 @@ class ArticulosController {
     }
     update(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield database_1.default.query('UPDATE articulos SET ? WHERE id=?', [req.params.id]);
+            yield database_1.default.query('UPDATE articulos SET ? WHERE id=?', [req.body, req.params.id]);
         });
     }
     delete(req, res) {

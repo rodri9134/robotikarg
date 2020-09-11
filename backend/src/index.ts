@@ -41,7 +41,7 @@ class server {
         this.app.use('/categorias',categoriasRoutes);
         this.app.use('/provincias',provinciasRoutes);
         this.app.use('/rangoEdad',rangoEdadRoutes);
-        this.app.use('/contacto',contactoRoutes);
+        this.app.use('/formulario',contactoRoutes);
     }
     start(): void {
         this.app.listen(this.app.get('port'), () => console.log('El servidor está escuchando en el puerto ', this.app.get('port')));
