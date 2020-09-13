@@ -22,7 +22,7 @@ class contactoRoutes {
             res.status(200).send();
         });
     
-        correo.listen(3000, () => {
+        correo.listen(3002, () => {
             //3002
         console.log('Servidor de correo corriendo');
         });

@@ -5,8 +5,8 @@ module.exports = (formulario) => {
     const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: 'rodri9134@gmail.com',
-            pass: '25Ar49Ro(!' // Cambialo por tu password
+            user: 'ikargrobot@gmail.com',
+            pass: 'MyO1}y|P}Be3drVi1k4s' // Cambialo por tu password
         },
         tls: {
             rejectUnauthorized: false,
@@ -15,7 +15,7 @@ module.exports = (formulario) => {
     console.log(formulario.titulo);
     const mailOptions = {
         from: '<${contactoForm.email}>',
-        to: 'rodri9134@gmail.com',
+        to: 'ikargrobot@gmail.com',
         subject: formulario.titulo,
         html: `
  <strong>Email:</strong> ${formulario.email} <br/>

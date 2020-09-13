@@ -8,7 +8,7 @@ export class MessageService {
   constructor(private http: HttpClient) { }
   sendMessage(body): Observable<any> {
     console.log('Contacto: ' + body);
-    return this.http.post('http://localhost:3000/formulario', body);
+    return this.http.post('http://localhost:3002/formulario', body);
   }
   /*private api = 'https://mailthis.to/rodri_9134@hotmail.com';
   sendMessage(input: any) {
