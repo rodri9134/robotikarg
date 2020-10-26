@@ -6,14 +6,14 @@ module.exports = (contactoForm: any) => {
     const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: 'rodri9134@gmail.com', // Cambialo por tu email
-            pass: '25Ar49Ro(!' // Cambialo por tu password
+              user: 'ikargrobot@gmail.com', // Cambialo por tu email
+            pass: 'MyO1}y|P}Be3drVi1k4s' // Cambialo por tu password
         }
     });
     console.log(contactoForm.titulo);
     const mailOptions = {
         from: '<${contactoForm.email}>',
-        to: 'rodri9134@gmail.com', // Cambia esta parte por el destinatario
+        to: 'ikargrobot@gmail.com', // Cambia esta parte por el destinatario
         subject: contactoForm.titulo,
         
         html: `
