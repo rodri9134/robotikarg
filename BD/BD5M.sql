@@ -294,10 +294,10 @@ CREATE TABLE IF NOT EXISTS `torneos` (
 DELETE FROM `torneos`;
 /*!40000 ALTER TABLE `torneos` DISABLE KEYS */;
 INSERT INTO `torneos` (`id`, `imagen`, `nombre`, `fecha`, `ubicacion`, `enlace`, `pagina`, `costeEquipo`, `idprovincia`, `idrangoedad`) VALUES
-	(2, 'roborave.jpg', 'RoboRave Ibérica', '2020-05-04 00:00:00', 'Toledo', 'https://goo.gl/maps/SwaiaQFa7gMQmZEQ7', 'http://roboraveiberica.org/', ' 23 €', 15, 5),
+	(2, 'roborave.jpg', 'RoboRave Ibérica', '2021-05-04 13:00:00', 'Toledo', 'https://goo.gl/maps/SwaiaQFa7gMQmZEQ7', 'http://roboraveiberica.org/', ' 23 €', 15, 5),
 	(3, 'vexf.png', 'VexRobotics', '2021-03-03 12:15:00', 'Barcelona', 'https://goo.gl/maps/tpFtCcF7iYBFVbiFA', 'http://vexcompetition.es/torneos/', '30 €', 8, 4),
-	(7, 'robolid.png', 'Robolid', '2020-04-16 16:39:20', 'Valladolid', 'https://goo.gl/maps/7zZsjiLKBRpGyaZH8', 'http://robolid.es/', '10 €', 47, 2),
-	(10, 'desafioCiutat.png', 'Desafio Ciutat', '2020-04-24 10:00:20', 'Valencia', 'https://goo.gl/maps/fRFc4NbQDURaZhan8', 'https://www.cac.es/es/web/desafiorobot/informacion-general', 'Gratuito', 46, 6);
+	(7, 'robolid.png', 'Robolid', '2021-04-16 16:39:20', 'Valladolid', 'https://goo.gl/maps/7zZsjiLKBRpGyaZH8', 'http://robolid.es/', '10 €', 47, 2),
+	(10, 'desafioCiutat.png', 'Desafio Ciutat', '2021-04-24 10:00:20', 'Valencia', 'https://goo.gl/maps/fRFc4NbQDURaZhan8', 'https://www.cac.es/es/web/desafiorobot/informacion-general', 'Gratuito', 46, 6);
 /*!40000 ALTER TABLE `torneos` ENABLE KEYS */;
 
 
