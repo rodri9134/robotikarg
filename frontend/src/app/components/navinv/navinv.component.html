@@ -1,8 +1,8 @@
-
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark"><p class="h6">    
-      <a class="navbar-brand" [routerLink]="['/']"><img  class="logo" src="../../assets/imagenes/logo3.png"></a></p>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <p class="h6">
+        <a class="navbar-brand" [routerLink]="['/']"><img class="logo" src="../../assets/imagenes/logo3.png"></a>
+    </p>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
   
     </button>
@@ -10,48 +10,58 @@
         <ul class="navbar-nav">
             <ng-container *ngIf="usuariosService.logAdminIn(); else logIn">
                 <li class="nav-item">
-                    <a class="nav-link"  [routerLink]="['/admin_instrucciones']" id="navbardrop">
+                    <a class="nav-link" [routerLink]="['/admin_instrucciones']" id="navbardrop">
                         Instrucciones
                     </a>
-        
+
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link"  [routerLink]="['/admin_articulos']" id="navbardrop">
+                    <a class="nav-link" [routerLink]="['/admin_articulos']" id="navbardrop">
                         Artículos
                     </a>
-        
+
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link"  [routerLink]="['/admin_torneos']" id="navbardrop">
+                    <a class="nav-link" [routerLink]="['/admin_torneos']" id="navbardrop">
                         Torneos
                     </a>
-        
+
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
                         <img src="../../assets/imagenes/login.png" alt="Identidad">
                     </a>
                     <div class="dropdown-menu">
-                       <a class="dropdown-item" [routerLink]="['/navInv']" (click)="usuariosService.logAdminOut()">Cerrar sesión</a>
-                
+                        <a class="dropdown-item" [routerLink]="['/navInv']" (click)="usuariosService.logAdminOut()">Cerrar sesión</a>
+
                     </div>
-               
+
                 </li>
             </ng-container>
-            <ng-container  #logIn *ngIf="usuariosService.logIn(); else loggedOut">
+            <ng-container #logIn *ngIf="usuariosService.logIn(); else loggedOut">
+
                 <li class="nav-item">
-                    <a class="nav-link"  [routerLink]="['/mInstrucciones']" id="navbardrop">
+                    <a class="nav-link" [routerLink]="['/mInstrucciones']" id="navbardrop">
                         Instrucciones
                     </a>
-        
+
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link"  [routerLink]="['/mArticulos']" id="navbardrop">
+                    <a class="nav-link" [routerLink]="['/mArticulos']" id="navbardrop">
                         Artículos
                     </a>
-        
+
                 </li>
-        
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/torneos']">
+                        Torneos
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/contacto']">
+                        Contacto
+                    </a>
+                </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
                         <img src="../../assets/imagenes/login.png" alt="Identidad">
@@ -60,45 +70,45 @@
                         <a class="dropdown-item" [routerLink]="['/editar_perfil']">Editar perfil</a>
                         <a class="dropdown-item" [routerLink]="['/misInstrucciones']">Mis instrucciones guardadas</a>
                         <a class="dropdown-item" [routerLink]="['/cerrar_sesion']" (click)="usuariosService.logOut()">Cerrar sesión</a>
-                
+
                     </div>
-               
+
                 </li>
             </ng-container>
-            <ng-container >
+            <ng-container>
                 <ng-template #loggedOut>
-                          <li class="nav-item">
-                <a class="nav-link" [routerLink]="['/']">Inicio</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" [routerLink]="['/informacion']">
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['/']">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['/informacion']">
                     Información
                 </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" [routerLink]="['/torneos']">
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['/torneos']">
                     Torneos
                 </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" [routerLink]="['/contacto']">
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['/contacto']">
                     Contacto
                 </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" [routerLink]="['/login']" >
-                    <img class="imagen" src="../../assets/imagenes/login.png" alt="Login">Login
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" [routerLink]="['/registro']" >
-                    <img class="imagen" src="../../assets/imagenes/registro.png" alt="Registro">Registro
-                </a>
-            </li>
-        </ng-template>
-    </ng-container>
-    
-    
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['/login']">
+                            <img class="imagen" src="../../assets/imagenes/login.png" alt="Login">Login
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['/registro']">
+                            <img class="imagen" src="../../assets/imagenes/registro.png" alt="Registro">Registro
+                        </a>
+                    </li>
+                </ng-template>
+            </ng-container>
+
+
         </ul>
     </div>
 </nav>

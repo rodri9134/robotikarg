@@ -1,9 +1,9 @@
 {
-  "name": "formulariosreactivos",
+  "name": "robotikarg",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
- "start": "nodemon app.js",
+    "start": "ng serve nodemon app.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
