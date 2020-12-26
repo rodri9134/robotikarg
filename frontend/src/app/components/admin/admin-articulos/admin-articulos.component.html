@@ -1,48 +1,49 @@
 <div class="contenedor_articulos">
     <div class="contenedor_tabla">
-      <div class="tituloA">
-        <h2>LISTADO DE ARTÍCULOS</h2>
-   
-      </div>
-      <div class="filtros">
-        <button class="añadir_articulos" [routerLink]="['/admin_insertar_articulos']">Añadir articulo</button><br>
-        Filtros. Categoria:<select name="idCategoria" (change)="muestraArticulosCategoria($event.target.value)">
+        <div class="tituloA">
+            <h2>LISTADO DE ARTÍCULOS</h2>
+
+        </div>
+
+        <div class="filtros">
+            <button class="actualizar" (click)="refresh()">Actualizar artículos</button><br><br>
+            <button class="añadir_articulos" [routerLink]="['/admin_insertar_articulos']">Añadir articulo</button><br> Filtros. Categoria:<select name="idCategoria" (change)="muestraArticulosCategoria($event.target.value)">
       <option value="-1">-----------</option>
       <option  *ngFor='let categoria of categorias' value="{{categoria.id}}">{{categoria.nombre}}</option>
-      </select>  Tienda: 
-      <select name="idTienda" (change)="muestraArticulosTienda($event.target.value)">
+      </select> Tienda:
+            <select name="idTienda" (change)="muestraArticulosTienda($event.target.value)">
         <option value="-1">-----------</option>
         <option  *ngFor='let tienda of tiendas' value="{{tienda.id}}">{{tienda.nombre}}</option>
       </select>
-      <div class="encabezados">
-        <div class="id"> Id</div>
-        <div class="titulo">Titulo</div>
-        <div class="descripcion">Descripción</div>
-        <div class="referencia">Referencia</div>
-        <div class="precio">Precio</div>
-        <div class="imagen">Imagen</div>
-        <div class="categoria">Categoria</div>
-        <div class="tienda">Tienda</div>
-        <div class="opciones">Opciones</div>
-     
-      </div>
+            <div class="encabezados">
+                <div class="id"> Id</div>
+                <div class="titulo">Titulo</div>
+                <div class="descripcion">Descripción</div>
+                <div class="referencia">Referencia</div>
+                <div class="precio">Precio</div>
+                <div class="imagen">Imagen</div>
+                <div class="categoria">Categoria</div>
+                <div class="tienda">Tienda</div>
+                <div class="opciones">Opciones</div>
 
-      <div>
+            </div>
 
-      <div class="articulos" *ngFor='let articulo of articulos'>
-        <div>{{articulo.id}} </div>
-        <div>{{articulo.titulo}}</div>
-        <div>{{articulo.descripcion}} </div>
-        <div> <a href="{{articulo.referencia}}">{{articulo.referencia}}</a></div>
-        <div>{{articulo.precio}} € </div>
-        <div><img class="formateaImagen" alt="{{articulo.imagen}}" src="assets/imagenes/{{articulo.imagen}}"></div>
-        <div>{{articulo.categoria}} </div>
-        <div> {{articulo.tienda}}</div>
-        <div><button class="editar" (click)="editar(articulo.id)">Editar articulo </button>
-          <button class="eliminar" (click)="eliminar(articulo.id)">Eliminar articulo</button>
-      </div>
-  
-      </div>
+            <div>
+
+                <div class="articulos" *ngFor='let articulo of articulos'>
+                    <div>{{articulo.id}} </div>
+                    <div>{{articulo.titulo}}</div>
+                    <div>{{articulo.descripcion}} </div>
+                    <div> <a href="{{articulo.referencia}}">{{articulo.referencia}}</a></div>
+                    <div>{{articulo.precio}} € </div>
+                    <div><img class="formateaImagen" alt="{{articulo.imagen}}" src="assets/imagenes/{{articulo.imagen}}"></div>
+                    <div>{{articulo.categoria}} </div>
+                    <div> {{articulo.tienda}}</div>
+                    <div><button class="editar" (click)="editar(articulo.id)">Editar articulo </button>
+                        <button class="eliminar" (click)="eliminar(articulo.id)">Eliminar articulo</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
     </div>
-    </div>
-  </div>

@@ -55,7 +55,9 @@ export class AdminTorneosComponent implements OnInit {
     );
 
   }
-
+  refresh(): void {
+    window.location.reload();
+}
   editar(idTorneo) {
 
     localStorage.setItem('idTorneo', idTorneo);
@@ -64,11 +66,13 @@ export class AdminTorneosComponent implements OnInit {
   }
   eliminar(id) {
     this.torneosService.deleteTorneo(id).subscribe(res => {
-      this.router.navigate(['/admin_torneos']);
+      window.location.reload();
     }, (err) => {
       console.log(err);
+      
     }
     );
+    window.location.reload();
   }
   muestraTorneosProvincias(id) {
     this.torneosService.getTorneosProvincia(id).subscribe(

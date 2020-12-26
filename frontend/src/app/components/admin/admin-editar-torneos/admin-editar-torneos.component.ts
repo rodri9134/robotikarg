@@ -76,8 +76,8 @@ export class AdminEditarTorneosComponent implements OnInit {
     const idTorneo = localStorage.getItem('idTorneo');
     this.torneosService.updateTorneo(idTorneo, this.editarTorneoForm.value).subscribe(
       res => {
-        this.router.navigate(['/admin_torneos']);
-        console.log('Torneo actualizado correctamente');
+        // this.router.navigate(['/admin_torneos']);
+        // console.log('Torneo actualizado correctamente');
         this.provincias = res;
         this.rangoEdades = res;
         localStorage.removeItem('idTorneo');

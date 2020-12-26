@@ -56,21 +56,29 @@ export class AdminEditarInstruccionesComponent implements OnInit {
 
 editarInstruccion() {
     const idInstruccion = localStorage.getItem('idInstruccion');
+    console.log(this.editarInstruccionForm.value);
     this.instruccionesService.updateInstruccion(idInstruccion, this.editarInstruccionForm.value).subscribe(
       res => {
-        localStorage.removeItem('idInstruccion');
+      
        // this.router.navigate(['/admin_instrucciones']);
         console.log('Instrucción actualizada correctamente');
         this.lenguajes = res;
-        this.router.navigate(['/navAdmin']);
+        localStorage.removeItem('idInstruccion');
+        this.router.navigate(['/admin_instrucciones']);
+    
       }
       ,
       err => {
         console.log(err);
       }
+
     );
 
+this.volver();
+  }
+  volver(){
 
+    this.router.navigate(['/admin_instrucciones']);
   }
   get id() {
     return this.editarInstruccionForm.get('id');

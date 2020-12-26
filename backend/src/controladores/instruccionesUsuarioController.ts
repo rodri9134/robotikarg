@@ -13,15 +13,13 @@ class InstruccionesUsuarioController {
     }
     // Guardar las instrucciones que le gusten al usuario
     public async guardarInstruccionUsuario(req: Request, res: Response) {
-        console.log('Req body idUsuario '+req.body.idUsuario);
-        console.log('Req body idInstruccion '+req.body.idInstruccion);
 
         await pool.query('INSERT INTO instrucciones_usuarios SET ?', [req.body]);
         res.json({ message: 'Tu instrucción elegida, ha sido guardada' });
     }
     //Eliminar instrucciones usuario
     public async eliminarInstruccionUsuario(req:Request, res:Response){
-        console.log("Eliminar INSTRUCCIONusuario.id "+req.params.id);
+
         await pool.query('DELETE FROM instrucciones_usuarios WHERE id= ?',[req.params.id]);
         res.json({message: 'Instruccion eliminada'});
     }

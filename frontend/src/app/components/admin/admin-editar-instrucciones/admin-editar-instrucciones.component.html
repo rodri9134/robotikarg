@@ -1,54 +1,59 @@
 <div class="contenedor_editarInstrucciones">
     <div class="contenedor">
-  <div class="titulo">
-  <h3>Editar instruccion</h3>
-  </div>
-  <div class="datosFormulario">
+        <div class="titulo">
+            <h3>Editar instrucción</h3>
+        </div>
+        <div class="datosFormulario">
 
-  <form [formGroup]="editarInstruccionForm" (submit)="editarInstruccion()">
-    <div class="instrucciones" *ngFor='let miInstruccion of instrucciones'>
-    <div class="form-group">
-    <input type="text"  class="id" id="id" formControlName="id" value="{{miInstruccion.id}}" hidden> </div>
-      <div class="form-group">
-        <label for="instruccion">Instrucción: {{miInstruccion.id}} </label>
-        <input type="text" formControlName="instruccion" class="instruccion" id="instruccion" value="{{miInstruccion.instruccion}}" size="100">
-        <div *ngIf="instruccion.invalid && (instruccion.dirty || instruccion.touched)">
-            <div class="fallo" *ngIf="instruccion.errors.required">
-              La instrucción es obligatoria
-            </div>
-         
-        </div>
-    </div>
-  
-      <div class="form-group">
-        <label for="accion">Accion: </label>
-        <input type="accion" formControlName="accion" id="accion" class="accion" value="{{miInstruccion.accion}}" size="50">
-        <div *ngIf="accion.invalid && (accion.dirty || accion.touched)">
-            <div class="fallo" *ngIf="accion.errors.required">
-              La acción es obligatoria
-            </div>
-         
-        </div>
-      </div>
-         <div class="form-group">
-              <div class="lenguajes">
-            <label for="idLenguaje">Lenguajes</label>
-            <select formControlName="idLenguaje">
+            <form [formGroup]="editarInstruccionForm" (submit)="editarInstruccion()">
+                <div class="borde">
+                    <div class="instrucciones" *ngFor='let miInstruccion of instrucciones'>
+                        <div class="form-group">
+                            <label for="id" hidden>ID:</label>
+                            <input type="text" class="id" id="id" formControlName="id" value="{{miInstruccion.id}}" hidden>
+                        </div>
+                        <div class="form-group">
+                            <label for="instruccion">Nombre:</label>
+                            <input type="text" formControlName="instruccion" class="instruccion" id="instruccion" value="{{miInstruccion.instruccion}}" size="100">
+                            <div *ngIf="instruccion.invalid && (instruccion.dirty || instruccion.touched)">
+                                <div class="fallo" *ngIf="instruccion.errors.required">
+                                    La instrucción es obligatoria
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="accion">Accion: </label>
+                            <input type="accion" formControlName="accion" id="accion" class="accion" value="{{miInstruccion.accion}}" size="50">
+                            <div *ngIf="accion.invalid && (accion.dirty || accion.touched)">
+                                <div class="fallo" *ngIf="accion.errors.required">
+                                    La acción es obligatoria
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="lenguajes">
+                                <label for="idLenguaje">Lenguajes</label>
+                                <select formControlName="idLenguaje">
               <option selected="true" disabled value="{{miInstruccion.idlenguaje}}">{{miInstruccion.nombrelenguaje}}</option>
               <option  *ngFor='let lenguaje of lenguajes' value="{{lenguaje.id}}">{{lenguaje.nombre}}</option>
             </select>
-            
-          </div>
-        <br>
-      </div>
 
-    
-      <button [disabled]="!editarInstruccionForm.valid" class="btn btn-primary" type="submit">Editar instruccion</button>
-      <a class="nav-link"  [routerLink]="['/admin_instrucciones']" id="navbardrop">
+                            </div>
+                            <br>
+                            <div class="aviso">*** Se deben modificar todos los campos, para poder actualizar la instrucción.</div>
+                        </div>
+
+
+                        <button [disabled]="!editarInstruccionForm.valid" class="btn btn-primary" type="submit">Editar instruccion</button>
+                        <a class="nav-link" [routerLink]="['/admin_instrucciones']" id="navbardrop">
       Volver a instrucciones
     </a>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
-    </form>
-  </div>
-  </div>
-  </div>
+</div>

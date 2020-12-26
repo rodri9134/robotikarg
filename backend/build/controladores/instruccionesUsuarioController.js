@@ -28,8 +28,6 @@ class InstruccionesUsuarioController {
     // Guardar las instrucciones que le gusten al usuario
     guardarInstruccionUsuario(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            console.log('Req body idUsuario ' + req.body.idUsuario);
-            console.log('Req body idInstruccion ' + req.body.idInstruccion);
             yield database_1.default.query('INSERT INTO instrucciones_usuarios SET ?', [req.body]);
             res.json({ message: 'Tu instrucción elegida, ha sido guardada' });
         });
@@ -37,7 +35,6 @@ class InstruccionesUsuarioController {
     //Eliminar instrucciones usuario
     eliminarInstruccionUsuario(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            console.log("Eliminar INSTRUCCIONusuario.id " + req.params.id);
             yield database_1.default.query('DELETE FROM instrucciones_usuarios WHERE id= ?', [req.params.id]);
             res.json({ message: 'Instruccion eliminada' });
         });

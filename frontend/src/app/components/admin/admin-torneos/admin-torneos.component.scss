@@ -1,123 +1,151 @@
 .contenedor_leerTorneos {
     display: grid;
     justify-items: center;
+}
 
-  }
-  .contenedor_tabla{
+.contenedor_tabla {
     width: 80%;
     display: grid;
     grid-template-columns: 12fr;
     grid-template-areas: "titulo" "filtros" " encabezados" "datosUsuario";
-  }
-  .titulo {
+}
+
+.titulo {
     grid-area: titulo;
     display: flex;
     align-items: center;
     justify-content: center;
-    color:#0A2843;
-  }
-  .filtros{
-    grid-area:filtros;
-  }
-  .encabezados {
+    color: #0A2843;
+}
+
+.filtros {
+    grid-area: filtros;
+}
+
+.actualizar {
+    transition-duration: 0.4s;
+    border-radius: 5px;
+    border: 1px solid white;
+}
+
+.actualizar:hover {
+    background-color: #4e94d2;
+    border-radius: 5px;
+    border: 1px solid #5684ac;
+}
+
+.encabezados {
     grid-area: encabezados;
     display: grid;
     grid-template-columns: 3fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-areas: "imagen fecha hora costeEquipo rangoEdad ubicacion opciones";
-    border:1px solid black;
-    color:white;
+    border: 1px solid black;
+    color: white;
     background-color: #0A2843;
     justify-content: center;
     align-items: center;
-  }
-  .id {
+}
+
+.id {
     //width: 100%;
     grid-area: id;
-    
-  }
-  .nombre {
-   // width: 100%;
-    grid-area: nombre;
-  }
-  .fecha {
-   // width: 100%;
-    grid-area: fecha;
-  }
-  .hora {
-    grid-area: hora;
-  }
-  .ubicacion{
-      grid-area:ubicacion;
-  }
-  .latitud{
-      grid-area:latitud;
-  }
-  .longitud{
-    grid-area:longitud;
+}
 
-  }
-  .costeEquipo{
-      grid-area:costeEquipo;
-  }
-  .provincia{
-      grid-area:provincia;
-  }
-  .rangoEdad{
-      grid-area:rangoEdad;
-  }
-  .opciones{
-      grid-area:opciones;
-  }
-  .datosUsuario {
+.nombre {
+    // width: 100%;
+    grid-area: nombre;
+}
+
+.fecha {
+    // width: 100%;
+    grid-area: fecha;
+}
+
+.hora {
+    grid-area: hora;
+}
+
+.ubicacion {
+    grid-area: ubicacion;
+}
+
+.latitud {
+    grid-area: latitud;
+}
+
+.longitud {
+    grid-area: longitud;
+}
+
+.costeEquipo {
+    grid-area: costeEquipo;
+}
+
+.provincia {
+    grid-area: provincia;
+}
+
+.rangoEdad {
+    grid-area: rangoEdad;
+}
+
+.opciones {
+    grid-area: opciones;
+}
+
+.datosUsuario {
     grid-area: datosUsuario;
     display: grid;
     grid-template-columns: 3fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-areas: "imagen fecha hora costeEquipo rangoEdad ubicacion opciones";
     grid-auto-rows: auto;
-    border:1px solid black;
+    border: 1px solid black;
     background-color: floralwhite;
-  }
-  
-  .editar {
+}
+
+.editar {
     transition-duration: 0.4s;
-    border-radius:5px;
-    border:1px solid white;
-  }
-  
-  .editar:hover {
+    border-radius: 5px;
+    border: 1px solid white;
+}
+
+.editar:hover {
     background-color: #4e94d2;
-    border-radius:5px;
-    border:1px solid #0A2843;
+    border-radius: 5px;
+    border: 1px solid #0A2843;
     width: 100%;
-  }
-  .eliminar {
+}
+
+.eliminar {
     transition-duration: 0.4s;
-    border-radius:5px;
-    border:1px solid white;
-  }
-  
-  .eliminar:hover {
+    border-radius: 5px;
+    border: 1px solid white;
+}
+
+.eliminar:hover {
     background-color: #4e94d2;
-    border-radius:5px;
-    border:1px solid #5684ac;
+    border-radius: 5px;
+    border: 1px solid #5684ac;
     width: 100%;
-  }
-  .añadir_torneo{
+}
+
+.añadir_torneo {
     transition-duration: 0.4s;
-    border-radius:5px;
+    border-radius: 5px;
     background-color: rgb(167, 179, 190);
-    border:1px solid #5684ac;
-  }
-  
-  .añadir_torneo:hover {
+    border: 1px solid #5684ac;
+}
+
+.añadir_torneo:hover {
     background-color: #4e94d2;
-    border-radius:5px;
-    border:1px solid #5684ac;
+    border-radius: 5px;
+    border: 1px solid #5684ac;
     width: 100%;
-  }
-  .formateaImagen{
+}
+
+.formateaImagen {
     width: 60%;
-    height:60%;
+    height: 60%;
     justify-content: center;
     align-items: center;
-  }
+}

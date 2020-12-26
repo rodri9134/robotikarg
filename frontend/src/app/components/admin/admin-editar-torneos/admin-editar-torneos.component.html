@@ -1,108 +1,111 @@
 <div class="contenedor_editarTorneo">
     <div class="contenedor">
-  <div class="titulo">
-  <h3>Editar torneos</h3>
-  </div>
-  <div class="datosFormulario">
-  <form [formGroup]="editarTorneoForm" (submit)="editarTorneo()">
-    <div class="torneos" *ngFor='let miTorneo of torneos'>
-    <div class="form-group">
-    <input type="text"  class="id" id="id" formControlName="id" value="{{miTorneo.id}}" hidden> </div>
-    <div class="form-group">
-        <label for="imagen">Imagen: </label>
-        <img src="assets/imagenes/{{miTorneo.imagen}}">
-        <input type="file" formControlName="imagen" class="imagen" id="imagen" value="{{miTorneo.imagen}}">
-        <div *ngIf="imagen.invalid && (imagen.dirty || imagen.touched)">
-            <div class="fallo" *ngIf="imagen.errors.required">
-            La imagen es obligatoria
-            </div>
+        <div class="titulo">
+            <h3>Editar torneos</h3>
         </div>
-    </div>  
-    <div class="form-group">
-        <label for="nombre">Nombre: {{miTorneo.id}} </label>
-        <input type="text" formControlName="nombre" class="nombre" id="nombre" value="{{miTorneo.nombre}}">
-        <div *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)">
-            <div class="fallo" *ngIf="nombre.errors.required">
-             El nombre es obligatorio
-            </div>
-        </div>
-    </div>
-    <div class="form-group">
-        <label for="fecha">Fecha: </label>
-        <input type="date" formControlName="fecha" class="fecha" id="fecha" value="{{miTorneo.fecha}}">
-        <div *ngIf="fecha.invalid && (fecha.dirty || fecha.touched)">
-            <div class="fallo" *ngIf="fecha.errors.required">
-             La fecha es obligatoria
-            </div>
-        </div>
-    </div>
-    <div class="form-group">
-        <label for="ubicacion">Ubicación: </label>
-        <input type="text" formControlName="ubicacion" class="ubicacion" id="ubicacion" value="{{miTorneo.ubicacion}}">
-        <div *ngIf="ubicacion.invalid && (ubicacion.dirty || ubicacion.touched)">
-            <div class="fallo" *ngIf="ubicacion.errors.required">
-             La ubicacion es obligatoria
-            </div>
-        </div>
-    </div>
-    <div class="form-group">
-        <label for="enlace">Enlace: </label>
-        <input type="text" formControlName="enlace" class="enlace" id="enlace" value="{{miTorneo.enlace}}">
-        <div *ngIf="enlace.invalid && (enlace.dirty || enlace.touched)">
-            <div class="fallo" *ngIf="enlace.errors.required">
-             El enlace es obligatorio
-            </div>
-        </div>
-    </div>
-    <div class="form-group">
-        <label for="pagina">Página: </label>
-        <input type="text" formControlName="pagina" class="pagina" id="pagina" value="{{miTorneo.pagina}}">
-        <div *ngIf="pagina.invalid && (pagina.dirty || pagina.touched)">
-            <div class="fallo" *ngIf="pagina.errors.required">
-             El pagina es obligatoria
-            </div>
-        </div>
-    </div>
-      
-    <div class="form-group">
-        <label for="costeEquipo">Coste Equipo: </label>
-        <input type="text" formControlName="costeEquipo" class="costeEquipo" id="costeEquipo" value="{{miTorneo.costeEquipo}}">
-        <div *ngIf="costeEquipo.invalid && (costeEquipo.dirty || costeEquipo.touched)">
-            <div class="fallo" *ngIf="costeEquipo.errors.required">
-             El coste del equipo es obligatorio
-            </div>
-        </div>
-    </div>
-      
-        <div class="form-group">
-            <div class="provincias">
-          <label for="provincias">Provincia</label>
-          <select formControlName="provincia">
+        <div class="datosFormulario">
+            <form [formGroup]="editarTorneoForm" (submit)="editarTorneo()">
+                <div class="borde">
+                    <div class="torneos" *ngFor='let miTorneo of torneos'>
+                        <div class="form-group">
+                            <input type="text" class="id" id="id" formControlName="id" value="{{miTorneo.id}}" hidden> </div>
+                        <div class="form-group">
+                            <label for="imagen">Imagen: </label>
+                            <img src="assets/imagenes/{{miTorneo.imagen}}">
+                            <input type="file" formControlName="imagen" class="imagen" id="imagen" value="{{miTorneo.imagen}}">
+                            <div *ngIf="imagen.invalid && (imagen.dirty || imagen.touched)">
+                                <div class="fallo" *ngIf="imagen.errors.required">
+                                    La imagen es obligatoria
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="nombre">Nombre: {{miTorneo.id}} </label>
+                            <input type="text" formControlName="nombre" class="nombre" id="nombre" value="{{miTorneo.nombre}}">
+                            <div *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)">
+                                <div class="fallo" *ngIf="nombre.errors.required">
+                                    El nombre es obligatorio
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="fecha">Fecha: </label>
+                            <input type="date" formControlName="fecha" class="fecha" id="fecha" value="{{miTorneo.fecha}}">
+                            <div *ngIf="fecha.invalid && (fecha.dirty || fecha.touched)">
+                                <div class="fallo" *ngIf="fecha.errors.required">
+                                    La fecha es obligatoria
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="ubicacion">Ubicación: </label>
+                            <input type="text" formControlName="ubicacion" class="ubicacion" id="ubicacion" value="{{miTorneo.ubicacion}}">
+                            <div *ngIf="ubicacion.invalid && (ubicacion.dirty || ubicacion.touched)">
+                                <div class="fallo" *ngIf="ubicacion.errors.required">
+                                    La ubicacion es obligatoria
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="enlace">Enlace: </label>
+                            <input type="text" formControlName="enlace" class="enlace" id="enlace" value="{{miTorneo.enlace}}">
+                            <div *ngIf="enlace.invalid && (enlace.dirty || enlace.touched)">
+                                <div class="fallo" *ngIf="enlace.errors.required">
+                                    El enlace es obligatorio
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="pagina">Página: </label>
+                            <input type="text" formControlName="pagina" class="pagina" id="pagina" value="{{miTorneo.pagina}}">
+                            <div *ngIf="pagina.invalid && (pagina.dirty || pagina.touched)">
+                                <div class="fallo" *ngIf="pagina.errors.required">
+                                    El pagina es obligatoria
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="costeEquipo">Coste Equipo: </label>
+                            <input type="text" formControlName="costeEquipo" class="costeEquipo" id="costeEquipo" value="{{miTorneo.costeEquipo}}">
+                            <div *ngIf="costeEquipo.invalid && (costeEquipo.dirty || costeEquipo.touched)">
+                                <div class="fallo" *ngIf="costeEquipo.errors.required">
+                                    El coste del equipo es obligatorio
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="provincias">
+                                <label for="provincias">Provincia</label>
+                                <select formControlName="provincia">
             <option  selected="true" disabled value=">{{miTorneo.idprovincia}}">{{miTorneo.pnombre}}</option>
             <option  *ngFor='let provincia of provincias' value="{{provincia.id}}">{{provincia.nombre}}</option>
           </select>
-          
-        </div>
-      <br>
-      </div>
-      <div class="form-group">
-        <div class="rangoEdades">
-      <label for="rangoEdad">Rango Edad</label>
-      <select formControlName="rangoEdad">
+
+                            </div>
+                            <br>
+                        </div>
+                        <div class="form-group">
+                            <div class="rangoEdades">
+                                <label for="rangoEdad">Rango Edad</label>
+                                <select formControlName="rangoEdad">
         <option selected="true" disabled value=">{{miTorneo.idrangoedad}}">{{miTorneo.redad}}</option>
         <option  *ngFor='let rangoEdad of rangoEdades' value="{{rangoEdad.id}}">{{rangoEdad.tiporango}}</option>
       </select>
-      
-    </div>
-  <br>
-  </div>
-</div>
-    
-      <button [disabled]="!editarTorneoForm.valid" class="btn btn-primary" type="submit">Editar torneo</button>
-      <a class="nav-link"  [routerLink]="['/admin_torneos']" id="navbardrop">
+
+                            </div>
+                            <br>
+                        </div>
+                    </div>
+
+                    <button [disabled]="!editarTorneoForm.valid" class="btn btn-primary" type="submit">Editar torneo</button>
+                    <a class="nav-link" [routerLink]="['/admin_torneos']" id="navbardrop">
         Volver a torneos
     </a>
-    </form>
-  </div>
-  </div>
-  </div>
+                    <div class="aviso">**** Para poder actualizar el torneo, se deben cambiar todos los campos.</div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

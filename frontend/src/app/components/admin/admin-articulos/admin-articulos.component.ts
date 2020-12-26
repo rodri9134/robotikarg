@@ -51,7 +51,9 @@ export class AdminArticulosComponent implements OnInit {
       }
     );
   }
-
+  refresh(): void {
+    window.location.reload();
+}
   editar(idArticulo) {
     localStorage.setItem('idArticulo', idArticulo);
     console.log('Id articulo ' + idArticulo);
@@ -60,13 +62,16 @@ export class AdminArticulosComponent implements OnInit {
 
   }
   eliminar(id) {
+    console.log("Articulo a eliminar "+id);
     this.articulosService.deleteArticulo(id).subscribe(res => {
-      this.router.navigate(['/admin_articulos']);
+      window.location.reload();
     }, (err) => {
       console.log(err);
     }
     );
+    window.location.reload();
   }
+
   muestraArticulosTienda(id) {
     this.articulosService.getArticulosTienda(id).subscribe(
       res => {

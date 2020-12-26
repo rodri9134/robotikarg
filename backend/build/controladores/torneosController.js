@@ -71,7 +71,6 @@ class TorneosController {
     }
     torneosEdad(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            console.log('Id Edad ' + req.params.id);
             const torneos = yield database_1.default.query('SELECT torneos.*,provincias.nombre AS pNombre, rangoedad.tiporango AS rEdad FROM torneos INNER JOIN provincias ON torneos.idProvincia=provincias.id INNER JOIN rangoedad ON torneos.idRangoEdad=rangoedad.id WHERE torneos.idrangoedad=? ORDER BY torneos.fecha', [req.params.id]);
             res.json(torneos);
         });

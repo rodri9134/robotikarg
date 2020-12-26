@@ -26,8 +26,7 @@ class InstruccionesController {
         res.json(instrucciones);
     }
     public async update(req: Request, res: Response) {
-        console.log('Instruccion' + req.body);
-        console.log('Id ' + req.params.id);
+
         const id = req.params.id;
         req.body.id = id;
         await pool.query('UPDATE instrucciones SET ? WHERE id=?', [req.body, req.params.id]);
@@ -49,7 +48,7 @@ class InstruccionesController {
         res.json(misInstrucciones);
     }
     public async guardarInstrucciones(req: Request, res: Response) {
-        console.log('Req body ' + req.params.idUsuario);
+
         await pool.query('INSERT INTO instrucciones_usuarios SET ?', [req.body]);
         res.json({ message: 'Tu instrucción ha sido añadida' });
     }

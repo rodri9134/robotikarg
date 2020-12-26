@@ -21,7 +21,7 @@ export class ArticulosService {
     return this.http.post('http://localhost:3000/articulos', articulo);
   }
   deleteArticulo(id: string): Observable<any> {
-    return this.http.delete('http://localhost:3000/articulos/${id}');
+    return this.http.delete('http://localhost:3000/articulos/'+id);
   }
   updateArticulo(id: string, articulo: Articulo): Observable<any> {
     return this.http.put('http://localhost:3000/articulos/${id}'+id, articulo);

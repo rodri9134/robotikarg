@@ -1,90 +1,91 @@
 <div class="contenedor_editarArticulos">
     <div class="contenedor">
-  <div class="titulo">
-  <h3>Editar articulos</h3>
-  </div>
-  <div class="datosFormulario">
-  <form [formGroup]="editarArticuloForm" (submit)="editarArticulo()">
-    <div class="articulos" *ngFor='let miArticulo of articulos'>
-    <div class="form-group">
-    <input type="text"  class="id" id="id" formControlName="id" value="{{miArticulo.id}}" hidden> </div>
-      <div class="form-group">
-        <label for="titulo">Articulo: {{miArticulo.id}} </label>
-        <input type="text" formControlName="titulo" class="titulo" id="titulo" value="{{miArticulo.titulo}}">
-        <div *ngIf="titulo.invalid && (titulo.dirty || titulo.touched)">
-            <div class="fallo" *ngIf="titulo.errors.required">
-             El titulo es obligatorio
-            </div>
+        <div class="titulo">
+            <h3>Editar articulos</h3>
         </div>
-    </div>
-    <div class="form-group">
-        <label for="descripcion">Descripcion: </label>
-        <textarea formControlName="descripcion" class="descripcion" id="descripcion" value="{{miArticulo.descripcion}}" size="500"></textarea>
-        <div *ngIf="descripcion.invalid && (descripcion.dirty || descripcion.touched)">
-            <div class="fallo" *ngIf="descripcion.errors.required">
-             La descripción es obligatoria
-            </div>
-        </div>
-    </div>
-    <div class="form-group">
-        <label for="referencia">Referencia: </label>
-        <input type="text" formControlName="referencia" class="referencia" id="referencia" value="{{miArticulo.referencia}}">
-        <div *ngIf="referencia.invalid && (referencia.dirty || referencia.touched)">
-            <div class="fallo" *ngIf="referencia.errors.required">
-             La referencia es obligatoria
-            </div>
-        </div>
-    </div>
-    <div class="form-group">
-        <label for="precio">Precio: </label>
-        <input type="number" formControlName="precio" class="precio" id="precio" value="{{miArticulo.precio}}">
-        <div *ngIf="precio.invalid && (precio.dirty || precio.touched)">
-            <div class="fallo" *ngIf="precio.errors.required">
-             El precio es obligatorio
-            </div>
-        </div>
-    </div>
-    <div class="form-group">
-        <label for="imagen">Imagen: </label>
-        <input type="text" formControlName="imagen" class="imagen" id="imagen" value="{{miArticulo.imagen}}">
-        <div *ngIf="imagen.invalid && (imagen.dirty || imagen.touched)">
-            <div class="fallo" *ngIf="imagen.errors.required">
-            La imagen es obligatoria
-            </div>
-        </div>
-    </div>
-      
-         <div class="form-group">
-              <div class="categoria">
-            <label for="idCategoria">Categoria</label>
-            <select formControlName="idCategoria">
+        <div class="datosFormulario">
+            <form [formGroup]="editarArticuloForm" (submit)="editarArticulo()">
+                <div class="borde">
+                    <div class="articulos" *ngFor='let miArticulo of articulos'>
+                        <div class="form-group">
+                            <input type="text" class="id" id="id" formControlName="id" value="{{miArticulo.id}}" hidden> </div>
+                        <div class="form-group">
+                            <label for="titulo">Articulo: {{miArticulo.id}} </label>
+                            <input type="text" formControlName="titulo" class="titulo" id="titulo" value="{{miArticulo.titulo}}">
+                            <div *ngIf="titulo.invalid && (titulo.dirty || titulo.touched)">
+                                <div class="fallo" *ngIf="titulo.errors.required">
+                                    El titulo es obligatorio
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="descripcion">Descripcion: </label>
+                            <textarea formControlName="descripcion" class="descripcion" id="descripcion" value="{{miArticulo.descripcion}}" size="500"></textarea>
+                            <div *ngIf="descripcion.invalid && (descripcion.dirty || descripcion.touched)">
+                                <div class="fallo" *ngIf="descripcion.errors.required">
+                                    La descripción es obligatoria
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="referencia">Referencia: </label>
+                            <input type="text" formControlName="referencia" class="referencia" id="referencia" value="{{miArticulo.referencia}}">
+                            <div *ngIf="referencia.invalid && (referencia.dirty || referencia.touched)">
+                                <div class="fallo" *ngIf="referencia.errors.required">
+                                    La referencia es obligatoria
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="precio">Precio: </label>
+                            <input type="number" formControlName="precio" class="precio" id="precio" value="{{miArticulo.precio}}">
+                            <div *ngIf="precio.invalid && (precio.dirty || precio.touched)">
+                                <div class="fallo" *ngIf="precio.errors.required">
+                                    El precio es obligatorio
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="imagen">Imagen: </label>
+                            <input type="text" formControlName="imagen" class="imagen" id="imagen" value="{{miArticulo.imagen}}">
+                            <div *ngIf="imagen.invalid && (imagen.dirty || imagen.touched)">
+                                <div class="fallo" *ngIf="imagen.errors.required">
+                                    La imagen es obligatoria
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="categoria">
+                                <label for="idCategoria">Categoria</label>
+                                <select formControlName="idCategoria">
               <option selected="true" disabled value="{{miArticulo.idCategoria}}">{{miArticulo.categoria}}</option>
               <option  *ngFor='let categoria of categorias' value="{{categoria.id}}">{{categoria.nombre}}</option>
             </select>
-            
-          </div>
-        <br>
-        <div class="form-group">
-            <div class="tienda">
-          <label for="idTienda">Tienda</label>
-          <select formControlName="idTienda">
+
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <div class="tienda">
+                                    <label for="idTienda">Tienda</label>
+                                    <select formControlName="idTienda">
             <option selected="true"disabled value="{{miArticulo.idTienda}}">{{miArticulo.tienda}}</option>
             <option  *ngFor='let tienda of tiendas' value="{{tienda.id}}">{{tienda.nombre}}</option>
           </select>
-          
-        </div>
-      <br>
-      </div>
-</div>
-    
-      <button [disabled]="!editarArticuloForm.valid" class="btn btn-primary" type="submit">Editar articulo</button>
-      <a class="nav-link"  [routerLink]="['/admin_articulos']" id="navbardrop">
+
+                                </div>
+                                <br>
+                            </div>
+                        </div>
+
+                        <button [disabled]="!editarArticuloForm.valid" class="btn btn-primary" type="submit">Editar articulo</button>
+                        <a class="nav-link" [routerLink]="['/admin_articulos']" id="navbardrop">
         Volver a artículos
     </a>
+                        <div class="aviso">**** Para poder actualizar el artículo, se deben cambiar todos los campos.</div>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
-    </form>
-  </div>
-  </div>
-  </div>
-
-
+</div>

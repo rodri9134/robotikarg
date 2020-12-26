@@ -21,7 +21,6 @@ export class InstruccionesService {
     return this.http.post('http://localhost:3000/instrucciones/', instruccion);
   }
   deleteInstruccion(id: string): Observable<any> {
-    console.log('Id a eliminar: '+id);
     return this.http.delete('http://localhost:3000/instrucciones/' + id);
   }
   updateInstruccion(id: string, instruccion: Instruccion): Observable<any> {

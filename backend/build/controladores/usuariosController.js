@@ -47,9 +47,6 @@ class UsuariosController {
     }
     update(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            console.log(req.body);
-            console.log(req.params);
-            console.log(req.params.id);
             passPlano = req.body.password;
             const encriptada = bcrypt.hashSync(passPlano, saltRounds);
             /*
@@ -78,14 +75,15 @@ class UsuariosController {
     }
     idUsuario(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            console.log(req.body.email);
             const idUsuario = yield database_1.default.query('SELECT id FROM usuarios WHERE email = ? AND idRol=1', [req.body.email]);
-            console.log('Id usuario: ', idUsuario);
             res.json(idUsuario);
         });
     }
     readAdminLogin(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
+            // console.log("P "+req.body.password
+            // );
+            // console.log("Email "+req.body.email);
             const copiaUsuario = {
                 email: req.body.email,
                 password: req.body.password
@@ -95,20 +93,15 @@ class UsuariosController {
                 res.json({ message: 'Correo incorrecto' });
             }
             else {
-                console.log('Texto plano: ' + req.body.password);
-                console.log('Contraseña usuario: ' + usuario[0].password);
                 const comparar = bcrypt.compareSync(req.body.password, usuario[0].password);
-                console.log('Comparar ' + comparar);
-                if (!comparar) {
+                console.log("comparar " + comparar);
+                if (comparar) {
                     const expiraen = 24 * 60 * 60;
                     const accessToken = jwt.sign({ id: copiaUsuario.email }, SECRET_KEY, { expiresIn: expiraen });
-                    console.log('Credenciales validas');
-                    console.log(accessToken);
                     res.json(accessToken);
                 }
                 else {
-                    console.log('Contraseña incorrecta');
-                    res.json({ message: 'Contraseña incorrecta' });
+                    res.json({ message: 'Contraseña incorrecta del admin' });
                 }
             }
         });
@@ -119,28 +112,18 @@ class UsuariosController {
                 email: req.body.email,
                 password: req.body.password
             };
-            const usuario = yield database_1.default.query('SELECT * FROM usuarios WHERE email = ?', [req.body.email]);
-            // bcrypt compare ususarios[0].password
-            // const usuarios = await pool.query('SELECT * FROM usuarios WHERE email = ? AND password = ?', [req.body.email, req.body.password]);
-            console.log(usuario);
-            console.log(usuario[0].email);
+            const usuario = yield database_1.default.query('SELECT * FROM usuarios WHERE idrol=1 AND email = ?', [req.body.email]);
             if (usuario.length == 0) {
                 res.json({ message: 'Correo incorrecto' });
             }
             else {
-                console.log('Texto plano: ' + req.body.password);
-                console.log('Contraseña usuario: ' + usuario[0].password);
                 const comparar = bcrypt.compareSync(req.body.password, usuario[0].password);
-                console.log('Comparar ' + comparar);
-                if (!comparar) {
+                if (comparar) {
                     const expiraen = 24 * 60 * 60;
                     const accessToken = jwt.sign({ id: copiaUsuario.email }, SECRET_KEY, { expiresIn: expiraen });
-                    console.log('Credenciales validas');
-                    console.log(accessToken);
                     res.json(accessToken);
                 }
                 else {
-                    console.log('Contraseña incorrecta');
                     res.json({ message: 'Contraseña incorrecta' });
                 }
                 //   res.json(usuarios);

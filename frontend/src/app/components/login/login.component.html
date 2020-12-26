@@ -2,8 +2,7 @@
     <form [formGroup]="loginForm" (submit)="login()">
         <div class="login-box">
             <h1 class="titulo">INICIO DE SESIÓN</h1>
-     
-            <div class="textbox">
+                 <div class="textbox">
                 <i class="fa fa-user" aria-hidden="true">Correo electrónico</i><br>
                 <input type="text" class="form-group" placeholder="Correo electrónico" formControlName="email">
                 <div *ngIf="email.invalid && (email.dirty || email.touched)">
@@ -32,6 +31,7 @@
             </div>
             <button [disabled]="!loginForm.valid" class="btn btn-primary" type="submit">Enviar</button>
         </div>
+
         <div class="row">
             <div class="col-md-6">
     

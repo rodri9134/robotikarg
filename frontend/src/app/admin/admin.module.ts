@@ -42,20 +42,26 @@ const routes: Routes = [
   }, {
     path: 'admin_articulos',
     component: AdminArticulosComponent,
+    canActivate: [GuardaLoginAdminGuard]
   }, {
     path: 'admin_instrucciones',
     component: AdminInstruccionesComponent,
+    canActivate: [GuardaLoginAdminGuard]
   }, {
     path: 'admin_torneos',
     component: AdminTorneosComponent,
+    canActivate: [GuardaLoginAdminGuard]
   }, {
     path: 'admin_editar_articulos',
     component: AdminEditarArticulosComponent,
+    canActivate: [GuardaLoginAdminGuard]
   }, {
     path: 'admin_editar_instrucciones',
     component: AdminEditarInstruccionesComponent,
+    canActivate: [GuardaLoginAdminGuard]
   }, {
     path: 'admin_editar_torneos',
     component: AdminEditarTorneosComponent,
+    canActivate: [GuardaLoginAdminGuard]
   }];
 export class AdminModule { }

@@ -65,7 +65,7 @@ class TorneosController {
         res.json(torneos);
     }
     public async torneosEdad(req: Request, res: Response) {
-    console.log('Id Edad '+req.params.id);
+
         const torneos = await pool.query('SELECT torneos.*,provincias.nombre AS pNombre, rangoedad.tiporango AS rEdad FROM torneos INNER JOIN provincias ON torneos.idProvincia=provincias.id INNER JOIN rangoedad ON torneos.idRangoEdad=rangoedad.id WHERE torneos.idrangoedad=? ORDER BY torneos.fecha', [req.params.id]);
         res.json(torneos);
     }

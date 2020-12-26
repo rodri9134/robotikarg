@@ -1,100 +1,122 @@
 .contenedor_Instrucciones {
-  display: grid;
-  justify-items: center;
-
+    display: grid;
+    justify-items: center;
 }
-.contenedor_tabla{
-  width: 80%;
-  display: grid;
-  grid-template-columns: 12fr;
-  grid-template-areas: "titulo" "lenguajes" " encabezados" "instrucciones";
 
+.contenedor_tabla {
+    width: 80%;
+    display: grid;
+    grid-template-columns: 12fr;
+    grid-template-areas: "titulo" "lenguajes" " encabezados" "instrucciones";
 }
+
 .titulo {
-  grid-area: titulo;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color:#0A2843;
+    grid-area: titulo;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0A2843;
 }
-.lenguajes{
-  grid-area:lenguajes;
-  grid-template-columns: 12fr;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.encabezados {
-  grid-area: encabezados;
-  display: grid;
-  grid-template-columns: 1fr 6fr 3fr 1fr 1fr;
-  grid-template-areas: "id instruccion accion lenguaje opciones";
-  border:1px solid black;
-  color:white;
-  background-color: #0A2843;
-  justify-content: center;
-  align-items: center;
-}
-.id {
-  //width: 100%;
-  grid-area: id;
 
+.actualizar {
+    transition-duration: 0.4s;
+    border-radius: 5px;
+    border: 1px solid white;
 }
-.instruccion{
-    grid-area:instruccion;
-  }
- .accion{
-     grid-area:accion;
+
+.actualizar:hover {
+    background-color: #4e94d2;
+    border-radius: 5px;
+    border: 1px solid #5684ac;
 }
- .lenguaje{
-     grid-area:lenguaje
-  }
-  .opciones{
-      grid-area:opciones;
-  }
+
+.lenguajes {
+    grid-area: lenguajes;
+    grid-template-columns: 12fr;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.encabezados {
+    grid-area: encabezados;
+    display: grid;
+    grid-template-columns: 1fr 6fr 3fr 1fr 1fr;
+    grid-template-areas: "id instruccion accion lenguaje opciones";
+    border: 1px solid black;
+    color: white;
+    background-color: #0A2843;
+    justify-content: center;
+    align-items: center;
+}
+
+.id {
+    //width: 100%;
+    grid-area: id;
+}
+
+.instruccion {
+    grid-area: instruccion;
+}
+
+.accion {
+    grid-area: accion;
+}
+
+.lenguaje {
+    grid-area: lenguaje
+}
+
+.opciones {
+    grid-area: opciones;
+}
+
 .instrucciones {
-  grid-area:instrucciones;
-  display: grid;
-  grid-template-columns: 1fr 6fr 3fr 1fr 1fr;
-  grid-template-areas: "id instruccion accion lenguaje opciones";
-  grid-auto-rows: auto;
-  border:1px solid black;
-  background-color: floralwhite;
+    grid-area: instrucciones;
+    display: grid;
+    grid-template-columns: 1fr 6fr 3fr 1fr 1fr;
+    grid-template-areas: "id instruccion accion lenguaje opciones";
+    grid-auto-rows: auto;
+    border: 1px solid black;
+    background-color: floralwhite;
 }
+
 .editar {
-  transition-duration: 0.4s;
-  border-radius:5px;
-  border:1px solid white;
+    transition-duration: 0.4s;
+    border-radius: 5px;
+    border: 1px solid white;
 }
 
 .editar:hover {
-  background-color: #4e94d2;
-  border-radius:5px;
-  border:1px solid #0A2843;
-  width: 100%;
+    background-color: #4e94d2;
+    border-radius: 5px;
+    border: 1px solid #0A2843;
+    width: 100%;
 }
+
 .eliminar {
-  transition-duration: 0.4s;
-  border-radius:5px;
-  border:1px solid white;
+    transition-duration: 0.4s;
+    border-radius: 5px;
+    border: 1px solid white;
 }
 
 .eliminar:hover {
-  background-color: #4e94d2;
-  border-radius:5px;
-  border:1px solid #5684ac;
-  width: 100%;
+    background-color: #4e94d2;
+    border-radius: 5px;
+    border: 1px solid #5684ac;
+    width: 100%;
 }
-.añadir_instruccion{
-  transition-duration: 0.4s;
-  border-radius:5px;
-  background-color: rgb(167, 179, 190);
-  border:1px solid #5684ac;
+
+.añadir_instruccion {
+    transition-duration: 0.4s;
+    border-radius: 5px;
+    background-color: rgb(167, 179, 190);
+    border: 1px solid #5684ac;
 }
 
 .añadir_instruccion:hover {
-  background-color: #4e94d2;
-  border-radius:5px;
-  border:1px solid #5684ac;
-  width: 100%;
+    background-color: #4e94d2;
+    border-radius: 5px;
+    border: 1px solid #5684ac;
+    width: 100%;
 }

@@ -37,6 +37,7 @@ this.miinstruccion = this.router.events.subscribe((event) => {
       this.miinstruccion.unsubscribe();
     }
      }
+     
   ngOnInit() {
     this.lenguajesService.getLenguajes().subscribe(
       res => {
@@ -60,6 +61,9 @@ this.miinstruccion = this.router.events.subscribe((event) => {
     );
 
   }
+  refresh(): void {
+    window.location.reload();
+}
   muestraInstrucciones(id) {
 
     this.instruccionesService.getInstruccionesLenguaje(id).subscribe(
@@ -79,25 +83,16 @@ this.miinstruccion = this.router.events.subscribe((event) => {
 
 
   }
-  eliminar(idInstruccion) {
-    this.instruccionesService.deleteInstruccion(idInstruccion).subscribe(
+  eliminar(id) {
+    this.instruccionesService.deleteInstruccion(id).subscribe(
       res => {
         console.log(res);
-        // tslint:disable-next-line: no-unused-expression
-        this.miinstruccion;
-        this.router.navigate(['/navAdmin']);
-        this.ngOnDestroy();
-/*
-        this.router.routeReuseStrategy.shouldReuseRoute = () => false;
-        this.router.onSameUrlNavigation = 'reload';
-        this.router.navigate(['/admin_instrucciones']);
-*/
       },
       err => {
         console.log(err);
       }
     );
-
+    window.location.reload();
   }
 
 

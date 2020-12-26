@@ -14,11 +14,12 @@ export class LoginAdminComponent implements OnInit {
   public usuario: Usuario;
 
   mensaje: string;
-  private patronemail = '^[a-z0-9.%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$';
+  private patronEmail = '^[a-z0-9.%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$';
+  // tslint:disable-next-line: max-line-length
   constructor(private EncrDecr: EncrDecrService, private router: Router, private formBuilder: FormBuilder, private usuariosService: UsuariosService) {
     this.loginAdminForm = formBuilder.group({
-      emailAdmin: ['', [Validators.required, Validators.pattern(this.patronemail)]],
-      passwordAdmin: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(15)]]
+      email: ['', [Validators.required, Validators.pattern(this.patronEmail)]],
+      password: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(15)]]
 
     });
   }
@@ -26,11 +27,13 @@ export class LoginAdminComponent implements OnInit {
   ngOnInit() {
   }
   loginAdmin() {
-
+    console.log(this.loginAdminForm.value);
     this.usuariosService.getLoginAdmin(this.loginAdminForm.value).subscribe(
       res => {
         const tok = 'Roboadmin' + res;
         localStorage.setItem('tokenAdmin', tok);
+        const u: Usuario = { email: this.loginAdminForm.value.email, password: this.loginAdminForm.value.password };
+        this.usuariosService.setAdminLoggedIn(u);
         this.router.navigate(['/navAdmin']);
         console.log(res);
       },
@@ -39,5 +42,12 @@ export class LoginAdminComponent implements OnInit {
         this.router.navigate(['/login']);
       }
     );
+  }
+  get email() {
+    return this.loginAdminForm.get('email');
+  }
+  get password() {
+
+    return this.loginAdminForm.get('password');
   }
 }

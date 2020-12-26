@@ -43,6 +43,7 @@ import { AdminInsertarArticulosComponent } from './components/admin/admin-insert
 import { SocialLoginModule, AuthServiceConfig } from 'angularx-social-login';
 import { GoogleLoginProvider, FacebookLoginProvider } from 'angularx-social-login';
 import { NavAdministradorComponent } from './components/nav-administrador/nav-administrador.component';
+
 const config = new AuthServiceConfig([
   {
     id: GoogleLoginProvider.PROVIDER_ID,
@@ -92,6 +93,7 @@ export function provideConfig() {
     AdminInsertarTorneosComponent,
     AdminInsertarArticulosComponent,
     NavAdministradorComponent,
+
 
   ],
   imports: [

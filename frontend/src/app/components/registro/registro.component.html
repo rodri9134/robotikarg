@@ -1,56 +1,56 @@
 <div class="registro">
 
-        <form  [formGroup]="registroForm" (submit)="registro()">
-            <h1 class="card-title">Registro</h1>
-            <div class="form-group">
-                <i class="fa fa-user" aria-hidden="true">Correo electrónico</i><br><br>
+    <form [formGroup]="registroForm" (submit)="registro()">
+        <h1 class="titulo">Registro</h1>
+        <div class="form-group">
+            <i class="fa fa-user" aria-hidden="true">Correo electrónico</i><br><br>
             <input type="text" formControlName="email" placeholder="Introduce tu correo...">
             <div *ngIf="email.invalid && (email.dirty || email.touched)">
-                <div  class="fallo" *ngIf="email.errors.required">
-                  El correo es obligatorio
+                <div class="fallo" *ngIf="email.errors.required">
+                    El correo es obligatorio
                 </div>
-                <div  class="fallo" *ngIf="email.errors.pattern">
+                <div class="fallo" *ngIf="email.errors.pattern">
                     El correo tiene que cumplir unos requisitos
                 </div>
             </div>
         </div>
-        
 
-            <div class="form-group">
-                <i class="fa fa-lock" aria-hidden="true">Contraseña</i><br>
+
+        <div class="form-group">
+            <i class="fa fa-lock" aria-hidden="true">Contraseña</i><br>
             <input type="password" formControlName="password" placeholder="Introduce la contraseña...">
             <div *ngIf="password.invalid && (password.dirty || password.touched)">
                 <div class="fallo" *ngIf="password.errors.required">
-                   La contraseña es obligatoria
+                    La contraseña es obligatoria
                 </div>
                 <div class="fallo" *ngIf="password.errors.minlength">
-                  La contraseña debe tener un mínimo de 6 caracteres
+                    La contraseña debe tener un mínimo de 6 caracteres
                 </div>
                 <div class="fallo" *ngIf="password.errors.maxlength">
-                 La contraseña debe tener un máximo de 15 caracteres
+                    La contraseña debe tener un máximo de 15 caracteres
                 </div>
             </div>
-            </div>
-            <div class="form-group">
+        </div>
+        <div class="form-group">
 
             <i class="fa fa-mobile" aria-hidden="true">Teléfono</i><br><br>
             <input type="text" formControlName="telefono" placeholder="Introduce tu telefono...">
             <div *ngIf="telefono.invalid && (telefono.dirty || telefono.touched)">
                 <div class="fallo" *ngIf="telefono.errors.required">
-                 El teléfono es obligatorio
+                    El teléfono es obligatorio
                 </div>
-       
+
                 <div class="fallo" *ngIf="telefono.errors.minlength">
                     El teléfono debe tener como mínimo de 9 dígitos
-                  </div>
+                </div>
             </div>
             <input type="number" formControlName="idRol" value=1 hidden>
-            </div>
-            
-            <div class="form-group">
-            <input [disabled]="!registroForm.valid"  type="submit" class="btn btn-primary" value="Enviar">
-            </div>
+        </div>
 
-        </form>
+        <div class="form-group">
+            <input [disabled]="!registroForm.valid" type="submit" class="btn btn-primary" value="Enviar">
+        </div>
+
+    </form>
 
 </div>

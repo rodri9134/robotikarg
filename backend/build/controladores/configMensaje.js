@@ -7,12 +7,8 @@ module.exports = (formulario) => {
         auth: {
             user: 'ikargrobot@gmail.com',
             pass: 'MyO1}y|P}Be3drVi1k4s' // Cambialo por tu password
-        },
-        tls: {
-            rejectUnauthorized: false,
         }
     });
-    console.log(formulario.titulo);
     const mailOptions = {
         from: '<${contactoForm.email}>',
         to: 'ikargrobot@gmail.com',
