@@ -1,9 +1,21 @@
-.informacion{
-    display:grid;
+.informacion {
+    display: grid;
     justify-content: center;
-    margin-left:4%;
-    margin-right:4%;
- }
- .titulo{
-   color:#34649C;
- }
+    margin-left: 4%;
+    margin-right: 4%;
+}
+
+.titulo {
+    color: #34649C;
+}
+
+.borde {
+    border-radius: 14px 14px 14px 14px;
+    -moz-border-radius: 14px 14px 14px 14px;
+    -webkit-border-radius: 14px 14px 14px 14px;
+    border: 10px double #000000;
+    padding: 30px;
+    -webkit-box-shadow: 10px -9px 7px 1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px -9px 7px 1px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px -9px 7px 1px rgba(0, 0, 0, 0.75);
+}

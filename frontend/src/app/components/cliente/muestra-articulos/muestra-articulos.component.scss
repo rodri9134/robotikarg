@@ -1,81 +1,95 @@
 .contenedor_articulos {
     display: grid;
     justify-items: center;
+}
 
-  }
-  .contenedor_tabla{
+.contenedor_tabla {
     width: 80%;
     display: grid;
     grid-template-columns: 12fr;
     grid-template-areas: "titulo" " encabezados" "articulos";
+    border-radius: 14px 14px 14px 14px;
+    -moz-border-radius: 14px 14px 14px 14px;
+    -webkit-border-radius: 14px 14px 14px 14px;
+    border: 10px double #000000;
+    -webkit-box-shadow: 10px -9px 7px 1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px -9px 7px 1px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px -9px 7px 1px rgba(0, 0, 0, 0.75);
+}
 
-  }
-  .tituloA {
+.tituloA {
     grid-area: titulo;
     display: flex;
     align-items: center;
     justify-content: center;
-    color:#34649C;
- 
-  }
-  .encabezados {
+    color: #34649C;
+}
+
+.encabezados {
     grid-area: encabezados;
     display: grid;
     grid-template-columns: 1fr 4fr 2fr 1fr 2fr 1fr 1fr;
     grid-template-areas: "titulo descripcion referencia precio imagen categoria tienda";
-
-    color:white;
-   background-color: #0a2843;;
+    color: white;
+    background-color: #0a2843;
+    ;
     justify-content: center;
     align-items: center;
-    border:1px solid #00376F;
+    border: 1px solid #00376F;
     padding: 1%;
-  }
-  .id {
+}
+
+.id {
     //width: 100%;
     grid-area: id;
- 
-  }
-  .titulo{
-      grid-area:titulo;
-    }
-   .descripcion{
-       grid-area:descripcion;
 }
-   .referencia{
-       grid-area:referencia
-    }
-   .precio{
-grid-area:precio;
-   } 
-   .imagen{
-grid-area:imagen;
-   }
-    .categoria{
-grid-area:categoria;
-   } 
-   .tienda{
-grid-area:tienda;
-   }
-  
-  .articulos {
+
+.titulo {
+    grid-area: titulo;
+}
+
+.descripcion {
+    grid-area: descripcion;
+}
+
+.referencia {
+    grid-area: referencia
+}
+
+.precio {
+    grid-area: precio;
+}
+
+.imagen {
+    grid-area: imagen;
+}
+
+.categoria {
+    grid-area: categoria;
+}
+
+.tienda {
+    grid-area: tienda;
+}
+
+.articulos {
     grid-area: articulos;
     display: grid;
     grid-template-columns: 1fr 4fr 2fr 1fr 2fr 1fr 1fr;
     grid-template-areas: "titulo descripcion referencia precio imagen categoria tienda";
     grid-auto-rows: auto;
-  
     background-color: floralwhite;
-    margin:1px;
-    padding:1px;
-    border:1px solid #00376F;
-    padding:1%;
-  }
-  .formateaImagen{
-      height: 70%;
-      width: 70%;
-  }
-  a{
-      text-decoration: none;
-  }
-  
+    margin: 1px;
+    padding: 1px;
+    border: 1px solid #00376F;
+    padding: 1%;
+}
+
+.formateaImagen {
+    height: 70%;
+    width: 70%;
+}
+
+a {
+    text-decoration: none;
+}

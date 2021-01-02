@@ -12,10 +12,9 @@ app.post('/formulario', (req: any, res: any) => {
     configMensaje(req.body);
     res.status(200).send();
 })
+
 //Correo
-app.listen(3002, () => {
-    console.log('Servidor de correo corriendo');
-    });
+
 app.listen(3000, () => {
 console.log('Servidor corriendo');
 });

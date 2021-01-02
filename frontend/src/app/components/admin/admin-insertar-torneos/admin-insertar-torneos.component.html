@@ -1,104 +1,105 @@
 <div class="contenedor_insertarTorneos">
     <div class="contenedor">
-  <div class="titulo">
-  <h3>Insertar torneo</h3>
-  </div>
-  <div class="datosFormulario">
+        <div class="titulo">
+            <h3>Insertar torneo</h3>
+        </div>
+        <div class="datosFormulario">
+            <div class="borde">
+                <form [formGroup]="insertarTorneoForm" (submit)="insertarTorneo()">
+                    <div class="torneos">
+                        <div class="form-group">
+                            <label for="imagen">Imagen: </label><br>
+                            <input type="file" formControlName="imagen" class="imagen" id="imagen" (change)="subirImagen($event)">
 
-  <form [formGroup]="insertarTorneoForm" (submit)="insertarTorneo()">
-    <div class="torneos">
-      <div class="form-group">
-        <label for="imagen">Imagen: </label><br>
-        <input type="file" formControlName="imagen" class="imagen" id="imagen" (change)="subirImagen($event)">
-    
-    </div>
-  
-      <div class="form-group">
-        <label for="nombre">Nombre del torneo: </label>
-        <input type="nombre" formControlName="nombre" id="nombre" class="nombre">
-        <div *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)">
-            <div class="fallo" *ngIf="nombre.errors.required">
-             El nombre es obligatorio
-            </div>
-         
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="fecha">Fecha: </label>
-        <input type="date" formControlName="fecha" id="fecha" class="fecha">
-        <div *ngIf="fecha.invalid && (fecha.dirty || fecha.touched)">
-            <div class="fallo" *ngIf="fecha.errors.required">
-            La fecha es obligatoria
-            </div>
-         
-        </div>
-      </div>
-      
-      <div class="form-group">
-        <label for="enlace">Enlace: </label>
-        <input type="text" formControlName="enlace" id="enlace" class="enlace">
-        <div *ngIf="enlace.invalid && (enlace.dirty || enlace.touched)">
-            <div class="fallo" *ngIf="enlace.errors.required">
-             El enlace es obligatorio
-            </div>
-         
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="pagina">Pagina: </label>
-        <input type="text" formControlName="pagina" id="pagina" class="pagina">
-        <div *ngIf="pagina.invalid && (pagina.dirty || pagina.touched)">
-            <div class="fallo" *ngIf="pagina.errors.required">
-             La página es obligatoria
-            </div>
-         
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="costeEquipo">Coste Equipo: </label>
-        <input type="number" formControlName="costeEquipo" id="costeEquipo" class="costeEquipo">
-        <div *ngIf="costeEquipo.invalid && (costeEquipo.dirty || costeEquipo.touched)">
-            <div class="fallo" *ngIf="costeEquipo.errors.required">
-             El coste del equipo es obligatorio
-            </div>
-         
-        </div>
-      </div>
-         <div class="form-group">
-          
-            <label for="idRangoEdad">Rango Edad</label>
-    
-            <select formControlName="idRangoEdad">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="nombre">Nombre del torneo: </label>
+                            <input type="nombre" formControlName="nombre" id="nombre" class="nombre">
+                            <div *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)">
+                                <div class="fallo" *ngIf="nombre.errors.required">
+                                    El nombre es obligatorio
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="fecha">Fecha: </label>
+                            <input type="date" formControlName="fecha" id="fecha" class="fecha">
+                            <div *ngIf="fecha.invalid && (fecha.dirty || fecha.touched)">
+                                <div class="fallo" *ngIf="fecha.errors.required">
+                                    La fecha es obligatoria
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="enlace">Enlace: </label>
+                            <input type="text" formControlName="enlace" id="enlace" class="enlace">
+                            <div *ngIf="enlace.invalid && (enlace.dirty || enlace.touched)">
+                                <div class="fallo" *ngIf="enlace.errors.required">
+                                    El enlace es obligatorio
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="pagina">Pagina: </label>
+                            <input type="text" formControlName="pagina" id="pagina" class="pagina">
+                            <div *ngIf="pagina.invalid && (pagina.dirty || pagina.touched)">
+                                <div class="fallo" *ngIf="pagina.errors.required">
+                                    La página es obligatoria
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="costeEquipo">Coste Equipo: </label>
+                            <input type="number" formControlName="costeEquipo" id="costeEquipo" class="costeEquipo">
+                            <div *ngIf="costeEquipo.invalid && (costeEquipo.dirty || costeEquipo.touched)">
+                                <div class="fallo" *ngIf="costeEquipo.errors.required">
+                                    El coste del equipo es obligatorio
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+
+                            <label for="idRangoEdad">Rango Edad</label>
+
+                            <select formControlName="idRangoEdad">
               <option value="-1">-------------</option>
               <option  *ngFor='let rangoEdad of rangoEdades' value="{{rangoEdad.id}}">{{rangoEdad.tiporango}}</option>
             </select>
-            
-          </div>
-          <div class="form-group">
-            <label for="ubicacion">Ubicacion: </label>
-            <input type="text" formControlName="ubicacion" id="ubicacion" class="ubicacion">
-            <div *ngIf="ubicacion.invalid && (ubicacion.dirty || ubicacion.touched)">
-                <div class="fallo" *ngIf="ubicacion.errors.required">
-                 La ubicacion es obligatoria
-                </div>
-             
-            </div>
-          </div>
-          <div class="form-group">
-         
-          <label for="idProvincia">Provincia</label>
-          <select formControlName="idProvincia">
+
+                        </div>
+                        <div class="form-group">
+                            <label for="ubicacion">Ubicacion: </label>
+                            <input type="text" formControlName="ubicacion" id="ubicacion" class="ubicacion">
+                            <div *ngIf="ubicacion.invalid && (ubicacion.dirty || ubicacion.touched)">
+                                <div class="fallo" *ngIf="ubicacion.errors.required">
+                                    La ubicacion es obligatoria
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+
+                            <label for="idProvincia">Provincia</label>
+                            <select formControlName="idProvincia">
             <option value="-1">-------------</option>
             <option  *ngFor='let provincia of provincias' value="{{provincia.id}}">{{provincia.nombre}}</option>
           </select>
-          
-        </div>
-        
 
-    
-      <button [disabled]="!insertarTorneosForm.valid" class="btn btn-primary" type="submit">Insertar torneo</button>
+                        </div>
+
+
+
+                        <button [disabled]="!insertarTorneosForm.valid" class="btn btn-primary" type="submit">Insertar torneo</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
-    </form>
-  </div>
-  </div>
-  </div>
+</div>

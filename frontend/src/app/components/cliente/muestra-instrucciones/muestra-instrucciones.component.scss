@@ -1,79 +1,92 @@
 .contenedor_instrucciones {
     display: grid;
     justify-items: center;
+}
 
-  }
-  .contenedor_tabla{
+.contenedor_tabla {
     width: 80%;
     display: grid;
     grid-template-columns: 12fr;
     grid-template-areas: "titulo" "lenguajes" " encabezados" "instrucciones";
+    border-radius: 14px 14px 14px 14px;
+    -moz-border-radius: 14px 14px 14px 14px;
+    -webkit-border-radius: 14px 14px 14px 14px;
+    border: 10px double #000000;
+    -webkit-box-shadow: 10px -9px 7px 1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px -9px 7px 1px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px -9px 7px 1px rgba(0, 0, 0, 0.75);
+}
 
-  }
-  .titulo {
+.titulo {
     grid-area: titulo;
     display: flex;
     align-items: center;
     justify-content: center;
-    color:#34649C;
-  }
-  .lenguajes{
-    grid-area:lenguajes;
+    color: #34649C;
+}
+
+.lenguajes {
+    grid-area: lenguajes;
     grid-template-columns: 12fr;
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-  .encabezados {
+}
+
+.encabezados {
     grid-area: encabezados;
     display: grid;
     grid-template-columns: 6fr 2fr 2fr 2fr;
     grid-template-areas: "instruccion accion lenguaje opciones";
-    border:1px solid #00376F;
-    color:white;
+    border: 1px solid #00376F;
+    color: white;
     background-color: #0a2843;
     justify-content: center;
     align-items: center;
-    padding:1%;
-  }
-  .id {
+    padding: 1%;
+}
+
+.id {
     //width: 100%;
     grid-area: id;
- 
-  }
-  .instruccion{
-      grid-area:instruccion;
-    }
-   .accion{
-       grid-area:accion;
 }
-   .lenguaje{
-       grid-area:lenguaje
-    }
-    .opciones{
-        grid-area:opciones;
-    }
- .instrucciones {
-    grid-area:instrucciones;
+
+.instruccion {
+    grid-area: instruccion;
+}
+
+.accion {
+    grid-area: accion;
+}
+
+.lenguaje {
+    grid-area: lenguaje
+}
+
+.opciones {
+    grid-area: opciones;
+}
+
+.instrucciones {
+    grid-area: instrucciones;
     display: grid;
     grid-template-columns: 6fr 2fr 2fr 2fr;
     grid-template-areas: "instruccion accion lenguaje";
     grid-auto-rows: auto;
-
     background-color: floralwhite;
-    border:1px solid #00376F;
-    padding:1%;
-  }
+    border: 1px solid #00376F;
+    padding: 1%;
+}
 
-  .megusta {
+.megusta {
     transition-duration: 0.4s;
-    border-radius:5px;
-    border:1px solid white;
-  }
-  
-  .megusta:hover {
+    border-radius: 5px;
+    border: 1px solid white;
+}
+
+.megusta:hover {
     background-color: #4e94d2;
-    border-radius:5px;
-    border:1px solid #00376F;
+    border-radius: 5px;
+    border: 1px solid #00376F;
     width: 100%;
-  }
+}

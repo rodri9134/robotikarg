@@ -1,62 +1,82 @@
 .contenedor_insertarTorneos {
     display: grid;
     justify-items: center;
-  }
-  .contenedor{
+}
+
+.contenedor {
     width: 60%;
     display: grid;
     grid-template-columns: 12fr;
     grid-template-areas: "titulo" " datosFormulario";
+}
 
-  }
-  .titulo {
+.titulo {
     grid-area: titulo;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #0A2843;
-  }
-  .datosFormulario {
+}
+
+.datosFormulario {
     grid-area: datosFormulario;
     display: grid;
     grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-areas: "id imagen nombre fecha enlace pagina costeEquipo idRangoEdad ubicacion idProvincia";
-
 }
-  .id{
-      grid-area:id;
-  }
-.imagen{
+
+.id {
+    grid-area: id;
+}
+
+.imagen {
     grid-area: imagen;
 }
-.nombre{
+
+.nombre {
     grid-area: nombre;
 }
-.fecha{
+
+.fecha {
     grid-area: fecha;
 }
-.enlace{
+
+.enlace {
     grid-area: enlace;
 }
-.pagina{
+
+.pagina {
     grid-area: pagina;
 }
-.costeEquipo{
+
+.costeEquipo {
     grid-area: costeEquipo;
 }
-.idRangoEdad{
+
+.idRangoEdad {
     grid-area: idRangoEdad;
 }
-.ubicacion{
+
+.ubicacion {
     grid-area: ubicacion;
 }
-.idProvincia{
+
+.idProvincia {
     grid-area: idProvincia;
 }
-.aviso{
 
-    color:darkred;
+.aviso {
+    color: darkred;
 }
-.fallo{
-  color:red;
+
+.fallo {
+    color: red;
+}
+
+.borde {
+    border-radius: 14px 14px 14px 14px;
+    -moz-border-radius: 14px 14px 14px 14px;
+    -webkit-border-radius: 14px 14px 14px 14px;
+    border: 10px double #000000;
+    padding: 40px;
 }

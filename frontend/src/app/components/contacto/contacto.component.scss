@@ -1,11 +1,34 @@
-.contacto{
-   display:grid;
-   justify-content: center;
+.contacto {
+    display: grid;
+    justify-content: center;
 }
-.titulo{
-   color:#34649C;
+
+.titulo {
+    color: #34649C;
 }
-.form-group{
-   padding:10px;
-   margin-right: 10px;
+
+.form-group {
+    padding: 10px;
+    margin-right: 10px;
+}
+
+.borde {
+    border-radius: 14px 14px 14px 14px;
+    -moz-border-radius: 14px 14px 14px 14px;
+    -webkit-border-radius: 14px 14px 14px 14px;
+    border: 10px double #000000;
+    -webkit-box-shadow: 10px -9px 7px 1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px -9px 7px 1px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px -9px 7px 1px rgba(0, 0, 0, 0.75);
+    padding: 30px;
+    text-align: center;
+}
+
+.texto {
+    font-size: 30px;
+}
+
+.correo {
+    font-size: 18px;
+    text-align: center;
 }

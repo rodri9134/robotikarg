@@ -25,8 +25,8 @@
 .encabezados {
     grid-area: encabezados;
     display: grid;
-    grid-template-columns: 1fr 1fr 3fr 2fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-areas: "id titulo descripcion referencia precio imagen categoria tienda opciones";
+    grid-template-columns: 1fr 3fr 2fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: "titulo descripcion referencia precio imagen categoria tienda opciones";
     border: 1px solid black;
     color: white;
     background-color: #0A2843;
@@ -74,8 +74,8 @@
 .articulos {
     grid-area: articulos;
     display: grid;
-    grid-template-columns: 1fr 1fr 3fr 2fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-areas: "id titulo descripcion referencia precio imagen categoria tienda opciones";
+    grid-template-columns: 1fr 3fr 2fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: "titulo descripcion referencia precio imagen categoria tienda opciones";
     grid-auto-rows: auto;
     border: 1px solid black;
     background-color: floralwhite;

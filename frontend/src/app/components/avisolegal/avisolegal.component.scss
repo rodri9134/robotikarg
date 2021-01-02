@@ -1,6 +1,14 @@
-.avisolegal{
-    display:grid;
+.avisolegal {
+    display: grid;
     justify-content: center;
-    margin-left:4%;
-    margin-right:4%;
- }
+    margin-left: 4%;
+    margin-right: 4%;
+}
+
+.borde {
+    border-radius: 14px 14px 14px 14px;
+    -moz-border-radius: 14px 14px 14px 14px;
+    -webkit-border-radius: 14px 14px 14px 14px;
+    border: 10px double #000000;
+    padding: 30px;
+}

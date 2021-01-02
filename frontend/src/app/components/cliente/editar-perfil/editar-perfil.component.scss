@@ -1,49 +1,61 @@
 .contenedor_editarPerfil {
     display: grid;
     justify-items: center;
-    
     //grid-template-columns: 12fr;
-  }
-  .contenedor{
+}
+
+.contenedor {
     width: 60%;
     display: grid;
     grid-template-columns: 12fr;
     grid-template-areas: "titulo" " datosFormulario";
-  
     //grid-auto-rows: auto;
     // grid-gap: 10%;
-  
     //margin: auto;
-  }
-  .titulo {
+}
+
+.borde {
+    border-radius: 14px 14px 14px 14px;
+    -moz-border-radius: 14px 14px 14px 14px;
+    -webkit-border-radius: 14px 14px 14px 14px;
+    border: 10px double #000000;
+    padding: 30px;
+    -webkit-box-shadow: 10px -9px 7px 1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px -9px 7px 1px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px -9px 7px 1px rgba(0, 0, 0, 0.75);
+}
+
+.titulo {
     grid-area: titulo;
     display: flex;
     align-items: center;
     justify-content: center;
-    color:#34649C;
-  }
-  .datosFormulario {
+    color: #34649C;
+}
+
+.datosFormulario {
     grid-area: datosFormulario;
     display: grid;
     grid-template-columns: 2fr 5fr 5fr;
     grid-template-areas: "email password foto";
-  }
-  .email {
-
-    grid-area: email;
-  }
-  .password {
-
-    grid-area: password;
-  }
-  .foto {
-    grid-area: foto;
-
-  }
-.aviso{
-
-    color:darkred;
 }
-.fallo{
-  color:red;
+
+.email {
+    grid-area: email;
+}
+
+.password {
+    grid-area: password;
+}
+
+.foto {
+    grid-area: foto;
+}
+
+.aviso {
+    color: darkred;
+}
+
+.fallo {
+    color: red;
 }

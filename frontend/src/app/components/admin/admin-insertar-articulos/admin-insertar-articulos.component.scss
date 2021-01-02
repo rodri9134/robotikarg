@@ -1,55 +1,74 @@
 .contenedor_insertarArticulos {
     display: grid;
     justify-items: center;
-  }
-  .contenedor{
+}
+
+.contenedor {
     width: 60%;
     display: grid;
     grid-template-columns: 12fr;
     grid-template-areas: "titulo" " datosFormulario";
+}
 
-  }
-  .titulo {
+.titulo {
     grid-area: titulo;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #0A2843;
-  }
-  .datosFormulario {
+}
+
+.datosFormulario {
     grid-area: datosFormulario;
     display: grid;
     grid-template-columns: 1fr 2fr 2fr 2fr 1fr 2fr 1fr 1fr;
     grid-template-areas: "id titulo descripcion referencia precio imagen categoria tienda";
 }
-  .id{
-      grid-area:id;
-  }
-.titulo{
+
+.id {
+    grid-area: id;
+}
+
+.titulo {
     grid-area: titulo;
 }
-.descripcion{
+
+.descripcion {
     grid-area: descripcion;
 }
-.referencia{
+
+.referencia {
     grid-area: referencia;
 }
-.precio{
+
+.precio {
     grid-area: precio;
 }
-.imagen{
+
+.imagen {
     grid-area: imagen;
 }
-.categoria{
+
+.categoria {
     grid-area: categoria;
 }
-.tienda{
+
+.tienda {
     grid-area: tienda;
 }
-.aviso{
 
-    color:darkred;
+.aviso {
+    color: darkred;
 }
-.fallo{
-  color:red;
+
+.fallo {
+    color: red;
+}
+
+.borde {
+    border-radius: 14px 14px 14px 14px;
+    -moz-border-radius: 14px 14px 14px 14px;
+    -webkit-border-radius: 14px 14px 14px 14px;
+    border: 10px double #000000;
+    padding: 40px;
 }

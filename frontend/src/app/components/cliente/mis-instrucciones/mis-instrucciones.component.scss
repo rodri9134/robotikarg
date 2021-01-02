@@ -1,75 +1,84 @@
 .contenedor_misInstrucciones {
     display: grid;
     justify-items: center;
+}
 
-  }
-  .contenedor_tabla{
+.contenedor_tabla {
     width: 80%;
     display: grid;
     grid-template-columns: 12fr;
     grid-template-areas: "titulo" " encabezados" "instrucciones";
+    border-radius: 14px 14px 14px 14px;
+    -moz-border-radius: 14px 14px 14px 14px;
+    -webkit-border-radius: 14px 14px 14px 14px;
+    border: 10px double #000000;
+    -webkit-box-shadow: 10px -9px 7px 1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px -9px 7px 1px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px -9px 7px 1px rgba(0, 0, 0, 0.75);
+}
 
-  }
-  .titulo {
+.titulo {
     grid-area: titulo;
     display: flex;
     align-items: center;
     justify-content: center;
+    color: #34649C;
+}
 
-    color:#34649C;
-  }
-  .encabezados {
+.encabezados {
     grid-area: encabezados;
     display: grid;
     grid-template-columns: 5fr 1fr 1fr 1fr;
     grid-template-areas: "instruccion accion lenguaje opciones";
-    border:1px solid #00376F;
-    color:white;
+    border: 1px solid #00376F;
+    color: white;
     background-color: #0a2843;
     justify-content: center;
     align-items: center;
-    padding:10px;
-  }
-  .id {
- 
+    padding: 10px;
+}
+
+.id {
     grid-area: id;
-    
-  }
-  .instruccion {
+}
 
+.instruccion {
     grid-area: instruccion;
-  }
-  .accion {
+}
 
+.accion {
     grid-area: accion;
-  }
-  .lenguaje{
-      grid-area:lenguaje;
-  }
-  .opciones{
-  grid-area:opciones;
-  }
-  
-  .instrucciones {
+}
+
+.lenguaje {
+    grid-area: lenguaje;
+}
+
+.opciones {
+    grid-area: opciones;
+}
+
+.instrucciones {
     grid-area: instrucciones;
     display: grid;
     grid-template-columns: 5fr 1fr 1fr 1fr;
     grid-template-areas: "instruccion accion lenguaje opciones";
     grid-auto-rows: auto;
-    border:1px solid #00376F;
+    border: 1px solid #00376F;
     background-color: floralwhite;
-    padding:10px;
-  }
-  .nomegusta:hover {
+    padding: 10px;
+}
+
+.nomegusta:hover {
     background-color: white;
     transition-duration: 0.4s;
-    border-radius:5px;
-    border:1px solid white;
-  }
-  
-  .nomegusta {
+    border-radius: 5px;
+    border: 1px solid white;
+}
+
+.nomegusta {
     background-color: #4e94d2;
-    border-radius:5px;
-    border:1px solid #00376F;
+    border-radius: 5px;
+    border: 1px solid #00376F;
     width: 100%;
-  }
+}

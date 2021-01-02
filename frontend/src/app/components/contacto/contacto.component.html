@@ -1,14 +1,20 @@
 <div class="wrapper-box">
     <div class="container">
+        <h1 class="titulo">Contacto</h1><br>
+        <div class="borde">
+            <div class="row">
+                <div class="col">
+                    <p class="texto">Si tiene alguna con nuestra web, no dude en contactarnos en la siguiente dirección de correo electrónico:</p>
+                    <br>
 
-        <div class="row">
-            <div class="col-md-6 offset-md-3">
-                <form [formGroup]="contactoForm" (submit)="enviarContacto()">
-                    <h1 class="titulo">Contacto</h1>
-                    <div class="form-group">
-                        <label for="Email">Correo:</label>
-                        <input type="email" class="form-control" name="Email" aria-describedby="emailHelp" placeholder="Introduce tu correo ...." formControlName="Email" size="100" />
-                        <small id="emailHelp" class="form-text text-muted">Nunca compartiremos su correo electrónico con nadie más.</small
+                    <p class="correo">ikargrobot@gmail.com</p>
+
+                    <!-- <form [formGroup]="contactoForm" (submit)="enviarContacto()">
+
+                        <div class="form-group">
+                            <label for="Email">Correo:</label>
+                            <input type="email" class="form-control" name="Email" aria-describedby="emailHelp" placeholder="Introduce tu correo ...." formControlName="Email" size="100" />
+                            <small id="emailHelp" class="form-text text-muted">Nunca compartiremos su correo electrónico con nadie más.</small
               >
             </div>
             <div class="form-group">
@@ -24,8 +30,9 @@
             <button type="submit" class="btn btn-primary" [disabled]="!contactoForm.valid">
               Enviar
             </button>
-          </form>
+          </form> -->
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
+</div>

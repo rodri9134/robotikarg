@@ -1,50 +1,51 @@
 <div class="contenedor_insertarInstrucciones">
     <div class="contenedor">
-  <div class="titulo">
-  <h3>Insertar instruccion</h3>
-  </div>
-  <div class="datosFormulario">
-
-  <form [formGroup]="insertarInstruccionForm" (submit)="insertarInstruccion()">
-    <div class="instrucciones">
-
-      <div class="form-group">
-        <label for="instruccion">Instrucción: </label><br>
-        <textarea formControlName="instruccion" class="instruccion" id="instruccion" ></textarea>
-        <div *ngIf="instruccion.invalid && (instruccion.dirty || instruccion.touched)">
-            <div class="fallo" *ngIf="instruccion.errors.required">
-              La instrucción es obligatoria
-            </div>
-         
+        <div class="titulo">
+            <h3>Insertar instruccion</h3><br><br>
         </div>
-    </div>
-  
-      <div class="form-group">
-        <label for="accion">Accion: </label>
-        <input type="accion" formControlName="accion" id="accion" class="accion" size="50">
-        <div *ngIf="accion.invalid && (accion.dirty || accion.touched)">
-            <div class="fallo" *ngIf="accion.errors.required">
-              La acción es obligatoria
-            </div>
-         
-        </div>
-      </div>
-         <div class="form-group">
-              <div class="lenguajes">
-            <label for="idLenguaje">Lenguajes</label>
-            <select formControlName="idLenguaje">
+        <div class="datosFormulario">
+            <div class="borde">
+                <form [formGroup]="insertarInstruccionForm" (submit)="insertarInstruccion()">
+                    <div class="instrucciones">
+
+                        <div class="form-group">
+                            <label for="instruccion">Instrucción: </label><br>
+                            <textarea formControlName="instruccion" class="instruccion" id="instruccion"></textarea>
+                            <div *ngIf="instruccion.invalid && (instruccion.dirty || instruccion.touched)">
+                                <div class="fallo" *ngIf="instruccion.errors.required">
+                                    La instrucción es obligatoria
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="accion">Accion: </label>
+                            <input type="accion" formControlName="accion" id="accion" class="accion" size="50">
+                            <div *ngIf="accion.invalid && (accion.dirty || accion.touched)">
+                                <div class="fallo" *ngIf="accion.errors.required">
+                                    La acción es obligatoria
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="lenguajes">
+                                <label for="idLenguaje">Lenguajes</label>
+                                <select formControlName="idLenguaje">
               <option value="-1">-------------</option>
               <option  *ngFor='let lenguaje of lenguajes' value="{{lenguaje.id}}">{{lenguaje.nombre}}</option>
             </select>
-            
-          </div>
-        <br>
-      </div>
 
-    
-      <button [disabled]="!insertarInstruccionForm.valid" class="btn btn-primary" type="submit">Insertar instruccion</button>
+                            </div>
+                            <br>
+                        </div>
+
+
+                        <button [disabled]="!insertarInstruccionForm.valid" class="btn btn-primary" type="submit">Insertar instruccion</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
-    </form>
-  </div>
-  </div>
-  </div>
+</div>
