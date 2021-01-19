@@ -67,18 +67,23 @@ export class LoginComponent implements OnInit {
     this.usuariosService.getLogin(this.loginForm.value).subscribe(
       res => {
 
-        this.guardarIdUsuario();
+        if (res.message == "Correo incorrecto" || res.message == "Contraseña incorrecta") {
+          this.router.navigate(['/login']);
+          alert("Login incorrecto");
+        } else {
+          this.guardarIdUsuario();
 
-        const tok = 'Robocliente' + res;
-        localStorage.setItem('token', tok);
-        const u: Usuario = { email: this.loginForm.value.email, password: this.loginForm.value.password };
-        this.usuariosService.setUserLoggedIn(u);
-        this.router.navigate(['/navCli']);
-        console.log(res);
+          const tok = 'Robocliente' + res;
+          localStorage.setItem('token', tok);
+          const u: Usuario = { email: this.loginForm.value.email, password: this.loginForm.value.password };
+          this.usuariosService.setUserLoggedIn(u);
+          this.router.navigate(['/navCli']);
+
+        }
       },
       err => {
         console.log(err);
-        this.router.navigate(['/login']);
+
       }
     );
 

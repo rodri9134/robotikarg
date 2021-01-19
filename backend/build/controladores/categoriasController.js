@@ -26,8 +26,8 @@ class CategoriasController {
     read(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             // tslint:disable-next-line: max-line-length
-            const torneos = yield database_1.default.query('SELECT * FROM categorias', [req.body]);
-            res.json(torneos);
+            const categorias = yield database_1.default.query('SELECT * FROM categorias', [req.body]);
+            res.json(categorias);
         });
     }
     update(req, res) {

@@ -9,7 +9,7 @@
                     <div class="torneos">
                         <div class="form-group">
                             <label for="imagen">Imagen: </label><br>
-                            <input type="file" formControlName="imagen" class="imagen" id="imagen" (change)="subirImagen($event)">
+                            <input type="file" formControlName="imagen" class="imagen" id="imagen" (change)="subirImagen($event.target.files)">
 
                         </div>
 

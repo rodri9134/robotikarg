@@ -79,7 +79,7 @@
                             <div class="provincias">
                                 <label for="provincias">Provincia</label>
                                 <select formControlName="provincia">
-            <option  selected="true" disabled value=">{{miTorneo.idprovincia}}">{{miTorneo.pnombre}}</option>
+            <option  selected="true" disabled value="{{miTorneo.idprovincia}}">{{miTorneo.pnombre}}</option>
             <option  *ngFor='let provincia of provincias' value="{{provincia.id}}">{{provincia.nombre}}</option>
           </select>
 

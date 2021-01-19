@@ -12,8 +12,8 @@ class CategoriasController {
 
      public async read(req: Request, res: Response) {
         // tslint:disable-next-line: max-line-length
-        const torneos = await pool.query('SELECT * FROM categorias', [req.body]);
-        res.json(torneos);
+        const categorias = await pool.query('SELECT * FROM categorias', [req.body]);
+        res.json(categorias);
     }
     public async update(req: Request, res: Response) {
 

@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { TorneosService } from 'src/app/services/torneos.service';
-
 import { Torneo } from '../../../modelo/torneos';
 import { ProvinciasService } from 'src/app/services/provincias.service';
 import { RangoEdadService } from 'src/app/services/rango-edad.service';
+import { FileUploadService } from '../../../services/file-upload-service.service';
 @Component({
   selector: 'app-admin-insertar-torneos',
   templateUrl: './admin-insertar-torneos.component.html',
@@ -18,8 +18,9 @@ export class AdminInsertarTorneosComponent implements OnInit {
   public provincias: ProvinciasService;
   public rangoEdades: RangoEdadService;
   http: any;
+
   // tslint:disable-next-line: max-line-length
-  constructor(private router: Router, private formBuilder: FormBuilder, private provinciasService: ProvinciasService, private rangoEdadService: RangoEdadService, private torneosService: TorneosService) {
+  constructor(private fileUploadService:FileUploadService,private router: Router, private formBuilder: FormBuilder, private provinciasService: ProvinciasService, private rangoEdadService: RangoEdadService, private torneosService: TorneosService) {
 
     this.insertarTorneoForm = formBuilder.group({
       imagen: [''],
@@ -84,7 +85,18 @@ export class AdminInsertarTorneosComponent implements OnInit {
     );
 
   }
-  subirImagen(event: any): void {
+  fileToUpload: File = null;
+  subirImagen(files: FileList) {
+    this.fileToUpload = files.item(0);
+}
+uploadFileToActivity() {
+  this.fileUploadService.postFile(this.fileToUpload).subscribe(data => {
+    // do something, if upload success
+    }, error => {
+      console.log(error);
+    });
+}
+  subirImagen2(event: any): void {
     this.imagen2 = event.target.files[0];
 
   }

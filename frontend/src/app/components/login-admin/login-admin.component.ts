@@ -30,12 +30,19 @@ export class LoginAdminComponent implements OnInit {
     console.log(this.loginAdminForm.value);
     this.usuariosService.getLoginAdmin(this.loginAdminForm.value).subscribe(
       res => {
+
+        if (res.message == "Correo incorrecto" || res.message == "Contraseña incorrecta del admin") {
+          this.router.navigate(['/login']);
+          alert("Login incorrecto");
+        }
+        else{
         const tok = 'Roboadmin' + res;
         localStorage.setItem('tokenAdmin', tok);
         const u: Usuario = { email: this.loginAdminForm.value.email, password: this.loginAdminForm.value.password };
         this.usuariosService.setAdminLoggedIn(u);
         this.router.navigate(['/navAdmin']);
         console.log(res);
+        }
       },
       err => {
         console.log(err);
