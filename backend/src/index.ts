@@ -12,6 +12,7 @@ import categoriasRoutes from './routes/categoriasRoutes';
 import provinciasRoutes from './routes/provinciasRoutes';
 import rangoEdadRoutes from './routes/rangoEdadRoutes';
 import contactoRoutes from './routes/contactoRoutes';
+
 import morgan from 'morgan';
 import cors from 'cors';
 class server {
@@ -22,6 +23,7 @@ class server {
         this.routes();
     }
     config(): void {
+        
         this.app.set('port', process.env.PORT || 3000);
         this.app.use(morgan('dev'));
         this.app.use(cors());
